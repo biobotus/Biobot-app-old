@@ -119,8 +119,8 @@ namespace BioBotApp.Controls.Option.Options
             this.buttonZ1Plus = new System.Windows.Forms.Button();
             this.buttonXMinus = new System.Windows.Forms.Button();
             this.buttonYMinus = new System.Windows.Forms.Button();
-            this.dsModuleStructure1 = new BioBotApp.DataSets.dsModuleStructure2();
-            this.taModule1 = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModule();
+            this.dsModuleStructure1 = new BioBotApp.DataSets.dsModuleStructure3();
+            this.taModule1 = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModule();
             this.bs1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnHomeZ3 = new System.Windows.Forms.Button();
             this.btnHomeZ2 = new System.Windows.Forms.Button();
@@ -734,7 +734,7 @@ namespace BioBotApp.Controls.Option.Options
             // 
             // dsModuleStructure1
             // 
-            this.dsModuleStructure1.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructure1.DataSetName = "dsModuleStructure3";
             this.dsModuleStructure1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // taModule1
@@ -944,9 +944,9 @@ namespace BioBotApp.Controls.Option.Options
         private Label z1coord;
         private Label ycoord;
         private Label xcoord;
-        private DataSets.dsModuleStructure2 dsModuleStructure1;
+        private DataSets.dsModuleStructure3 dsModuleStructure1;
         private BindingSource bs1;
-        private DataSets.dsModuleStructure2TableAdapters.taModule taModule1;
+        private DataSets.dsModuleStructure3TableAdapters.taModule taModule1;
         private Button btnHomeZ3;
         private Button btnHomeZ2;
         private Button btnHomeZ1;

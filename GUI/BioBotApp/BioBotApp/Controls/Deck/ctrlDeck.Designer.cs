@@ -53,7 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bs1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dsModuleStructure21 = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructure31 = new BioBotApp.DataSets.dsModuleStructure3();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -63,7 +63,7 @@
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bs1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure31)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -338,12 +338,12 @@
             // bs1
             // 
             this.bs1.DataMember = "dtModule";
-            this.bs1.DataSource = this.dsModuleStructure21;
+            this.bs1.DataSource = this.dsModuleStructure31;
             // 
-            // dsModuleStructure21
+            // dsModuleStructure31
             // 
-            this.dsModuleStructure21.DataSetName = "dsModuleStructure2";
-            this.dsModuleStructure21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsModuleStructure31.DataSetName = "dsModuleStructure3";
+            this.dsModuleStructure31.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ctrlDeck
             // 
@@ -364,7 +364,7 @@
             this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bs1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure31)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,6 +395,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource bs1;
-        private DataSets.dsModuleStructure2 dsModuleStructure21;
+        private DataSets.dsModuleStructure3 dsModuleStructure31;
     }
 }

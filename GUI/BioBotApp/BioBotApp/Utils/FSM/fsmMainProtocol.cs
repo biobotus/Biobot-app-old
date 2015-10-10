@@ -30,7 +30,7 @@ namespace BioBotApp.Utils.FSM
             multiChannelPipette = new fsmMultiChannelPipette();
         }
 
-        public void executeAction(DataSets.dsModuleStructure2.dtActionValueRow action)
+        public void executeAction(DataSets.dsModuleStructure3.dtActionValueRow action)
         {
             int moduleTypeId = action.dtStepLeafRow.dtStepCompositeRow.dtModuleRow.dtModuleTypeRow.pk_id;
             if (moduleTypeId == TOOL_HOLDER)

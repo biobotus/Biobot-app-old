@@ -19,14 +19,14 @@ namespace BioBotApp.Controls.Deck
         {
             InitializeComponent();
         }
-        public void initDeck(DataSets.dsModuleStructure2 dsModuleStructure, BindingSource bsModule)
+        public void initDeck(DataSets.dsModuleStructure3 dsModuleStructure, BindingSource bsModule)
         {
-            this.dsModuleStructure21 = dsModuleStructure;
+            this.dsModuleStructure31 = dsModuleStructure;
             this.bs1=bsModule;
-            bsModule.DataSource = this.dsModuleStructure21;
+            bsModule.DataSource = this.dsModuleStructure31;
 
             this.bs1.DataMember = "dtModule";
-            this.bs1.DataSource = this.dsModuleStructure21;
+            this.bs1.DataSource = this.dsModuleStructure31;
 
         }
 
@@ -47,20 +47,20 @@ namespace BioBotApp.Controls.Deck
 
             dialog.ShowDialog();
 
-            //if(e.Data.GetData(typeof(DataSets.dsModuleStructure2.dtModuleRow)))
+            //if(e.Data.GetData(typeof(DataSets.dsModuleStructure3.dtModuleRow)))
             //{
                 
             //}
 
             //if (dialog.DialogResult.Equals(DialogResult.OK))
             //{
-            //    DataSets.dsModuleStructure2.dtModuleRow row;
+            //    DataSets.dsModuleStructure3.dtModuleRow row;
 
-            //    row = dsModuleStructure21.dtModule.NewdtModuleRow();
+            //    row = dsModuleStructure31.dtModule.NewdtModuleRow();
             //    row.description = xCoord.getInputTextValue();
             //    row.description = yCoord.getInputTextValue();
             //    row.description = rotation.getInputTextValue();
-            //    dsModuleStructure21.dtModule.AdddtModuleRow(row);
+            //    dsModuleStructure31.dtModule.AdddtModuleRow(row);
             //    updateRow(row);
             //}
         }

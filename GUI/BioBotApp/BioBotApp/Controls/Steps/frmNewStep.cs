@@ -20,13 +20,13 @@ namespace BioBotApp.Controls.Steps
             this.CancelButton = moduleParameters.getCancelButton();
         }
 
-        public frmNewStep(DataSets.dsModuleStructure2 dsModuleStructure, DataSets.dsModuleStructure2.dtModuleRow moduleRow)
+        public frmNewStep(DataSets.dsModuleStructure3 dsModuleStructure, DataSets.dsModuleStructure3.dtModuleRow moduleRow)
             : this()
         {
             moduleParameters.setParameterActions(dsModuleStructure, moduleRow);
         }
 
-        public Dictionary<DataSets.dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> getActionValues()
+        public Dictionary<DataSets.dsModuleStructure3.dtModuleTypeActionTypeRow, ctrlCommand> getActionValues()
         {
             return moduleParameters.getParameterActions();
         }

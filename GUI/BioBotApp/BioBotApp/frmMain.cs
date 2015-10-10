@@ -74,9 +74,9 @@ namespace BioBotApp
 
         }
 
-        public DataSets.dsModuleStructure2.dtActionTypeRow addActionTypeRow(String description)
+        public DataSets.dsModuleStructure3.dtActionTypeRow addActionTypeRow(String description)
         {
-            DataSets.dsModuleStructure2.dtActionTypeRow actionTypeRow = this.dsModuleStructure.dtActionType.NewdtActionTypeRow();
+            DataSets.dsModuleStructure3.dtActionTypeRow actionTypeRow = this.dsModuleStructure.dtActionType.NewdtActionTypeRow();
             actionTypeRow.description = description;
             this.dsModuleStructure.dtActionType.AdddtActionTypeRow(actionTypeRow);
             return actionTypeRow;
@@ -114,7 +114,7 @@ namespace BioBotApp
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
-            DataSets.dsModuleStructure2.dtModuleRow mr = dsModuleStructure.dtModule.NewdtModuleRow();
+            DataSets.dsModuleStructure3.dtModuleRow mr = dsModuleStructure.dtModule.NewdtModuleRow();
 
             mr.fk_module_type = 1;
             mr.pk_id = Guid.NewGuid().ToString();
@@ -123,7 +123,7 @@ namespace BioBotApp
 
         private void toolStripStatusLabel3_Click(object sender, EventArgs e)
         {
-            DataSets.dsModuleStructure2.dtModuleRow mr = dsModuleStructure.dtModule.NewdtModuleRow();
+            DataSets.dsModuleStructure3.dtModuleRow mr = dsModuleStructure.dtModule.NewdtModuleRow();
 
             mr.fk_module_type = 1;
             mr.pk_id = Guid.NewGuid().ToString().Substring(0, 7);
@@ -134,11 +134,11 @@ namespace BioBotApp
         private void ctrlTools_ToolSelectionChanged(object sender, ModuleTypeSelectionEventArgs e)
         {
             ctrlConsole.Log("Selection node: " + e.SelectedTreeNode.Text);
-            if (e.SelectedTreeNode.Tag is DataSets.dsModuleStructure2.dtModuleTypeRow)
+            if (e.SelectedTreeNode.Tag is DataSets.dsModuleStructure3.dtModuleTypeRow)
             {
-                DataSets.dsModuleStructure2.dtModuleTypeRow moduleRow = e.SelectedTreeNode.Tag as DataSets.dsModuleStructure2.dtModuleTypeRow;
-                DataSets.dsModuleStructure2.dtActionTypeDataTable actionTypeTable =
-                    new DataSets.dsModuleStructure2.dtActionTypeDataTable();
+                DataSets.dsModuleStructure3.dtModuleTypeRow moduleRow = e.SelectedTreeNode.Tag as DataSets.dsModuleStructure3.dtModuleTypeRow;
+                DataSets.dsModuleStructure3.dtActionTypeDataTable actionTypeTable =
+                    new DataSets.dsModuleStructure3.dtActionTypeDataTable();
 
                 //ctrlSteps.setSelectedModule(moduleRow);
             }
@@ -159,7 +159,7 @@ namespace BioBotApp
         {
             /*
             fsmMovement movement = new fsmMovement();
-            foreach (DataSets.dsModuleStructure2.dtActionValueRow row in this.dsModuleStructure.dtActionValue)
+            foreach (DataSets.dsModuleStructure3.dtActionValueRow row in this.dsModuleStructure.dtActionValue)
             {
                 if(row.dtStepLeafRow.dtStepCompositeRow.dtModuleRow.dtModuleTypeRow.pk_id == 7)
                 {
@@ -178,7 +178,7 @@ namespace BioBotApp
             /*
             SingleChannelPipette.sendInstruction(0x01, '\u00ff');
 
-            foreach (DataSets.dsModuleStructure2.dtActionValueRow row in this.dsModuleStructure.dtActionValue)
+            foreach (DataSets.dsModuleStructure3.dtActionValueRow row in this.dsModuleStructure.dtActionValue)
             {
                 fsmPince.executeAction(row);
             }

@@ -37,7 +37,7 @@
             this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModuleStepComposite = new System.Windows.Forms.BindingSource(this.components);
             this.dtModuleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure3();
             this.dtStepCompositeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,10 +45,10 @@
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StepLeafStepComposite = new System.Windows.Forms.BindingSource(this.components);
             this.bs_dtStepLeafBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ta_StepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
+            this.ta_StepLeaf = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taStepLeaf();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.crudOptionsStep = new BioBotApp.Controls.Utils.crudOptions();
-            this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
+            this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taStepComposite();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.pkidDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,11 +67,11 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StepLeafActionValue = new System.Windows.Forms.BindingSource(this.components);
             this.dtActionValueBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.taModule1 = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModule();
-            this.taActionValue1 = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValue();
+            this.taModule1 = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModule();
+            this.taActionValue1 = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionValue();
             this.button1 = new System.Windows.Forms.Button();
-            this.taActionType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionType();
-            this.taActionValueType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValueType();
+            this.taActionType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionType();
+            this.taActionValueType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionValueType();
             this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
@@ -175,7 +175,7 @@
             // 
             // dsModuleStructureGUI
             // 
-            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure3";
             this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dtStepCompositeBindingSource
@@ -550,12 +550,12 @@
         private Utils.crudOptions crudOptionsStep;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bs_dtStepLeafBindingSource;
-        private DataSets.dsModuleStructure2 dsModuleStructureGUI;
-        private DataSets.dsModuleStructure2TableAdapters.taStepLeaf ta_StepLeaf;
+        private DataSets.dsModuleStructure3 dsModuleStructureGUI;
+        private DataSets.dsModuleStructure3TableAdapters.taStepLeaf ta_StepLeaf;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource dtStepCompositeBindingSource;
         private System.Windows.Forms.GroupBox groupBox2;
-        private DataSets.dsModuleStructure2TableAdapters.taStepComposite taStepComposite;
+        private DataSets.dsModuleStructure3TableAdapters.taStepComposite taStepComposite;
         private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fkmoduleidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
@@ -566,8 +566,8 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private Utils.crudOptions crudOptionsActionType;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private DataSets.dsModuleStructure2TableAdapters.taModule taModule1;
-        private DataSets.dsModuleStructure2TableAdapters.taActionValue taActionValue1;
+        private DataSets.dsModuleStructure3TableAdapters.taModule taModule1;
+        private DataSets.dsModuleStructure3TableAdapters.taActionValue taActionValue1;
         private System.Windows.Forms.BindingSource dtModuleBindingSource;
         private System.Windows.Forms.BindingSource dtActionValueBindingSource;
         private System.Windows.Forms.BindingSource StepLeafActionValue;
@@ -575,8 +575,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource dtActionTypeBindingSource;
         private System.Windows.Forms.BindingSource dtActionValueTypeBindingSource;
-        private DataSets.dsModuleStructure2TableAdapters.taActionType taActionType;
-        private DataSets.dsModuleStructure2TableAdapters.taActionValueType taActionValueType;
+        private DataSets.dsModuleStructure3TableAdapters.taActionType taActionType;
+        private DataSets.dsModuleStructure3TableAdapters.taActionValueType taActionValueType;
         private System.Windows.Forms.ToolStrip fillByToolStrip;
         private System.Windows.Forms.ToolStripButton fillByToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;

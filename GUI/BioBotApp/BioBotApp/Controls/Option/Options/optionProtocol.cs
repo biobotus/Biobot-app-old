@@ -17,7 +17,7 @@ namespace BioBotApp.Controls.Option.Options
         {
             InitializeComponent();
         }
-        public optionProtocol(DataSets.dsModuleStructure2 dsModuleStructure) : this()
+        public optionProtocol(DataSets.dsModuleStructure3 dsModuleStructure) : this()
         {
             
             this.dsModuleStructureGUI = dsModuleStructure;
@@ -60,7 +60,7 @@ namespace BioBotApp.Controls.Option.Options
         }
         private void crudOptionsStep_AddClickHandler(object sender, EventArgs e)
         {
-            DataSets.dsModuleStructure2.dtStepCompositeRow ProtocolSelectedRow = getSelectedProtocolRow();
+            DataSets.dsModuleStructure3.dtStepCompositeRow ProtocolSelectedRow = getSelectedProtocolRow();
             if (ProtocolSelectedRow == null)
             {
                 return;
@@ -80,7 +80,7 @@ namespace BioBotApp.Controls.Option.Options
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
-                DataSets.dsModuleStructure2.dtStepLeafRow row;
+                DataSets.dsModuleStructure3.dtStepLeafRow row;
                 row = dsModuleStructureGUI.dtStepLeaf.NewdtStepLeafRow();
                 row.description = description.getInputTextValue();
                 row.fk_step_composite = ProtocolSelectedRow.pk_id;
@@ -96,7 +96,7 @@ namespace BioBotApp.Controls.Option.Options
                 return;
             }
 
-            DataSets.dsModuleStructure2.dtStepLeafRow row;
+            DataSets.dsModuleStructure3.dtStepLeafRow row;
             row = getSelectedStepRow();
 
             DialogResult result = MessageBox.Show("Delete : " + row.description + " ?", "Delete Step ?", MessageBoxButtons.YesNo,
@@ -115,7 +115,7 @@ namespace BioBotApp.Controls.Option.Options
         private void crudOptionsStep_ModifyClickHandler(object sender, EventArgs e)
         {
             abstractDialog dialog = new abstractDialog("Steps", "Modify");
-            DataSets.dsModuleStructure2.dtStepLeafRow row = getSelectedStepRow();
+            DataSets.dsModuleStructure3.dtStepLeafRow row = getSelectedStepRow();
 
             if (row == null)
             {
@@ -135,7 +135,7 @@ namespace BioBotApp.Controls.Option.Options
         }
         private void crudOptionsProto_AddClickHandler(object sender, EventArgs e)
         {
-            DataSets.dsModuleStructure2.dtModuleRow ModuleSelectedRow = getSelectedModuleRow();
+            DataSets.dsModuleStructure3.dtModuleRow ModuleSelectedRow = getSelectedModuleRow();
 
             abstractDialog dialog = new abstractDialog("Add Protocol", "Add Protocol for the " + ModuleSelectedRow.pk_id + " module");
 
@@ -152,7 +152,7 @@ namespace BioBotApp.Controls.Option.Options
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
-                DataSets.dsModuleStructure2.dtStepCompositeRow row;
+                DataSets.dsModuleStructure3.dtStepCompositeRow row;
                 row = dsModuleStructureGUI.dtStepComposite.NewdtStepCompositeRow();
                 row.description = description.getInputTextValue();
                 row.fk_module_id = ModuleSelectedRow.pk_id;
@@ -168,7 +168,7 @@ namespace BioBotApp.Controls.Option.Options
                 return;
             }
 
-            DataSets.dsModuleStructure2.dtStepCompositeRow row;
+            DataSets.dsModuleStructure3.dtStepCompositeRow row;
             row = getSelectedProtocolRow();
 
             DialogResult result = MessageBox.Show("Delete : " + row.description + " ?", "Delete protocol ?", MessageBoxButtons.YesNo,
@@ -187,7 +187,7 @@ namespace BioBotApp.Controls.Option.Options
         private void crudOptionsProto_ModifyClickHandler(object sender, EventArgs e)
         {
             abstractDialog dialog = new abstractDialog("Protocol", "Modify");
-            DataSets.dsModuleStructure2.dtStepCompositeRow row = getSelectedProtocolRow();
+            DataSets.dsModuleStructure3.dtStepCompositeRow row = getSelectedProtocolRow();
 
             if (row == null)
             {
@@ -208,7 +208,7 @@ namespace BioBotApp.Controls.Option.Options
         private void crudOptionsAction_AddClickHandler(object sender, EventArgs e)
         {
             
-            DataSets.dsModuleStructure2.dtStepLeafRow StepSelectedRow = getSelectedStepRow();
+            DataSets.dsModuleStructure3.dtStepLeafRow StepSelectedRow = getSelectedStepRow();
             if (StepSelectedRow == null)
             {
                 return;
@@ -236,20 +236,20 @@ namespace BioBotApp.Controls.Option.Options
             dialog.addControl(ActionValueType);
             dialog.ShowDialog();
 
-            DataSets.dsModuleStructure2.dtActionTypeRow Actionrow;
+            DataSets.dsModuleStructure3.dtActionTypeRow Actionrow;
             DataRowView ActionCombo = ActionType.getComboBox().SelectedItem as DataRowView;
-            Actionrow = ActionCombo.Row as DataSets.dsModuleStructure2.dtActionTypeRow;
+            Actionrow = ActionCombo.Row as DataSets.dsModuleStructure3.dtActionTypeRow;
 
-            DataSets.dsModuleStructure2.dtActionValueTypeRow ActionValueTyperow;
+            DataSets.dsModuleStructure3.dtActionValueTypeRow ActionValueTyperow;
             DataRowView ActionValueTypecombo = ActionValueType.getComboBox().SelectedItem as DataRowView;
-            ActionValueTyperow = ActionValueTypecombo.Row as DataSets.dsModuleStructure2.dtActionValueTypeRow;
+            ActionValueTyperow = ActionValueTypecombo.Row as DataSets.dsModuleStructure3.dtActionValueTypeRow;
 
             
 
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
-                DataSets.dsModuleStructure2.dtActionValueRow row;
+                DataSets.dsModuleStructure3.dtActionValueRow row;
                 row = dsModuleStructureGUI.dtActionValue.NewdtActionValueRow();
                 row.index = string.IsNullOrEmpty(index.getInputTextValue()) ? 0 : int.Parse(index.getInputTextValue());
                 row.description = description.getInputTextValue();
@@ -267,7 +267,7 @@ namespace BioBotApp.Controls.Option.Options
                 return;
             }
 
-            DataSets.dsModuleStructure2.dtActionValueRow row;
+            DataSets.dsModuleStructure3.dtActionValueRow row;
             row = getSelectedActionRow();
 
             DialogResult result = MessageBox.Show("Delete : " + row.description + " ?", "Delete action type ?", MessageBoxButtons.YesNo,
@@ -286,7 +286,7 @@ namespace BioBotApp.Controls.Option.Options
         private void crudOptionsAction_ModifyClickHandler(object sender, EventArgs e)
         {
             abstractDialog dialog = new abstractDialog("Action type", "Modify");
-            DataSets.dsModuleStructure2.dtActionValueRow row = getSelectedActionRow();
+            DataSets.dsModuleStructure3.dtActionValueRow row = getSelectedActionRow();
             if (row == null)
             {
                 return;
@@ -316,13 +316,13 @@ namespace BioBotApp.Controls.Option.Options
 
             dialog.ShowDialog();
 
-            DataSets.dsModuleStructure2.dtActionTypeRow Actionrow;
+            DataSets.dsModuleStructure3.dtActionTypeRow Actionrow;
             DataRowView ActionCombo = ActionType.getComboBox().SelectedItem as DataRowView;
-            Actionrow = ActionCombo.Row as DataSets.dsModuleStructure2.dtActionTypeRow;
+            Actionrow = ActionCombo.Row as DataSets.dsModuleStructure3.dtActionTypeRow;
 
-            DataSets.dsModuleStructure2.dtActionValueTypeRow ActionValueTyperow;
+            DataSets.dsModuleStructure3.dtActionValueTypeRow ActionValueTyperow;
             DataRowView ActionValueTypecombo = ActionValueType.getComboBox().SelectedItem as DataRowView;
-            ActionValueTyperow = ActionValueTypecombo.Row as DataSets.dsModuleStructure2.dtActionValueTypeRow;
+            ActionValueTyperow = ActionValueTypecombo.Row as DataSets.dsModuleStructure3.dtActionValueTypeRow;
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
@@ -333,9 +333,9 @@ namespace BioBotApp.Controls.Option.Options
                 updateActionRow(row);
             }
         }
-        public DataSets.dsModuleStructure2.dtActionValueRow getSelectedActionRow()
+        public DataSets.dsModuleStructure3.dtActionValueRow getSelectedActionRow()
         {
-            DataSets.dsModuleStructure2.dtActionValueRow row;
+            DataSets.dsModuleStructure3.dtActionValueRow row;
 
             if (StepLeafActionValue.Current == null)
             {
@@ -343,12 +343,12 @@ namespace BioBotApp.Controls.Option.Options
             }
 
             DataRowView rowView = StepLeafActionValue.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure2.dtActionValueRow;
+            row = rowView.Row as DataSets.dsModuleStructure3.dtActionValueRow;
             return row;
         }
-        public DataSets.dsModuleStructure2.dtStepLeafRow getSelectedStepRow()
+        public DataSets.dsModuleStructure3.dtStepLeafRow getSelectedStepRow()
         {
-            DataSets.dsModuleStructure2.dtStepLeafRow row;
+            DataSets.dsModuleStructure3.dtStepLeafRow row;
 
             if (StepLeafStepComposite.Current == null)
             {
@@ -356,12 +356,12 @@ namespace BioBotApp.Controls.Option.Options
             }
             
             DataRowView rowView = StepLeafStepComposite.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure2.dtStepLeafRow;
+            row = rowView.Row as DataSets.dsModuleStructure3.dtStepLeafRow;
             return row;
         }
-        public DataSets.dsModuleStructure2.dtStepCompositeRow getSelectedProtocolRow()
+        public DataSets.dsModuleStructure3.dtStepCompositeRow getSelectedProtocolRow()
         {
-            DataSets.dsModuleStructure2.dtStepCompositeRow row;
+            DataSets.dsModuleStructure3.dtStepCompositeRow row;
 
             if (ModuleStepComposite.Current == null)
             {
@@ -369,12 +369,12 @@ namespace BioBotApp.Controls.Option.Options
             }
 
             DataRowView rowView = ModuleStepComposite.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure2.dtStepCompositeRow;
+            row = rowView.Row as DataSets.dsModuleStructure3.dtStepCompositeRow;
             return row;
         }
-        public DataSets.dsModuleStructure2.dtModuleRow getSelectedModuleRow()
+        public DataSets.dsModuleStructure3.dtModuleRow getSelectedModuleRow()
         {
-            DataSets.dsModuleStructure2.dtModuleRow row;
+            DataSets.dsModuleStructure3.dtModuleRow row;
 
             if (dtModuleBindingSource.Current == null)
             {
@@ -382,11 +382,11 @@ namespace BioBotApp.Controls.Option.Options
             }
 
             DataRowView rowView = dtModuleBindingSource.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure2.dtModuleRow;
+            row = rowView.Row as DataSets.dsModuleStructure3.dtModuleRow;
             
             return row;
         }
-        public void updateProtoRow(DataSets.dsModuleStructure2.dtStepCompositeRow updateRow)
+        public void updateProtoRow(DataSets.dsModuleStructure3.dtStepCompositeRow updateRow)
         {
             try
             {
@@ -401,7 +401,7 @@ namespace BioBotApp.Controls.Option.Options
                 dsModuleStructureGUI.RejectChanges();
             }
         }
-        public void updateStepRow(DataSets.dsModuleStructure2.dtStepLeafRow updateRow)
+        public void updateStepRow(DataSets.dsModuleStructure3.dtStepLeafRow updateRow)
         {
             try
             {
@@ -416,7 +416,7 @@ namespace BioBotApp.Controls.Option.Options
                 dsModuleStructureGUI.RejectChanges();
             }
         }
-        public void updateActionRow(DataSets.dsModuleStructure2.dtActionValueRow updateRow)
+        public void updateActionRow(DataSets.dsModuleStructure3.dtActionValueRow updateRow)
         {
             try
             {

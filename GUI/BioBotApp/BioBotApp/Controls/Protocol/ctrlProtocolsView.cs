@@ -46,7 +46,7 @@ namespace BioBotApp.Controls.Protocol
             }
         }
 
-        public void addNodes(DataSets.dsModuleStructure2.dtStepCompositeRow row, TreeNode parentNode)
+        public void addNodes(DataSets.dsModuleStructure3.dtStepCompositeRow row, TreeNode parentNode)
         {
             TreeNode treeNode = new StepCompositeNode(row);
 
@@ -59,12 +59,12 @@ namespace BioBotApp.Controls.Protocol
                 parentNode.Nodes.Add(treeNode);
             }
 
-            foreach (DataSets.dsModuleStructure2.dtStepCompositeRow childRows in row.GetdtStepCompositeRows())
+            foreach (DataSets.dsModuleStructure3.dtStepCompositeRow childRows in row.GetdtStepCompositeRows())
             {
                 addNodes(childRows, treeNode);
             }
 
-            foreach (DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
+            foreach (DataSets.dsModuleStructure3.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
             {
                 TreeNode stepLeafNode = new StepLeafNode(stepLeafRow, dsModuleStructure.dtActionValue);
                 treeNode.Nodes.Add(stepLeafNode);
@@ -124,13 +124,13 @@ namespace BioBotApp.Controls.Protocol
                 StepLeafNode stepLeafNode = treeNode as StepLeafNode;
 
                 /*
-                DataSets.dsModuleStructure2.dtStepLeafRow stepLeaf = stepLeafNode.getStepLeaf();
-                DataSets.dsModuleStructure2.dtActionValueRow[] actionValueRows = stepLeaf.GetdtActionValueRows();
+                DataSets.dsModuleStructure3.dtStepLeafRow stepLeaf = stepLeafNode.getStepLeaf();
+                DataSets.dsModuleStructure3.dtActionValueRow[] actionValueRows = stepLeaf.GetdtActionValueRows();
 
                 */
 
-                DataSets.dsModuleStructure2.dtActionValueDataTable table = stepLeafNode.getActionValueDataTable();
-                foreach (DataSets.dsModuleStructure2.dtActionValueRow actionValueRow in table)
+                DataSets.dsModuleStructure3.dtActionValueDataTable table = stepLeafNode.getActionValueDataTable();
+                foreach (DataSets.dsModuleStructure3.dtActionValueRow actionValueRow in table)
                 {
                     mainProtocol.executeAction(actionValueRow);
                 }

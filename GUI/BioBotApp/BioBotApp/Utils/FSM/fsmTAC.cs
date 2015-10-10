@@ -46,7 +46,7 @@ namespace BioBotApp.Utils.FSM
             acknowledgeEvent.Set();
         }
 
-        public void move(DataSets.dsModuleStructure2.dtActionValueRow actionValue)
+        public void move(DataSets.dsModuleStructure3.dtActionValueRow actionValue)
         {
             if (actionValue.fk_action_type == SET_TARGET_TEMPERATURE)
             {

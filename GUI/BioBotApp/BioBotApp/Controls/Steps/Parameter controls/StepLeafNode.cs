@@ -11,13 +11,13 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
     [Serializable()]
     class StepLeafNode : System.Windows.Forms.TreeNode , ISerializable
     {
-        private DataSets.dsModuleStructure2.dtStepLeafRow _stepLeaf;
-        private DataSets.dsModuleStructure2TableAdapters.taStepLeaf taStepLeaf ;
-        private DataSets.dsModuleStructure2.dtStepLeafDataTable stepLeafDataTable;
-        private DataSets.dsModuleStructure2TableAdapters.taActionValue taActionValue;
-        private DataSets.dsModuleStructure2.dtActionValueDataTable actionValueDataValueTable;
+        private DataSets.dsModuleStructure3.dtStepLeafRow _stepLeaf;
+        private DataSets.dsModuleStructure3TableAdapters.taStepLeaf taStepLeaf ;
+        private DataSets.dsModuleStructure3.dtStepLeafDataTable stepLeafDataTable;
+        private DataSets.dsModuleStructure3TableAdapters.taActionValue taActionValue;
+        private DataSets.dsModuleStructure3.dtActionValueDataTable actionValueDataValueTable;
 
-        public StepLeafNode(DataSets.dsModuleStructure2.dtStepLeafRow stepLeaf, DataSets.dsModuleStructure2.dtActionValueDataTable actionValueDataTable)
+        public StepLeafNode(DataSets.dsModuleStructure3.dtStepLeafRow stepLeaf, DataSets.dsModuleStructure3.dtActionValueDataTable actionValueDataTable)
         {
             if(stepLeaf == null)
             {
@@ -33,16 +33,16 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
             this.Text = stepLeaf.description;
             this.BackColor = Color.LightBlue;
             this.Tag = stepLeaf.pk_id;
-            this.actionValueDataValueTable = actionValueDataTable.Clone() as DataSets.dsModuleStructure2.dtActionValueDataTable;
+            this.actionValueDataValueTable = actionValueDataTable.Clone() as DataSets.dsModuleStructure3.dtActionValueDataTable;
         }
 
         protected StepLeafNode(SerializationInfo info, StreamingContext context) : base(info,context)
         {
-            stepLeafDataTable = new DataSets.dsModuleStructure2.dtStepLeafDataTable();
-            taActionValue = new DataSets.dsModuleStructure2TableAdapters.taActionValue();
-            actionValueDataValueTable = new DataSets.dsModuleStructure2.dtActionValueDataTable();
+            stepLeafDataTable = new DataSets.dsModuleStructure3.dtStepLeafDataTable();
+            taActionValue = new DataSets.dsModuleStructure3TableAdapters.taActionValue();
+            actionValueDataValueTable = new DataSets.dsModuleStructure3.dtActionValueDataTable();
 
-            taStepLeaf = new DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
+            taStepLeaf = new DataSets.dsModuleStructure3TableAdapters.taStepLeaf();
             int id = 0;
             if(Tag is int)
             {
@@ -58,12 +58,12 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
             taActionValue.SelectById(actionValueDataValueTable, id);
         }
 
-        public DataSets.dsModuleStructure2.dtStepLeafRow getStepLeaf()
+        public DataSets.dsModuleStructure3.dtStepLeafRow getStepLeaf()
         {
             return _stepLeaf;
         }
 
-        public DataSets.dsModuleStructure2.dtActionValueDataTable getActionValueDataTable()
+        public DataSets.dsModuleStructure3.dtActionValueDataTable getActionValueDataTable()
         {
             return actionValueDataValueTable;
         }

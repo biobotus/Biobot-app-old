@@ -33,14 +33,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.taModuleType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModuleType();
+            this.taModuleType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModuleType();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fkmoduletypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bsModuleType = new System.Windows.Forms.BindingSource(this.components);
-            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure3();
             this.bsModule = new System.Windows.Forms.BindingSource(this.components);
-            this.taModule = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModule();
+            this.taModule = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModule();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -150,7 +150,7 @@
             // 
             // dsModuleStructure
             // 
-            this.dsModuleStructure.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructure.DataSetName = "dsModuleStructure3";
             this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bsModule
@@ -189,11 +189,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnAdd;
-        private DataSets.dsModuleStructure2TableAdapters.taModuleType taModuleType;
+        private DataSets.dsModuleStructure3TableAdapters.taModuleType taModuleType;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bsModule;
-        private DataSets.dsModuleStructure2 dsModuleStructure;
-        private DataSets.dsModuleStructure2TableAdapters.taModule taModule;
+        private DataSets.dsModuleStructure3 dsModuleStructure;
+        private DataSets.dsModuleStructure3TableAdapters.taModule taModule;
         private System.Windows.Forms.BindingSource bsModuleType;
         private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn fkmoduletypeDataGridViewTextBoxColumn;

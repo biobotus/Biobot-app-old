@@ -11,12 +11,12 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
     [Serializable()]
     class StepCompositeNode : System.Windows.Forms.TreeNode, ISerializable
     {
-        private DataSets.dsModuleStructure2.dtStepCompositeRow _stepCompositeRow;
-        private DataSets.dsModuleStructure2TableAdapters.taStepComposite taStepComposite;
-        private DataSets.dsModuleStructure2.dtStepCompositeDataTable stepCompositeDataTable;
+        private DataSets.dsModuleStructure3.dtStepCompositeRow _stepCompositeRow;
+        private DataSets.dsModuleStructure3TableAdapters.taStepComposite taStepComposite;
+        private DataSets.dsModuleStructure3.dtStepCompositeDataTable stepCompositeDataTable;
         public int id { get; set; }
 
-        public StepCompositeNode(DataSets.dsModuleStructure2.dtStepCompositeRow stepCompositeRow)
+        public StepCompositeNode(DataSets.dsModuleStructure3.dtStepCompositeRow stepCompositeRow)
         {
             if (stepCompositeRow == null)
             {
@@ -36,9 +36,9 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
 
         protected StepCompositeNode(SerializationInfo info, StreamingContext context) : base(info, context)
         {
-            stepCompositeDataTable = new DataSets.dsModuleStructure2.dtStepCompositeDataTable();
+            stepCompositeDataTable = new DataSets.dsModuleStructure3.dtStepCompositeDataTable();
 
-            taStepComposite = new DataSets.dsModuleStructure2TableAdapters.taStepComposite();
+            taStepComposite = new DataSets.dsModuleStructure3TableAdapters.taStepComposite();
 
             if(Tag is int)
             {
@@ -55,7 +55,7 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
         }
 
 
-        public DataSets.dsModuleStructure2.dtStepCompositeRow getStepCompositeRow()
+        public DataSets.dsModuleStructure3.dtStepCompositeRow getStepCompositeRow()
         {
             return _stepCompositeRow;
         }

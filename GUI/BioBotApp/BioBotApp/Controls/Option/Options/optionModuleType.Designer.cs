@@ -35,9 +35,9 @@
             this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsModuleType = new System.Windows.Forms.BindingSource(this.components);
-            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure3();
             this.crudOptions = new BioBotApp.Controls.Utils.crudOptions();
-            this.taModuleType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModuleType();
+            this.taModuleType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModuleType();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvActionType)).BeginInit();
@@ -107,7 +107,7 @@
             // 
             // dsModuleStructureGUI
             // 
-            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure3";
             this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // crudOptions
@@ -149,13 +149,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private DataSets.dsModuleStructure2 dsModuleStructureGUI;
+        private DataSets.dsModuleStructure3 dsModuleStructureGUI;
         private System.Windows.Forms.DataGridView gvActionType;
         private Utils.crudOptions crudOptions;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bsModuleType;
-        private DataSets.dsModuleStructure2TableAdapters.taModuleType taModuleType;
+        private DataSets.dsModuleStructure3TableAdapters.taModuleType taModuleType;
     }
 }

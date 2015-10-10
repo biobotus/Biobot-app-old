@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure3();
             this.bsLabwareType = new System.Windows.Forms.BindingSource(this.components);
             this.dtLabwareTypeDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,9 +43,9 @@
             this.crudOptions = new BioBotApp.Controls.Utils.crudOptions();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.taLabwareTypeLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taLabwareTypeLabwareParameterType();
+            this.taLabwareTypeLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taLabwareTypeLabwareParameterType();
             this.dsModuleStructureGUIBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.taLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taLabwareParameterType();
+            this.taLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taLabwareParameterType();
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructureGUI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLabwareType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtLabwareTypeDataGridView)).BeginInit();
@@ -59,7 +59,7 @@
             // 
             // dsModuleStructureGUI
             // 
-            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure3";
             this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bsLabwareType
@@ -239,7 +239,7 @@
 
         #endregion
 
-        private DataSets.dsModuleStructure2 dsModuleStructureGUI;
+        private DataSets.dsModuleStructure3 dsModuleStructureGUI;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -255,9 +255,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.BindingSource bsLabwareTypedtLabwareTypeLabwareParameterType;
-        private DataSets.dsModuleStructure2TableAdapters.taLabwareTypeLabwareParameterType taLabwareTypeLabwareParameterType;
+        private DataSets.dsModuleStructure3TableAdapters.taLabwareTypeLabwareParameterType taLabwareTypeLabwareParameterType;
         private System.Windows.Forms.BindingSource dsModuleStructureGUIBindingSource;
-        private DataSets.dsModuleStructure2TableAdapters.taLabwareParameterType taLabwareParameterType;
+        private DataSets.dsModuleStructure3TableAdapters.taLabwareParameterType taLabwareParameterType;
         private System.Windows.Forms.DataGridViewTextBoxColumn fklabwaretypeidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn fklabwareparametertypeidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;

@@ -29,7 +29,7 @@ namespace BioBotApp.Controls.Steps
         List<String> _protocolAddType = new List<string>(new String[] { PROTOCOL_TYPE, STEP_TYPE });
 
         //Project's dataset
-        DataSets.dsModuleStructure2 _dsModuleStructure;
+        DataSets.dsModuleStructure3 _dsModuleStructure;
         //Project's module_type binding source
         BindingSource _bsModuleType;
 
@@ -39,7 +39,7 @@ namespace BioBotApp.Controls.Steps
             CreateContextMenuStrip();
         }
 
-        public void initControl(DataSets.dsModuleStructure2 dsModuleStructure, BindingSource bsModuleType)
+        public void initControl(DataSets.dsModuleStructure3 dsModuleStructure, BindingSource bsModuleType)
         {
             _dsModuleStructure = dsModuleStructure;
             _bsModuleType = bsModuleType;
@@ -51,7 +51,7 @@ namespace BioBotApp.Controls.Steps
         {
             tlvSteps.Nodes.Clear();
             Boolean add = false;
-            foreach(DataSets.dsModuleStructure2.dtStepCompositeRow stepCompositeRow in _dsModuleStructure.dtStepComposite)
+            foreach(DataSets.dsModuleStructure3.dtStepCompositeRow stepCompositeRow in _dsModuleStructure.dtStepComposite)
             {
                 add = true;
                 if (stepCompositeRow == null)
@@ -71,10 +71,10 @@ namespace BioBotApp.Controls.Steps
             
         }
 
-        public void addNodes(DataSets.dsModuleStructure2.dtStepCompositeRow row, TreeNode parentNode)
+        public void addNodes(DataSets.dsModuleStructure3.dtStepCompositeRow row, TreeNode parentNode)
         {
             TreeNode treeNode = new StepCompositeNode(row);
-            DataSets.dsModuleStructure2.dtModuleRow module = getSelectedModuleRow();
+            DataSets.dsModuleStructure3.dtModuleRow module = getSelectedModuleRow();
 
             if(row.dtModuleRow.fk_module_type == module.fk_module_type)
             {
@@ -87,12 +87,12 @@ namespace BioBotApp.Controls.Steps
                     parentNode.Nodes.Add(treeNode);
                 }
 
-                foreach (DataSets.dsModuleStructure2.dtStepCompositeRow childRows in row.GetdtStepCompositeRows())
+                foreach (DataSets.dsModuleStructure3.dtStepCompositeRow childRows in row.GetdtStepCompositeRows())
                 {
                     addNodes(childRows, treeNode);
                 }
 
-                foreach (DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
+                foreach (DataSets.dsModuleStructure3.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
                 {
                     TreeNode stepLeafNode = new StepLeafNode(stepLeafRow, _dsModuleStructure.dtActionValue);
                     treeNode.Nodes.Add(stepLeafNode);
@@ -144,8 +144,8 @@ namespace BioBotApp.Controls.Steps
                     if (dialogResultAddNode == DialogResult.OK)
                     {
                         //treeNodeText = frmProtocolAdd.getStepName();
-                        DataSets.dsModuleStructure2.dtStepCompositeRow compositeRow = _dsModuleStructure.dtStepComposite.NewdtStepCompositeRow();
-                        DataSets.dsModuleStructure2.dtModuleRow module = getSelectedModuleRow();
+                        DataSets.dsModuleStructure3.dtStepCompositeRow compositeRow = _dsModuleStructure.dtStepComposite.NewdtStepCompositeRow();
+                        DataSets.dsModuleStructure3.dtModuleRow module = getSelectedModuleRow();
                         if (module == null)
                         {
                             return;
@@ -178,8 +178,8 @@ namespace BioBotApp.Controls.Steps
                     break;
                 case STEP_TYPE:
 
-                    DataSets.dsModuleStructure2.dtModuleRow moduleRow = getSelectedModuleRow();
-                    DataSets.dsModuleStructure2.dtStepCompositeRow c = _dsModuleStructure.dtStepComposite.NewdtStepCompositeRow();
+                    DataSets.dsModuleStructure3.dtModuleRow moduleRow = getSelectedModuleRow();
+                    DataSets.dsModuleStructure3.dtStepCompositeRow c = _dsModuleStructure.dtStepComposite.NewdtStepCompositeRow();
 
 
                     if (moduleRow == null)
@@ -200,7 +200,7 @@ namespace BioBotApp.Controls.Steps
                         if (tlvSteps.SelectedNode is StepCompositeNode)
                         {
                             StepCompositeNode stepCompositeNode = tlvSteps.SelectedNode as StepCompositeNode;
-                            DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow = _dsModuleStructure.dtStepLeaf.NewdtStepLeafRow();
+                            DataSets.dsModuleStructure3.dtStepLeafRow stepLeafRow = _dsModuleStructure.dtStepLeaf.NewdtStepLeafRow();
                             stepLeafRow.fk_step_composite = stepCompositeNode.getStepCompositeRow().pk_id;
                             stepLeafRow.description = _frmNewStep.getStepDescription();
 
@@ -210,17 +210,17 @@ namespace BioBotApp.Controls.Steps
 
                             treeNode = new StepLeafNode(stepLeafRow, _dsModuleStructure.dtActionValue);
 
-                            Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> command = _frmNewStep.getActionValues();
-                            foreach(KeyValuePair<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> kvp in command)
+                            Dictionary<dsModuleStructure3.dtModuleTypeActionTypeRow, ctrlCommand> command = _frmNewStep.getActionValues();
+                            foreach(KeyValuePair<dsModuleStructure3.dtModuleTypeActionTypeRow, ctrlCommand> kvp in command)
                             {
 
-                                Dictionary<dsModuleStructure2.dtActionTypeRow, namedInputTextBox> actionTypeInputBoxDict = kvp.Value.getActionTypesValues();
+                                Dictionary<dsModuleStructure3.dtActionTypeRow, namedInputTextBox> actionTypeInputBoxDict = kvp.Value.getActionTypesValues();
 
-                                foreach(KeyValuePair<dsModuleStructure2.dtActionTypeRow, namedInputTextBox> kvpActionType in actionTypeInputBoxDict)
+                                foreach(KeyValuePair<dsModuleStructure3.dtActionTypeRow, namedInputTextBox> kvpActionType in actionTypeInputBoxDict)
                                 {
                                     if(kvpActionType.Value.getInputTextValue().Length != 0)
                                     {
-                                        DataSets.dsModuleStructure2.dtActionValueRow actionValue = _dsModuleStructure.dtActionValue.NewdtActionValueRow();
+                                        DataSets.dsModuleStructure3.dtActionValueRow actionValue = _dsModuleStructure.dtActionValue.NewdtActionValueRow();
                                         actionValue.fk_action_type = kvpActionType.Key.pk_id;
                                         actionValue.fk_action_value_type = kvp.Key.dtActionValueTypeRow.pk_id;
                                         actionValue.fk_step_leaf_id = stepLeafRow.pk_id;
@@ -251,22 +251,22 @@ namespace BioBotApp.Controls.Steps
             }
         }
 
-        public void setSelectedModule(DataSets.dsModuleStructure2.dtModuleTypeRow moduleTypeRow, DataSets.dsModuleStructure2.dtActionTypeDataTable dtActionType)
+        public void setSelectedModule(DataSets.dsModuleStructure3.dtModuleTypeRow moduleTypeRow, DataSets.dsModuleStructure3.dtActionTypeDataTable dtActionType)
         {
             btnAdd.Enabled = (!String.IsNullOrEmpty(moduleTypeRow.description) && dtActionType.Rows.Count > 0);
             btnDelete.Enabled = (!String.IsNullOrEmpty(moduleTypeRow.description) && dtActionType.Rows.Count > 0);
             //_contextMenuAutoFill.Items[STEP_TYPE].Enabled = (!String.IsNullOrEmpty(moduleTypeRow.Description) && dtActionType.Rows.Count > 0);
         }
 
-        public DataSets.dsModuleStructure2.dtModuleRow getSelectedModuleRow()
+        public DataSets.dsModuleStructure3.dtModuleRow getSelectedModuleRow()
         {
             if (_bsModuleType.Current == null)
             {
                 return null;
             }
             DataRowView rowView = _bsModuleType.Current as DataRowView;
-            DataSets.dsModuleStructure2.dtModuleRow moduleRow = rowView.Row
-                as DataSets.dsModuleStructure2.dtModuleRow;
+            DataSets.dsModuleStructure3.dtModuleRow moduleRow = rowView.Row
+                as DataSets.dsModuleStructure3.dtModuleRow;
 
             return moduleRow;
         }
@@ -289,7 +289,7 @@ namespace BioBotApp.Controls.Steps
             }
         }
 
-        public void updateRow(DataSets.dsModuleStructure2.dtStepCompositeRow updateRow)
+        public void updateRow(DataSets.dsModuleStructure3.dtStepCompositeRow updateRow)
         {
             try
             {
@@ -304,7 +304,7 @@ namespace BioBotApp.Controls.Steps
                 _dsModuleStructure.RejectChanges();
             }
         }
-        public void updateRow(DataSets.dsModuleStructure2.dtActionValueRow updateRow)
+        public void updateRow(DataSets.dsModuleStructure3.dtActionValueRow updateRow)
         {
             try
             {
@@ -319,7 +319,7 @@ namespace BioBotApp.Controls.Steps
                 _dsModuleStructure.RejectChanges();
             }
         }
-        public void updateRow(DataSets.dsModuleStructure2.dtStepLeafRow updateRow)
+        public void updateRow(DataSets.dsModuleStructure3.dtStepLeafRow updateRow)
         {
             try
             {

@@ -35,11 +35,11 @@
             this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtStepLeafBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure3();
             this.crudOptions = new BioBotApp.Controls.Utils.crudOptions();
             this.bs_bbt_action_type = new System.Windows.Forms.BindingSource(this.components);
-            this.ta_bbt_action_type = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionType();
-            this.taStepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
+            this.ta_bbt_action_type = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionType();
+            this.taStepLeaf = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taStepLeaf();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvActionType)).BeginInit();
@@ -113,7 +113,7 @@
             // 
             // dsModuleStructureGUI
             // 
-            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure3";
             this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // crudOptions
@@ -167,8 +167,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private DataSets.dsModuleStructure2TableAdapters.taActionType ta_bbt_action_type;
-        private DataSets.dsModuleStructure2 dsModuleStructureGUI;
+        private DataSets.dsModuleStructure3TableAdapters.taActionType ta_bbt_action_type;
+        private DataSets.dsModuleStructure3 dsModuleStructureGUI;
         private System.Windows.Forms.DataGridView gvActionType;
         private System.Windows.Forms.BindingSource bs_bbt_action_type;
         private Utils.crudOptions crudOptions;
@@ -176,6 +176,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource dtStepLeafBindingSource;
-        private DataSets.dsModuleStructure2TableAdapters.taStepLeaf taStepLeaf;
+        private DataSets.dsModuleStructure3TableAdapters.taStepLeaf taStepLeaf;
     }
 }

@@ -238,13 +238,10 @@
       <DependentUpon>ctrlTools.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Tools\ModuleTypeSelectionEventArgs.cs" />
-    <Compile Include="DataSets\dsModuleStructure2.cs">
-      <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\dsModuleStructure21.Designer.cs">
+    <Compile Include="DataSets\dsModuleStructure3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
+      <DependentUpon>dsModuleStructure3.xsd</DependentUpon>
     </Compile>
     <Compile Include="frmCompMain.cs">
       <SubType>Form</SubType>
@@ -407,16 +404,16 @@
     <EmbeddedResource Include="Utils\Communication\pcan\ctrCanConnector.resx">
       <DependentUpon>ctrCanConnector.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSets\dsModuleStructure2.xsc">
-      <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
+    <None Include="DataSets\dsModuleStructure3.xsc">
+      <DependentUpon>dsModuleStructure3.xsd</DependentUpon>
     </None>
-    <None Include="DataSets\dsModuleStructure2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
+    <None Include="DataSets\dsModuleStructure3.xsd">
       <SubType>Designer</SubType>
-      <LastGenOutput>dsModuleStructure21.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsModuleStructure3.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSets\dsModuleStructure2.xss">
-      <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
+    <None Include="DataSets\dsModuleStructure3.xss">
+      <DependentUpon>dsModuleStructure3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

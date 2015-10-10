@@ -25,7 +25,7 @@ namespace BioBotApp.Controls.Tools_controls
             InitializeComponent();
         }
 
-        public void initControl(DataSets.dsModuleStructure2 dsModuleStructure, BindingSource bsModule)
+        public void initControl(DataSets.dsModuleStructure3 dsModuleStructure, BindingSource bsModule)
         {
             this.dsModuleStructure = dsModuleStructure;
             this.bsModule = bsModule;

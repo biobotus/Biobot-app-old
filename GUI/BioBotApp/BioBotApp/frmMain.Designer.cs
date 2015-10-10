@@ -62,20 +62,20 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.ttsDBConnection = new System.Windows.Forms.ToolStripStatusLabel();
             this.bsModule = new System.Windows.Forms.BindingSource(this.components);
-            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
-            this.bbt_action_typeTableAdapter = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionType();
+            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure3();
+            this.bbt_action_typeTableAdapter = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionType();
             this.bsModuleType = new System.Windows.Forms.BindingSource(this.components);
-            this.taModuleType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModuleType();
-            this.taModule = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModule();
-            this.taModuleTypeActionType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModuleTypeActionType();
-            this.taActionType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionType();
-            this.taActionValueType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValueType();
-            this.taLabwareType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taLabwareType();
-            this.taLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taLabwareParameterType();
-            this.taLabwareTypeLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taLabwareTypeLabwareParameterType();
-            this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
-            this.taStepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
-            this.taActionValue = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValue();
+            this.taModuleType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModuleType();
+            this.taModule = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModule();
+            this.taModuleTypeActionType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModuleTypeActionType();
+            this.taActionType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionType();
+            this.taActionValueType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionValueType();
+            this.taLabwareType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taLabwareType();
+            this.taLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taLabwareParameterType();
+            this.taLabwareTypeLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taLabwareTypeLabwareParameterType();
+            this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taStepComposite();
+            this.taStepLeaf = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taStepLeaf();
+            this.taActionValue = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionValue();
             ((System.ComponentModel.ISupportInitialize)(this.bsModuleStructure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtActionTypeBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -394,7 +394,7 @@
             // 
             // dsModuleStructure
             // 
-            this.dsModuleStructure.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructure.DataSetName = "dsModuleStructure3";
             this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bbt_action_typeTableAdapter
@@ -519,20 +519,20 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel ttsDBConnection;
         private System.Windows.Forms.ToolStripMenuItem parametersToolStripMenuItem;
-        private DataSets.dsModuleStructure2TableAdapters.taActionType bbt_action_typeTableAdapter;
-        private DataSets.dsModuleStructure2 dsModuleStructure;
+        private DataSets.dsModuleStructure3TableAdapters.taActionType bbt_action_typeTableAdapter;
+        private DataSets.dsModuleStructure3 dsModuleStructure;
         private System.Windows.Forms.BindingSource bsModuleType;
-        private DataSets.dsModuleStructure2TableAdapters.taModuleType taModuleType;
-        private DataSets.dsModuleStructure2TableAdapters.taModule taModule;
-        private DataSets.dsModuleStructure2TableAdapters.taModuleTypeActionType taModuleTypeActionType;
-        private DataSets.dsModuleStructure2TableAdapters.taActionType taActionType;
-        private DataSets.dsModuleStructure2TableAdapters.taActionValueType taActionValueType;
-        private DataSets.dsModuleStructure2TableAdapters.taLabwareType taLabwareType;
-        private DataSets.dsModuleStructure2TableAdapters.taLabwareParameterType taLabwareParameterType;
-        private DataSets.dsModuleStructure2TableAdapters.taLabwareTypeLabwareParameterType taLabwareTypeLabwareParameterType;
-        private DataSets.dsModuleStructure2TableAdapters.taStepComposite taStepComposite;
-        private DataSets.dsModuleStructure2TableAdapters.taStepLeaf taStepLeaf;
-        private DataSets.dsModuleStructure2TableAdapters.taActionValue taActionValue;
+        private DataSets.dsModuleStructure3TableAdapters.taModuleType taModuleType;
+        private DataSets.dsModuleStructure3TableAdapters.taModule taModule;
+        private DataSets.dsModuleStructure3TableAdapters.taModuleTypeActionType taModuleTypeActionType;
+        private DataSets.dsModuleStructure3TableAdapters.taActionType taActionType;
+        private DataSets.dsModuleStructure3TableAdapters.taActionValueType taActionValueType;
+        private DataSets.dsModuleStructure3TableAdapters.taLabwareType taLabwareType;
+        private DataSets.dsModuleStructure3TableAdapters.taLabwareParameterType taLabwareParameterType;
+        private DataSets.dsModuleStructure3TableAdapters.taLabwareTypeLabwareParameterType taLabwareTypeLabwareParameterType;
+        private DataSets.dsModuleStructure3TableAdapters.taStepComposite taStepComposite;
+        private DataSets.dsModuleStructure3TableAdapters.taStepLeaf taStepLeaf;
+        private DataSets.dsModuleStructure3TableAdapters.taActionValue taActionValue;
         private System.Windows.Forms.ToolStripMenuItem canCommunicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playToolStripMenuItem;
     }

@@ -36,7 +36,7 @@
             this.layoutButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure3();
             this.layoutMainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -139,7 +139,7 @@
             // 
             // dsModuleStructure
             // 
-            this.dsModuleStructure.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructure.DataSetName = "dsModuleStructure3";
             this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // layoutMainPanel
@@ -183,7 +183,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox edtStepName;
         private System.Windows.Forms.Label label3;
-        private DataSets.dsModuleStructure2 dsModuleStructure;
+        private DataSets.dsModuleStructure3 dsModuleStructure;
         private System.Windows.Forms.FlowLayoutPanel layoutMainPanel;
     }
 }

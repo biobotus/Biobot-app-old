@@ -16,7 +16,7 @@ namespace BioBotApp.Controls.Option.Options
         {
             InitializeComponent();
         }
-        public optionActionValueType(DataSets.dsModuleStructure2 dsModuleStructure)
+        public optionActionValueType(DataSets.dsModuleStructure3 dsModuleStructure)
             : this()
         {
             
@@ -39,7 +39,7 @@ namespace BioBotApp.Controls.Option.Options
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
-                DataSets.dsModuleStructure2.dtActionValueTypeRow row;
+                DataSets.dsModuleStructure3.dtActionValueTypeRow row;
 
                 row = dsModuleStructureGUI.dtActionValueType.NewdtActionValueTypeRow();
                 row.description = description.getInputTextValue();
@@ -55,7 +55,7 @@ namespace BioBotApp.Controls.Option.Options
                 return;
             }
 
-            DataSets.dsModuleStructure2.dtActionValueTypeRow row;
+            DataSets.dsModuleStructure3.dtActionValueTypeRow row;
             row = getSelectedRow();
 
             DialogResult result = MessageBox.Show( "Delete : " + row.description + " ?", "Delete action type ?", MessageBoxButtons.YesNo,
@@ -74,7 +74,7 @@ namespace BioBotApp.Controls.Option.Options
         private void crudOptions_ModifyClickHandler(object sender, EventArgs e)
         {
             abstractDialog dialog = new abstractDialog("Action type", "Modify");
-            DataSets.dsModuleStructure2.dtActionValueTypeRow row = getSelectedRow();
+            DataSets.dsModuleStructure3.dtActionValueTypeRow row = getSelectedRow();
 
             if(row == null)
             {
@@ -93,15 +93,15 @@ namespace BioBotApp.Controls.Option.Options
             }
         }
 
-        public DataSets.dsModuleStructure2.dtActionValueTypeRow getSelectedRow()
+        public DataSets.dsModuleStructure3.dtActionValueTypeRow getSelectedRow()
         {
-            DataSets.dsModuleStructure2.dtActionValueTypeRow row;
+            DataSets.dsModuleStructure3.dtActionValueTypeRow row;
             DataRowView rowView = bsActionValueType.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure2.dtActionValueTypeRow;
+            row = rowView.Row as DataSets.dsModuleStructure3.dtActionValueTypeRow;
             return row;
         }
 
-        public void updateRow(DataSets.dsModuleStructure2.dtActionValueTypeRow updateRow)
+        public void updateRow(DataSets.dsModuleStructure3.dtActionValueTypeRow updateRow)
         {
             try
             {

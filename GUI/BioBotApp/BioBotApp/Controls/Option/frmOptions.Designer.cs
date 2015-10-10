@@ -58,7 +58,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure3();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
@@ -166,7 +166,7 @@
             // 
             // dsModuleStructure
             // 
-            this.dsModuleStructure.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructure.DataSetName = "dsModuleStructure3";
             this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // splitter1
@@ -231,7 +231,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel mainPanel;
-        private DataSets.dsModuleStructure2 dsModuleStructure;
+        private DataSets.dsModuleStructure3 dsModuleStructure;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnClose;

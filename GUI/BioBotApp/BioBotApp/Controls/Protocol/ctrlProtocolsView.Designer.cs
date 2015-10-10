@@ -37,7 +37,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure3();
             this.SaveButton = new System.Windows.Forms.Button();
             this.LoadButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -144,7 +144,7 @@
             // 
             // dsModuleStructure
             // 
-            this.dsModuleStructure.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructure.DataSetName = "dsModuleStructure3";
             this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // SaveButton
@@ -193,7 +193,7 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnAdd;
-        private DataSets.dsModuleStructure2 dsModuleStructure;
+        private DataSets.dsModuleStructure3 dsModuleStructure;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button SaveButton;

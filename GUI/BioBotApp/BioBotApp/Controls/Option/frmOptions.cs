@@ -16,7 +16,7 @@ namespace BioBotApp.Controls.Option
     public partial class frmOptions : Form
     {
         ctrCanConnector canCom = new ctrCanConnector();
-        public frmOptions(DataSets.dsModuleStructure2 dsModuleStructure)
+        public frmOptions(DataSets.dsModuleStructure3 dsModuleStructure)
         {
             InitializeComponent();
             this.dsModuleStructure = dsModuleStructure;
@@ -94,7 +94,7 @@ namespace BioBotApp.Controls.Option
             }
         }
 
-        public void setDataSet(DataSets.dsModuleStructure2 dsModuleStructure)
+        public void setDataSet(DataSets.dsModuleStructure3 dsModuleStructure)
         {
             this.dsModuleStructure = dsModuleStructure;
         }

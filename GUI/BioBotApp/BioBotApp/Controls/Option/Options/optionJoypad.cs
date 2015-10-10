@@ -38,7 +38,7 @@ namespace BioBotApp.Controls.Option.Options
             ComChannelFactory.getGCodeSerial().DataReceived += OptionJoypad_DataReceived;
         }
 
-        public optionJoypad(dsModuleStructure2 dsModuleStructure,BindingSource bsModule) : this()
+        public optionJoypad(dsModuleStructure3 dsModuleStructure,BindingSource bsModule) : this()
         {
             this.dsModuleStructure1 = dsModuleStructure;
             this.bs1 = bsModule;
@@ -50,7 +50,7 @@ namespace BioBotApp.Controls.Option.Options
             }
         }
 
-        public void updateRow(DataSets.dsModuleStructure2.dtModuleRow updateRow)
+        public void updateRow(DataSets.dsModuleStructure3.dtModuleRow updateRow)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace BioBotApp.Controls.Option.Options
         double z3coor=0;
         Double varCoor = 0;
         string GCode;
-        private dsModuleStructure2 dsModuleStructure;
+        private dsModuleStructure3 dsModuleStructure;
         private string v;
         private string lblTestTxt;
 
