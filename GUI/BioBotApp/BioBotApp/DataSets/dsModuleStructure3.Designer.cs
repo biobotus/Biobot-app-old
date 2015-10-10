@@ -48,33 +48,33 @@ namespace BioBotApp.DataSets {
         
         private dtStepCompositeDataTable tabledtStepComposite;
         
-        private global::System.Data.DataRelation relationbbt_step_composite_bbt_step_leaf;
+        private global::System.Data.DataRelation relationdtModule_dtStepComposite;
         
-        private global::System.Data.DataRelation relationbbt_step_composite_bbt_step_composite;
+        private global::System.Data.DataRelation relationdtLabwareType_dtLabwareTypeLabwareParameterType;
         
-        private global::System.Data.DataRelation relationbbt_action_value_type_bbt_action_value;
+        private global::System.Data.DataRelation relationdtLabwareParameterType_dtLabwareTypeLabwareParameterType;
         
-        private global::System.Data.DataRelation relationbbt_action_type_bbt_action_value;
+        private global::System.Data.DataRelation relationdtLabwareParameterType_dtModuleTypeLabwareParameterType;
         
-        private global::System.Data.DataRelation relationbbt_labware_parameter_type_bbt_module_type_labware_parameter_type;
+        private global::System.Data.DataRelation relationdtModuleType_dtModuleTypeLabwareParameterType;
         
-        private global::System.Data.DataRelation relationbbt_module_type_bbt_module_type_labware_parameter_type;
+        private global::System.Data.DataRelation relationdtModuleType_dtModuleTypeActionType;
         
-        private global::System.Data.DataRelation relationbbt_labware_type_bbt_labware_type_labware_parameter_type;
+        private global::System.Data.DataRelation relationdtModuleType_dtModule;
         
-        private global::System.Data.DataRelation relationbbt_labware_parameter_type_bbt_labware_type_labware_parameter_type;
+        private global::System.Data.DataRelation relationdtActionValueType_dtModuleTypeActionType;
         
-        private global::System.Data.DataRelation relationbbt_step_leaf_bbt_action_value;
+        private global::System.Data.DataRelation relationdtActionType_dtModuleTypeActionType;
         
-        private global::System.Data.DataRelation relationbbt_module_type_bbt_module_type_action_type;
+        private global::System.Data.DataRelation relationdtActionValueType_dtActionValue;
         
-        private global::System.Data.DataRelation relationbbt_action_type_bbt_module_type_action_type;
+        private global::System.Data.DataRelation relationdtActionType_dtActionValue;
         
-        private global::System.Data.DataRelation relationbbt_action_value_type_bbt_module_type_action_type;
+        private global::System.Data.DataRelation relationdtStepLeaf_dtActionValue;
         
-        private global::System.Data.DataRelation relationbbt_module1_bbt_step_composite;
+        private global::System.Data.DataRelation relationdtStepComposite_dtStepLeaf;
         
-        private global::System.Data.DataRelation relationbbt_module_type_bbt_module1;
+        private global::System.Data.DataRelation relationdtStepComposite_dtStepComposite;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -486,20 +486,20 @@ namespace BioBotApp.DataSets {
                     this.tabledtStepComposite.InitVars();
                 }
             }
-            this.relationbbt_step_composite_bbt_step_leaf = this.Relations["bbt_step_composite_bbt_step_leaf"];
-            this.relationbbt_step_composite_bbt_step_composite = this.Relations["bbt_step_composite_bbt_step_composite"];
-            this.relationbbt_action_value_type_bbt_action_value = this.Relations["bbt_action_value_type_bbt_action_value"];
-            this.relationbbt_action_type_bbt_action_value = this.Relations["bbt_action_type_bbt_action_value"];
-            this.relationbbt_labware_parameter_type_bbt_module_type_labware_parameter_type = this.Relations["bbt_labware_parameter_type_bbt_module_type_labware_parameter_type"];
-            this.relationbbt_module_type_bbt_module_type_labware_parameter_type = this.Relations["bbt_module_type_bbt_module_type_labware_parameter_type"];
-            this.relationbbt_labware_type_bbt_labware_type_labware_parameter_type = this.Relations["bbt_labware_type_bbt_labware_type_labware_parameter_type"];
-            this.relationbbt_labware_parameter_type_bbt_labware_type_labware_parameter_type = this.Relations["bbt_labware_parameter_type_bbt_labware_type_labware_parameter_type"];
-            this.relationbbt_step_leaf_bbt_action_value = this.Relations["bbt_step_leaf_bbt_action_value"];
-            this.relationbbt_module_type_bbt_module_type_action_type = this.Relations["bbt_module_type_bbt_module_type_action_type"];
-            this.relationbbt_action_type_bbt_module_type_action_type = this.Relations["bbt_action_type_bbt_module_type_action_type"];
-            this.relationbbt_action_value_type_bbt_module_type_action_type = this.Relations["bbt_action_value_type_bbt_module_type_action_type"];
-            this.relationbbt_module1_bbt_step_composite = this.Relations["bbt_module1_bbt_step_composite"];
-            this.relationbbt_module_type_bbt_module1 = this.Relations["bbt_module_type_bbt_module1"];
+            this.relationdtModule_dtStepComposite = this.Relations["dtModule_dtStepComposite"];
+            this.relationdtLabwareType_dtLabwareTypeLabwareParameterType = this.Relations["dtLabwareType_dtLabwareTypeLabwareParameterType"];
+            this.relationdtLabwareParameterType_dtLabwareTypeLabwareParameterType = this.Relations["dtLabwareParameterType_dtLabwareTypeLabwareParameterType"];
+            this.relationdtLabwareParameterType_dtModuleTypeLabwareParameterType = this.Relations["dtLabwareParameterType_dtModuleTypeLabwareParameterType"];
+            this.relationdtModuleType_dtModuleTypeLabwareParameterType = this.Relations["dtModuleType_dtModuleTypeLabwareParameterType"];
+            this.relationdtModuleType_dtModuleTypeActionType = this.Relations["dtModuleType_dtModuleTypeActionType"];
+            this.relationdtModuleType_dtModule = this.Relations["dtModuleType_dtModule"];
+            this.relationdtActionValueType_dtModuleTypeActionType = this.Relations["dtActionValueType_dtModuleTypeActionType"];
+            this.relationdtActionType_dtModuleTypeActionType = this.Relations["dtActionType_dtModuleTypeActionType"];
+            this.relationdtActionValueType_dtActionValue = this.Relations["dtActionValueType_dtActionValue"];
+            this.relationdtActionType_dtActionValue = this.Relations["dtActionType_dtActionValue"];
+            this.relationdtStepLeaf_dtActionValue = this.Relations["dtStepLeaf_dtActionValue"];
+            this.relationdtStepComposite_dtStepLeaf = this.Relations["dtStepComposite_dtStepLeaf"];
+            this.relationdtStepComposite_dtStepComposite = this.Relations["dtStepComposite_dtStepComposite"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -534,62 +534,62 @@ namespace BioBotApp.DataSets {
             base.Tables.Add(this.tabledtModule);
             this.tabledtStepComposite = new dtStepCompositeDataTable();
             base.Tables.Add(this.tabledtStepComposite);
-            this.relationbbt_step_composite_bbt_step_leaf = new global::System.Data.DataRelation("bbt_step_composite_bbt_step_leaf", new global::System.Data.DataColumn[] {
-                        this.tabledtStepComposite.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtStepLeaf.fk_step_compositeColumn}, false);
-            this.Relations.Add(this.relationbbt_step_composite_bbt_step_leaf);
-            this.relationbbt_step_composite_bbt_step_composite = new global::System.Data.DataRelation("bbt_step_composite_bbt_step_composite", new global::System.Data.DataColumn[] {
-                        this.tabledtStepComposite.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtStepComposite.fk_step_parent_idColumn}, false);
-            this.Relations.Add(this.relationbbt_step_composite_bbt_step_composite);
-            this.relationbbt_action_value_type_bbt_action_value = new global::System.Data.DataRelation("bbt_action_value_type_bbt_action_value", new global::System.Data.DataColumn[] {
-                        this.tabledtActionValueType.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtActionValue.fk_action_value_typeColumn}, false);
-            this.Relations.Add(this.relationbbt_action_value_type_bbt_action_value);
-            this.relationbbt_action_type_bbt_action_value = new global::System.Data.DataRelation("bbt_action_type_bbt_action_value", new global::System.Data.DataColumn[] {
-                        this.tabledtActionType.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtActionValue.fk_action_typeColumn}, false);
-            this.Relations.Add(this.relationbbt_action_type_bbt_action_value);
-            this.relationbbt_labware_parameter_type_bbt_module_type_labware_parameter_type = new global::System.Data.DataRelation("bbt_labware_parameter_type_bbt_module_type_labware_parameter_type", new global::System.Data.DataColumn[] {
-                        this.tabledtLabwareParameterType.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtModuleTypeLabwareParameterType.fk_labware_parameter_type_idColumn}, false);
-            this.Relations.Add(this.relationbbt_labware_parameter_type_bbt_module_type_labware_parameter_type);
-            this.relationbbt_module_type_bbt_module_type_labware_parameter_type = new global::System.Data.DataRelation("bbt_module_type_bbt_module_type_labware_parameter_type", new global::System.Data.DataColumn[] {
-                        this.tabledtModuleType.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtModuleTypeLabwareParameterType.fk_module_type_idColumn}, false);
-            this.Relations.Add(this.relationbbt_module_type_bbt_module_type_labware_parameter_type);
-            this.relationbbt_labware_type_bbt_labware_type_labware_parameter_type = new global::System.Data.DataRelation("bbt_labware_type_bbt_labware_type_labware_parameter_type", new global::System.Data.DataColumn[] {
-                        this.tabledtLabwareType.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtLabwareTypeLabwareParameterType.fk_labware_type_idColumn}, false);
-            this.Relations.Add(this.relationbbt_labware_type_bbt_labware_type_labware_parameter_type);
-            this.relationbbt_labware_parameter_type_bbt_labware_type_labware_parameter_type = new global::System.Data.DataRelation("bbt_labware_parameter_type_bbt_labware_type_labware_parameter_type", new global::System.Data.DataColumn[] {
-                        this.tabledtLabwareParameterType.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtLabwareTypeLabwareParameterType.fk_labware_parameter_type_idColumn}, false);
-            this.Relations.Add(this.relationbbt_labware_parameter_type_bbt_labware_type_labware_parameter_type);
-            this.relationbbt_step_leaf_bbt_action_value = new global::System.Data.DataRelation("bbt_step_leaf_bbt_action_value", new global::System.Data.DataColumn[] {
-                        this.tabledtStepLeaf.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtActionValue.fk_step_leaf_idColumn}, false);
-            this.Relations.Add(this.relationbbt_step_leaf_bbt_action_value);
-            this.relationbbt_module_type_bbt_module_type_action_type = new global::System.Data.DataRelation("bbt_module_type_bbt_module_type_action_type", new global::System.Data.DataColumn[] {
-                        this.tabledtModuleType.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtModuleTypeActionType.fk_module_type_idColumn}, false);
-            this.Relations.Add(this.relationbbt_module_type_bbt_module_type_action_type);
-            this.relationbbt_action_type_bbt_module_type_action_type = new global::System.Data.DataRelation("bbt_action_type_bbt_module_type_action_type", new global::System.Data.DataColumn[] {
-                        this.tabledtActionType.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtModuleTypeActionType.fk_action_type_idColumn}, false);
-            this.Relations.Add(this.relationbbt_action_type_bbt_module_type_action_type);
-            this.relationbbt_action_value_type_bbt_module_type_action_type = new global::System.Data.DataRelation("bbt_action_value_type_bbt_module_type_action_type", new global::System.Data.DataColumn[] {
-                        this.tabledtActionValueType.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtModuleTypeActionType.fk_action_value_type_idColumn}, false);
-            this.Relations.Add(this.relationbbt_action_value_type_bbt_module_type_action_type);
-            this.relationbbt_module1_bbt_step_composite = new global::System.Data.DataRelation("bbt_module1_bbt_step_composite", new global::System.Data.DataColumn[] {
+            this.relationdtModule_dtStepComposite = new global::System.Data.DataRelation("dtModule_dtStepComposite", new global::System.Data.DataColumn[] {
                         this.tabledtModule.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtStepComposite.fk_module_idColumn}, false);
-            this.Relations.Add(this.relationbbt_module1_bbt_step_composite);
-            this.relationbbt_module_type_bbt_module1 = new global::System.Data.DataRelation("bbt_module_type_bbt_module1", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationdtModule_dtStepComposite);
+            this.relationdtLabwareType_dtLabwareTypeLabwareParameterType = new global::System.Data.DataRelation("dtLabwareType_dtLabwareTypeLabwareParameterType", new global::System.Data.DataColumn[] {
+                        this.tabledtLabwareType.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtLabwareTypeLabwareParameterType.fk_labware_type_idColumn}, false);
+            this.Relations.Add(this.relationdtLabwareType_dtLabwareTypeLabwareParameterType);
+            this.relationdtLabwareParameterType_dtLabwareTypeLabwareParameterType = new global::System.Data.DataRelation("dtLabwareParameterType_dtLabwareTypeLabwareParameterType", new global::System.Data.DataColumn[] {
+                        this.tabledtLabwareParameterType.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtLabwareTypeLabwareParameterType.fk_labware_parameter_type_idColumn}, false);
+            this.Relations.Add(this.relationdtLabwareParameterType_dtLabwareTypeLabwareParameterType);
+            this.relationdtLabwareParameterType_dtModuleTypeLabwareParameterType = new global::System.Data.DataRelation("dtLabwareParameterType_dtModuleTypeLabwareParameterType", new global::System.Data.DataColumn[] {
+                        this.tabledtLabwareParameterType.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtModuleTypeLabwareParameterType.fk_labware_parameter_type_idColumn}, false);
+            this.Relations.Add(this.relationdtLabwareParameterType_dtModuleTypeLabwareParameterType);
+            this.relationdtModuleType_dtModuleTypeLabwareParameterType = new global::System.Data.DataRelation("dtModuleType_dtModuleTypeLabwareParameterType", new global::System.Data.DataColumn[] {
+                        this.tabledtModuleType.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtModuleTypeLabwareParameterType.fk_module_type_idColumn}, false);
+            this.Relations.Add(this.relationdtModuleType_dtModuleTypeLabwareParameterType);
+            this.relationdtModuleType_dtModuleTypeActionType = new global::System.Data.DataRelation("dtModuleType_dtModuleTypeActionType", new global::System.Data.DataColumn[] {
+                        this.tabledtModuleType.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtModuleTypeActionType.fk_module_type_idColumn}, false);
+            this.Relations.Add(this.relationdtModuleType_dtModuleTypeActionType);
+            this.relationdtModuleType_dtModule = new global::System.Data.DataRelation("dtModuleType_dtModule", new global::System.Data.DataColumn[] {
                         this.tabledtModuleType.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtModule.fk_module_typeColumn}, false);
-            this.Relations.Add(this.relationbbt_module_type_bbt_module1);
+            this.Relations.Add(this.relationdtModuleType_dtModule);
+            this.relationdtActionValueType_dtModuleTypeActionType = new global::System.Data.DataRelation("dtActionValueType_dtModuleTypeActionType", new global::System.Data.DataColumn[] {
+                        this.tabledtActionValueType.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtModuleTypeActionType.fk_action_value_type_idColumn}, false);
+            this.Relations.Add(this.relationdtActionValueType_dtModuleTypeActionType);
+            this.relationdtActionType_dtModuleTypeActionType = new global::System.Data.DataRelation("dtActionType_dtModuleTypeActionType", new global::System.Data.DataColumn[] {
+                        this.tabledtActionType.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtModuleTypeActionType.fk_action_type_idColumn}, false);
+            this.Relations.Add(this.relationdtActionType_dtModuleTypeActionType);
+            this.relationdtActionValueType_dtActionValue = new global::System.Data.DataRelation("dtActionValueType_dtActionValue", new global::System.Data.DataColumn[] {
+                        this.tabledtActionValueType.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtActionValue.fk_action_value_typeColumn}, false);
+            this.Relations.Add(this.relationdtActionValueType_dtActionValue);
+            this.relationdtActionType_dtActionValue = new global::System.Data.DataRelation("dtActionType_dtActionValue", new global::System.Data.DataColumn[] {
+                        this.tabledtActionType.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtActionValue.fk_action_typeColumn}, false);
+            this.Relations.Add(this.relationdtActionType_dtActionValue);
+            this.relationdtStepLeaf_dtActionValue = new global::System.Data.DataRelation("dtStepLeaf_dtActionValue", new global::System.Data.DataColumn[] {
+                        this.tabledtStepLeaf.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtActionValue.fk_step_leaf_idColumn}, false);
+            this.Relations.Add(this.relationdtStepLeaf_dtActionValue);
+            this.relationdtStepComposite_dtStepLeaf = new global::System.Data.DataRelation("dtStepComposite_dtStepLeaf", new global::System.Data.DataColumn[] {
+                        this.tabledtStepComposite.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtStepLeaf.fk_step_compositeColumn}, false);
+            this.Relations.Add(this.relationdtStepComposite_dtStepLeaf);
+            this.relationdtStepComposite_dtStepComposite = new global::System.Data.DataRelation("dtStepComposite_dtStepComposite", new global::System.Data.DataColumn[] {
+                        this.tabledtStepComposite.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtStepComposite.fk_step_parent_idColumn}, false);
+            this.Relations.Add(this.relationdtStepComposite_dtStepComposite);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1169,7 +1169,7 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtActionValueRow AdddtActionValueRow(dtStepLeafRow parentdtStepLeafRowBybbt_step_leaf_bbt_action_value, dtActionTypeRow parentdtActionTypeRowBybbt_action_type_bbt_action_value, dtActionValueTypeRow parentdtActionValueTypeRowBybbt_action_value_type_bbt_action_value, string description, int index) {
+            public dtActionValueRow AdddtActionValueRow(dtStepLeafRow parentdtStepLeafRowBydtStepLeaf_dtActionValue, dtActionTypeRow parentdtActionTypeRowBydtActionType_dtActionValue, dtActionValueTypeRow parentdtActionValueTypeRowBydtActionValueType_dtActionValue, string description, int index) {
                 dtActionValueRow rowdtActionValueRow = ((dtActionValueRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1178,14 +1178,14 @@ namespace BioBotApp.DataSets {
                         null,
                         description,
                         index};
-                if ((parentdtStepLeafRowBybbt_step_leaf_bbt_action_value != null)) {
-                    columnValuesArray[1] = parentdtStepLeafRowBybbt_step_leaf_bbt_action_value[0];
+                if ((parentdtStepLeafRowBydtStepLeaf_dtActionValue != null)) {
+                    columnValuesArray[1] = parentdtStepLeafRowBydtStepLeaf_dtActionValue[0];
                 }
-                if ((parentdtActionTypeRowBybbt_action_type_bbt_action_value != null)) {
-                    columnValuesArray[2] = parentdtActionTypeRowBybbt_action_type_bbt_action_value[0];
+                if ((parentdtActionTypeRowBydtActionType_dtActionValue != null)) {
+                    columnValuesArray[2] = parentdtActionTypeRowBydtActionType_dtActionValue[0];
                 }
-                if ((parentdtActionValueTypeRowBybbt_action_value_type_bbt_action_value != null)) {
-                    columnValuesArray[3] = parentdtActionValueTypeRowBybbt_action_value_type_bbt_action_value[0];
+                if ((parentdtActionValueTypeRowBydtActionValueType_dtActionValue != null)) {
+                    columnValuesArray[3] = parentdtActionValueTypeRowBydtActionValueType_dtActionValue[0];
                 }
                 rowdtActionValueRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtActionValueRow);
@@ -2310,17 +2310,17 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtLabwareTypeLabwareParameterTypeRow AdddtLabwareTypeLabwareParameterTypeRow(dtLabwareTypeRow parentdtLabwareTypeRowBybbt_labware_type_bbt_labware_type_labware_parameter_type, dtLabwareParameterTypeRow parentdtLabwareParameterTypeRowBybbt_labware_parameter_type_bbt_labware_type_labware_parameter_type, string value) {
+            public dtLabwareTypeLabwareParameterTypeRow AdddtLabwareTypeLabwareParameterTypeRow(dtLabwareTypeRow parentdtLabwareTypeRowBydtLabwareType_dtLabwareTypeLabwareParameterType, dtLabwareParameterTypeRow parentdtLabwareParameterTypeRowBydtLabwareParameterType_dtLabwareTypeLabwareParameterType, string value) {
                 dtLabwareTypeLabwareParameterTypeRow rowdtLabwareTypeLabwareParameterTypeRow = ((dtLabwareTypeLabwareParameterTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         value};
-                if ((parentdtLabwareTypeRowBybbt_labware_type_bbt_labware_type_labware_parameter_type != null)) {
-                    columnValuesArray[0] = parentdtLabwareTypeRowBybbt_labware_type_bbt_labware_type_labware_parameter_type[0];
+                if ((parentdtLabwareTypeRowBydtLabwareType_dtLabwareTypeLabwareParameterType != null)) {
+                    columnValuesArray[0] = parentdtLabwareTypeRowBydtLabwareType_dtLabwareTypeLabwareParameterType[0];
                 }
-                if ((parentdtLabwareParameterTypeRowBybbt_labware_parameter_type_bbt_labware_type_labware_parameter_type != null)) {
-                    columnValuesArray[1] = parentdtLabwareParameterTypeRowBybbt_labware_parameter_type_bbt_labware_type_labware_parameter_type[0];
+                if ((parentdtLabwareParameterTypeRowBydtLabwareParameterType_dtLabwareTypeLabwareParameterType != null)) {
+                    columnValuesArray[1] = parentdtLabwareParameterTypeRowBydtLabwareParameterType_dtLabwareTypeLabwareParameterType[0];
                 }
                 rowdtLabwareTypeLabwareParameterTypeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtLabwareTypeLabwareParameterTypeRow);
@@ -2892,21 +2892,21 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleTypeActionTypeRow AdddtModuleTypeActionTypeRow(dtModuleTypeRow parentdtModuleTypeRowBybbt_module_type_bbt_module_type_action_type, dtActionTypeRow parentdtActionTypeRowBybbt_action_type_bbt_module_type_action_type, dtActionValueTypeRow parentdtActionValueTypeRowBybbt_action_value_type_bbt_module_type_action_type) {
+            public dtModuleTypeActionTypeRow AdddtModuleTypeActionTypeRow(dtModuleTypeRow parentdtModuleTypeRowBydtModuleType_dtModuleTypeActionType, dtActionTypeRow parentdtActionTypeRowBydtActionType_dtModuleTypeActionType, dtActionValueTypeRow parentdtActionValueTypeRowBydtActionValueType_dtModuleTypeActionType) {
                 dtModuleTypeActionTypeRow rowdtModuleTypeActionTypeRow = ((dtModuleTypeActionTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
                         null};
-                if ((parentdtModuleTypeRowBybbt_module_type_bbt_module_type_action_type != null)) {
-                    columnValuesArray[1] = parentdtModuleTypeRowBybbt_module_type_bbt_module_type_action_type[0];
+                if ((parentdtModuleTypeRowBydtModuleType_dtModuleTypeActionType != null)) {
+                    columnValuesArray[1] = parentdtModuleTypeRowBydtModuleType_dtModuleTypeActionType[0];
                 }
-                if ((parentdtActionTypeRowBybbt_action_type_bbt_module_type_action_type != null)) {
-                    columnValuesArray[2] = parentdtActionTypeRowBybbt_action_type_bbt_module_type_action_type[0];
+                if ((parentdtActionTypeRowBydtActionType_dtModuleTypeActionType != null)) {
+                    columnValuesArray[2] = parentdtActionTypeRowBydtActionType_dtModuleTypeActionType[0];
                 }
-                if ((parentdtActionValueTypeRowBybbt_action_value_type_bbt_module_type_action_type != null)) {
-                    columnValuesArray[3] = parentdtActionValueTypeRowBybbt_action_value_type_bbt_module_type_action_type[0];
+                if ((parentdtActionValueTypeRowBydtActionValueType_dtModuleTypeActionType != null)) {
+                    columnValuesArray[3] = parentdtActionValueTypeRowBydtActionValueType_dtModuleTypeActionType[0];
                 }
                 rowdtModuleTypeActionTypeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtModuleTypeActionTypeRow);
@@ -3197,17 +3197,17 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleTypeLabwareParameterTypeRow AdddtModuleTypeLabwareParameterTypeRow(dtModuleTypeRow parentdtModuleTypeRowBybbt_module_type_bbt_module_type_labware_parameter_type, dtLabwareParameterTypeRow parentdtLabwareParameterTypeRowBybbt_labware_parameter_type_bbt_module_type_labware_parameter_type, string value) {
+            public dtModuleTypeLabwareParameterTypeRow AdddtModuleTypeLabwareParameterTypeRow(dtModuleTypeRow parentdtModuleTypeRowBydtModuleType_dtModuleTypeLabwareParameterType, dtLabwareParameterTypeRow parentdtLabwareParameterTypeRowBydtLabwareParameterType_dtModuleTypeLabwareParameterType, string value) {
                 dtModuleTypeLabwareParameterTypeRow rowdtModuleTypeLabwareParameterTypeRow = ((dtModuleTypeLabwareParameterTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         value};
-                if ((parentdtModuleTypeRowBybbt_module_type_bbt_module_type_labware_parameter_type != null)) {
-                    columnValuesArray[0] = parentdtModuleTypeRowBybbt_module_type_bbt_module_type_labware_parameter_type[0];
+                if ((parentdtModuleTypeRowBydtModuleType_dtModuleTypeLabwareParameterType != null)) {
+                    columnValuesArray[0] = parentdtModuleTypeRowBydtModuleType_dtModuleTypeLabwareParameterType[0];
                 }
-                if ((parentdtLabwareParameterTypeRowBybbt_labware_parameter_type_bbt_module_type_labware_parameter_type != null)) {
-                    columnValuesArray[1] = parentdtLabwareParameterTypeRowBybbt_labware_parameter_type_bbt_module_type_labware_parameter_type[0];
+                if ((parentdtLabwareParameterTypeRowBydtLabwareParameterType_dtModuleTypeLabwareParameterType != null)) {
+                    columnValuesArray[1] = parentdtLabwareParameterTypeRowBydtLabwareParameterType_dtModuleTypeLabwareParameterType[0];
                 }
                 rowdtModuleTypeLabwareParameterTypeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtModuleTypeLabwareParameterTypeRow);
@@ -3493,14 +3493,14 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepLeafRow AdddtStepLeafRow(string description, dtStepCompositeRow parentdtStepCompositeRowBybbt_step_composite_bbt_step_leaf) {
+            public dtStepLeafRow AdddtStepLeafRow(string description, dtStepCompositeRow parentdtStepCompositeRowBydtStepComposite_dtStepLeaf) {
                 dtStepLeafRow rowdtStepLeafRow = ((dtStepLeafRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         description,
                         null};
-                if ((parentdtStepCompositeRowBybbt_step_composite_bbt_step_leaf != null)) {
-                    columnValuesArray[2] = parentdtStepCompositeRowBybbt_step_composite_bbt_step_leaf[0];
+                if ((parentdtStepCompositeRowBydtStepComposite_dtStepLeaf != null)) {
+                    columnValuesArray[2] = parentdtStepCompositeRowBydtStepComposite_dtStepLeaf[0];
                 }
                 rowdtStepLeafRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtStepLeafRow);
@@ -3826,18 +3826,18 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleRow AdddtModuleRow(string description, dtModuleTypeRow parentdtModuleTypeRowBybbt_module_type_bbt_module1, int deck_x, int deck_y, int rotation, string activated) {
+            public dtModuleRow AdddtModuleRow(string pk_id, string description, dtModuleTypeRow parentdtModuleTypeRowBydtModuleType_dtModule, int deck_x, int deck_y, int rotation, string activated) {
                 dtModuleRow rowdtModuleRow = ((dtModuleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        pk_id,
                         description,
                         null,
                         deck_x,
                         deck_y,
                         rotation,
                         activated};
-                if ((parentdtModuleTypeRowBybbt_module_type_bbt_module1 != null)) {
-                    columnValuesArray[2] = parentdtModuleTypeRowBybbt_module_type_bbt_module1[0];
+                if ((parentdtModuleTypeRowBydtModuleType_dtModule != null)) {
+                    columnValuesArray[2] = parentdtModuleTypeRowBydtModuleType_dtModule[0];
                 }
                 rowdtModuleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtModuleRow);
@@ -3846,7 +3846,7 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleRow FindBypk_id(int pk_id) {
+            public dtModuleRow FindBypk_id(string pk_id) {
                 return ((dtModuleRow)(this.Rows.Find(new object[] {
                             pk_id})));
             }
@@ -3880,7 +3880,7 @@ namespace BioBotApp.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnpk_id = new global::System.Data.DataColumn("pk_id", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnpk_id = new global::System.Data.DataColumn("pk_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpk_id);
                 this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescription);
@@ -3896,7 +3896,6 @@ namespace BioBotApp.DataSets {
                 base.Columns.Add(this.columnactivated);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnpk_id}, true));
-                this.columnpk_id.AutoIncrement = true;
                 this.columnpk_id.AutoIncrementSeed = -1;
                 this.columnpk_id.AutoIncrementStep = -1;
                 this.columnpk_id.AllowDBNull = false;
@@ -4146,18 +4145,18 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeRow AdddtStepCompositeRow(dtStepCompositeRow parentdtStepCompositeRowBybbt_step_composite_bbt_step_composite, string description, dtModuleRow parentdtModuleRowBybbt_module1_bbt_step_composite) {
+            public dtStepCompositeRow AdddtStepCompositeRow(dtStepCompositeRow parentdtStepCompositeRowBydtStepComposite_dtStepComposite, string description, dtModuleRow parentdtModuleRowBydtModule_dtStepComposite) {
                 dtStepCompositeRow rowdtStepCompositeRow = ((dtStepCompositeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         description,
                         null};
-                if ((parentdtStepCompositeRowBybbt_step_composite_bbt_step_composite != null)) {
-                    columnValuesArray[1] = parentdtStepCompositeRowBybbt_step_composite_bbt_step_composite[0];
+                if ((parentdtStepCompositeRowBydtStepComposite_dtStepComposite != null)) {
+                    columnValuesArray[1] = parentdtStepCompositeRowBydtStepComposite_dtStepComposite[0];
                 }
-                if ((parentdtModuleRowBybbt_module1_bbt_step_composite != null)) {
-                    columnValuesArray[3] = parentdtModuleRowBybbt_module1_bbt_step_composite[0];
+                if ((parentdtModuleRowBydtModule_dtStepComposite != null)) {
+                    columnValuesArray[3] = parentdtModuleRowBydtModule_dtStepComposite[0];
                 }
                 rowdtStepCompositeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtStepCompositeRow);
@@ -4203,7 +4202,7 @@ namespace BioBotApp.DataSets {
                 base.Columns.Add(this.columnfk_step_parent_id);
                 this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescription);
-                this.columnfk_module_id = new global::System.Data.DataColumn("fk_module_id", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnfk_module_id = new global::System.Data.DataColumn("fk_module_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfk_module_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnpk_id}, true));
@@ -4377,23 +4376,23 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtActionValueRow[] GetdtActionValueRows() {
-                if ((this.Table.ChildRelations["bbt_action_type_bbt_action_value"] == null)) {
-                    return new dtActionValueRow[0];
+            public dtModuleTypeActionTypeRow[] GetdtModuleTypeActionTypeRows() {
+                if ((this.Table.ChildRelations["dtActionType_dtModuleTypeActionType"] == null)) {
+                    return new dtModuleTypeActionTypeRow[0];
                 }
                 else {
-                    return ((dtActionValueRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_action_type_bbt_action_value"])));
+                    return ((dtModuleTypeActionTypeRow[])(base.GetChildRows(this.Table.ChildRelations["dtActionType_dtModuleTypeActionType"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleTypeActionTypeRow[] GetdtModuleTypeActionTypeRows() {
-                if ((this.Table.ChildRelations["bbt_action_type_bbt_module_type_action_type"] == null)) {
-                    return new dtModuleTypeActionTypeRow[0];
+            public dtActionValueRow[] GetdtActionValueRows() {
+                if ((this.Table.ChildRelations["dtActionType_dtActionValue"] == null)) {
+                    return new dtActionValueRow[0];
                 }
                 else {
-                    return ((dtModuleTypeActionTypeRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_action_type_bbt_module_type_action_type"])));
+                    return ((dtActionValueRow[])(base.GetChildRows(this.Table.ChildRelations["dtActionType_dtActionValue"])));
                 }
             }
         }
@@ -4507,21 +4506,21 @@ namespace BioBotApp.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtActionValueTypeRow dtActionValueTypeRow {
                 get {
-                    return ((dtActionValueTypeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_action_value_type_bbt_action_value"])));
+                    return ((dtActionValueTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtActionValueType_dtActionValue"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_action_value_type_bbt_action_value"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtActionValueType_dtActionValue"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtActionTypeRow bbt_action_typeRow {
+            public dtActionTypeRow dtActionTypeRow {
                 get {
-                    return ((dtActionTypeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_action_type_bbt_action_value"])));
+                    return ((dtActionTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtActionType_dtActionValue"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_action_type_bbt_action_value"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtActionType_dtActionValue"]);
                 }
             }
             
@@ -4529,10 +4528,10 @@ namespace BioBotApp.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtStepLeafRow dtStepLeafRow {
                 get {
-                    return ((dtStepLeafRow)(this.GetParentRow(this.Table.ParentRelations["bbt_step_leaf_bbt_action_value"])));
+                    return ((dtStepLeafRow)(this.GetParentRow(this.Table.ParentRelations["dtStepLeaf_dtActionValue"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_step_leaf_bbt_action_value"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtStepLeaf_dtActionValue"]);
                 }
             }
             
@@ -4652,23 +4651,23 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtActionValueRow[] Getbbt_action_valueRows() {
-                if ((this.Table.ChildRelations["bbt_action_value_type_bbt_action_value"] == null)) {
-                    return new dtActionValueRow[0];
+            public dtModuleTypeActionTypeRow[] GetdtModuleTypeActionTypeRows() {
+                if ((this.Table.ChildRelations["dtActionValueType_dtModuleTypeActionType"] == null)) {
+                    return new dtModuleTypeActionTypeRow[0];
                 }
                 else {
-                    return ((dtActionValueRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_action_value_type_bbt_action_value"])));
+                    return ((dtModuleTypeActionTypeRow[])(base.GetChildRows(this.Table.ChildRelations["dtActionValueType_dtModuleTypeActionType"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleTypeActionTypeRow[] GetdtModuleTypeActionTypeRows() {
-                if ((this.Table.ChildRelations["bbt_action_value_type_bbt_module_type_action_type"] == null)) {
-                    return new dtModuleTypeActionTypeRow[0];
+            public dtActionValueRow[] GetdtActionValueRows() {
+                if ((this.Table.ChildRelations["dtActionValueType_dtActionValue"] == null)) {
+                    return new dtActionValueRow[0];
                 }
                 else {
-                    return ((dtModuleTypeActionTypeRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_action_value_type_bbt_module_type_action_type"])));
+                    return ((dtActionValueRow[])(base.GetChildRows(this.Table.ChildRelations["dtActionValueType_dtActionValue"])));
                 }
             }
         }
@@ -4711,23 +4710,23 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleTypeLabwareParameterTypeRow[] GetdtModuleTypeLabwareParameterTypeRows() {
-                if ((this.Table.ChildRelations["bbt_labware_parameter_type_bbt_module_type_labware_parameter_type"] == null)) {
-                    return new dtModuleTypeLabwareParameterTypeRow[0];
+            public dtLabwareTypeLabwareParameterTypeRow[] GetdtLabwareTypeLabwareParameterTypeRows() {
+                if ((this.Table.ChildRelations["dtLabwareParameterType_dtLabwareTypeLabwareParameterType"] == null)) {
+                    return new dtLabwareTypeLabwareParameterTypeRow[0];
                 }
                 else {
-                    return ((dtModuleTypeLabwareParameterTypeRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_labware_parameter_type_bbt_module_type_labware_parameter_type"])));
+                    return ((dtLabwareTypeLabwareParameterTypeRow[])(base.GetChildRows(this.Table.ChildRelations["dtLabwareParameterType_dtLabwareTypeLabwareParameterType"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtLabwareTypeLabwareParameterTypeRow[] GetdtLabwareTypeLabwareParameterTypeRows() {
-                if ((this.Table.ChildRelations["bbt_labware_parameter_type_bbt_labware_type_labware_parameter_type"] == null)) {
-                    return new dtLabwareTypeLabwareParameterTypeRow[0];
+            public dtModuleTypeLabwareParameterTypeRow[] GetdtModuleTypeLabwareParameterTypeRows() {
+                if ((this.Table.ChildRelations["dtLabwareParameterType_dtModuleTypeLabwareParameterType"] == null)) {
+                    return new dtModuleTypeLabwareParameterTypeRow[0];
                 }
                 else {
-                    return ((dtLabwareTypeLabwareParameterTypeRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_labware_parameter_type_bbt_labware_type_labware_parameter_type"])));
+                    return ((dtModuleTypeLabwareParameterTypeRow[])(base.GetChildRows(this.Table.ChildRelations["dtLabwareParameterType_dtModuleTypeLabwareParameterType"])));
                 }
             }
         }
@@ -4771,11 +4770,11 @@ namespace BioBotApp.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtLabwareTypeLabwareParameterTypeRow[] GetdtLabwareTypeLabwareParameterTypeRows() {
-                if ((this.Table.ChildRelations["bbt_labware_type_bbt_labware_type_labware_parameter_type"] == null)) {
+                if ((this.Table.ChildRelations["dtLabwareType_dtLabwareTypeLabwareParameterType"] == null)) {
                     return new dtLabwareTypeLabwareParameterTypeRow[0];
                 }
                 else {
-                    return ((dtLabwareTypeLabwareParameterTypeRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_labware_type_bbt_labware_type_labware_parameter_type"])));
+                    return ((dtLabwareTypeLabwareParameterTypeRow[])(base.GetChildRows(this.Table.ChildRelations["dtLabwareType_dtLabwareTypeLabwareParameterType"])));
                 }
             }
         }
@@ -4831,10 +4830,10 @@ namespace BioBotApp.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtLabwareTypeRow dtLabwareTypeRow {
                 get {
-                    return ((dtLabwareTypeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_labware_type_bbt_labware_type_labware_parameter_type"])));
+                    return ((dtLabwareTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtLabwareType_dtLabwareTypeLabwareParameterType"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_labware_type_bbt_labware_type_labware_parameter_type"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtLabwareType_dtLabwareTypeLabwareParameterType"]);
                 }
             }
             
@@ -4842,10 +4841,10 @@ namespace BioBotApp.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtLabwareParameterTypeRow dtLabwareParameterTypeRow {
                 get {
-                    return ((dtLabwareParameterTypeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_labware_parameter_type_bbt_labware_type_labware_parameter_type"])));
+                    return ((dtLabwareParameterTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtLabwareParameterType_dtLabwareTypeLabwareParameterType"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_labware_parameter_type_bbt_labware_type_labware_parameter_type"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtLabwareParameterType_dtLabwareTypeLabwareParameterType"]);
                 }
             }
         }
@@ -4906,33 +4905,33 @@ namespace BioBotApp.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtModuleTypeLabwareParameterTypeRow[] GetdtModuleTypeLabwareParameterTypeRows() {
-                if ((this.Table.ChildRelations["bbt_module_type_bbt_module_type_labware_parameter_type"] == null)) {
+                if ((this.Table.ChildRelations["dtModuleType_dtModuleTypeLabwareParameterType"] == null)) {
                     return new dtModuleTypeLabwareParameterTypeRow[0];
                 }
                 else {
-                    return ((dtModuleTypeLabwareParameterTypeRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_module_type_bbt_module_type_labware_parameter_type"])));
+                    return ((dtModuleTypeLabwareParameterTypeRow[])(base.GetChildRows(this.Table.ChildRelations["dtModuleType_dtModuleTypeLabwareParameterType"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtModuleTypeActionTypeRow[] GetdtModuleTypeActionTypeRows() {
-                if ((this.Table.ChildRelations["bbt_module_type_bbt_module_type_action_type"] == null)) {
+                if ((this.Table.ChildRelations["dtModuleType_dtModuleTypeActionType"] == null)) {
                     return new dtModuleTypeActionTypeRow[0];
                 }
                 else {
-                    return ((dtModuleTypeActionTypeRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_module_type_bbt_module_type_action_type"])));
+                    return ((dtModuleTypeActionTypeRow[])(base.GetChildRows(this.Table.ChildRelations["dtModuleType_dtModuleTypeActionType"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtModuleRow[] GetdtModuleRows() {
-                if ((this.Table.ChildRelations["bbt_module_type_bbt_module1"] == null)) {
+                if ((this.Table.ChildRelations["dtModuleType_dtModule"] == null)) {
                     return new dtModuleRow[0];
                 }
                 else {
-                    return ((dtModuleRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_module_type_bbt_module1"])));
+                    return ((dtModuleRow[])(base.GetChildRows(this.Table.ChildRelations["dtModuleType_dtModule"])));
                 }
             }
         }
@@ -4997,23 +4996,12 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleTypeRow bbt_module_typeRow {
+            public dtModuleTypeRow dtModuleTypeRow {
                 get {
-                    return ((dtModuleTypeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_module_type_bbt_module_type_action_type"])));
+                    return ((dtModuleTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtModuleType_dtModuleTypeActionType"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_module_type_bbt_module_type_action_type"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtActionTypeRow dtActionTypeRow {
-                get {
-                    return ((dtActionTypeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_action_type_bbt_module_type_action_type"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_action_type_bbt_module_type_action_type"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtModuleType_dtModuleTypeActionType"]);
                 }
             }
             
@@ -5021,10 +5009,21 @@ namespace BioBotApp.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtActionValueTypeRow dtActionValueTypeRow {
                 get {
-                    return ((dtActionValueTypeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_action_value_type_bbt_module_type_action_type"])));
+                    return ((dtActionValueTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtActionValueType_dtModuleTypeActionType"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_action_value_type_bbt_module_type_action_type"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtActionValueType_dtModuleTypeActionType"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtActionTypeRow dtActionTypeRow {
+                get {
+                    return ((dtActionTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtActionType_dtModuleTypeActionType"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["dtActionType_dtModuleTypeActionType"]);
                 }
             }
         }
@@ -5078,23 +5077,23 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtLabwareParameterTypeRow bbt_labware_parameter_typeRow {
+            public dtLabwareParameterTypeRow dtLabwareParameterTypeRow {
                 get {
-                    return ((dtLabwareParameterTypeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_labware_parameter_type_bbt_module_type_labware_parameter_type"])));
+                    return ((dtLabwareParameterTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtLabwareParameterType_dtModuleTypeLabwareParameterType"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_labware_parameter_type_bbt_module_type_labware_parameter_type"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtLabwareParameterType_dtModuleTypeLabwareParameterType"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleTypeRow bbt_module_typeRow {
+            public dtModuleTypeRow dtModuleTypeRow {
                 get {
-                    return ((dtModuleTypeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_module_type_bbt_module_type_labware_parameter_type"])));
+                    return ((dtModuleTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtModuleType_dtModuleTypeLabwareParameterType"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_module_type_bbt_module_type_labware_parameter_type"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtModuleType_dtModuleTypeLabwareParameterType"]);
                 }
             }
         }
@@ -5160,10 +5159,10 @@ namespace BioBotApp.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtStepCompositeRow dtStepCompositeRow {
                 get {
-                    return ((dtStepCompositeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_step_composite_bbt_step_leaf"])));
+                    return ((dtStepCompositeRow)(this.GetParentRow(this.Table.ParentRelations["dtStepComposite_dtStepLeaf"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_step_composite_bbt_step_leaf"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtStepComposite_dtStepLeaf"]);
                 }
             }
             
@@ -5193,12 +5192,12 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtActionValueRow[] Getbbt_action_valueRows() {
-                if ((this.Table.ChildRelations["bbt_step_leaf_bbt_action_value"] == null)) {
+            public dtActionValueRow[] GetdtActionValueRows() {
+                if ((this.Table.ChildRelations["dtStepLeaf_dtActionValue"] == null)) {
                     return new dtActionValueRow[0];
                 }
                 else {
-                    return ((dtActionValueRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_step_leaf_bbt_action_value"])));
+                    return ((dtActionValueRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepLeaf_dtActionValue"])));
                 }
             }
         }
@@ -5219,9 +5218,9 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int pk_id {
+            public string pk_id {
                 get {
-                    return ((int)(this[this.tabledtModule.pk_idColumn]));
+                    return ((string)(this[this.tabledtModule.pk_idColumn]));
                 }
                 set {
                     this[this.tabledtModule.pk_idColumn] = value;
@@ -5326,12 +5325,12 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleTypeRow bbt_module_typeRow {
+            public dtModuleTypeRow dtModuleTypeRow {
                 get {
-                    return ((dtModuleTypeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_module_type_bbt_module1"])));
+                    return ((dtModuleTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtModuleType_dtModule"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_module_type_bbt_module1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtModuleType_dtModule"]);
                 }
             }
             
@@ -5410,11 +5409,11 @@ namespace BioBotApp.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtStepCompositeRow[] GetdtStepCompositeRows() {
-                if ((this.Table.ChildRelations["bbt_module1_bbt_step_composite"] == null)) {
+                if ((this.Table.ChildRelations["dtModule_dtStepComposite"] == null)) {
                     return new dtStepCompositeRow[0];
                 }
                 else {
-                    return ((dtStepCompositeRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_module1_bbt_step_composite"])));
+                    return ((dtStepCompositeRow[])(base.GetChildRows(this.Table.ChildRelations["dtModule_dtStepComposite"])));
                 }
             }
         }
@@ -5478,10 +5477,10 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int fk_module_id {
+            public string fk_module_id {
                 get {
                     try {
-                        return ((int)(this[this.tabledtStepComposite.fk_module_idColumn]));
+                        return ((string)(this[this.tabledtStepComposite.fk_module_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'fk_module_id\' in table \'dtStepComposite\' is DBNull.", e);
@@ -5494,23 +5493,23 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeRow dtStepCompositeRowParent {
+            public dtModuleRow dtModuleRow {
                 get {
-                    return ((dtStepCompositeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_step_composite_bbt_step_composite"])));
+                    return ((dtModuleRow)(this.GetParentRow(this.Table.ParentRelations["dtModule_dtStepComposite"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_step_composite_bbt_step_composite"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtModule_dtStepComposite"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleRow dtModuleRow {
+            public dtStepCompositeRow dtStepCompositeRowParent {
                 get {
-                    return ((dtModuleRow)(this.GetParentRow(this.Table.ParentRelations["bbt_module1_bbt_step_composite"])));
+                    return ((dtStepCompositeRow)(this.GetParentRow(this.Table.ParentRelations["dtStepComposite_dtStepComposite"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_module1_bbt_step_composite"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtStepComposite_dtStepComposite"]);
                 }
             }
             
@@ -5553,22 +5552,22 @@ namespace BioBotApp.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtStepLeafRow[] GetdtStepLeafRows() {
-                if ((this.Table.ChildRelations["bbt_step_composite_bbt_step_leaf"] == null)) {
+                if ((this.Table.ChildRelations["dtStepComposite_dtStepLeaf"] == null)) {
                     return new dtStepLeafRow[0];
                 }
                 else {
-                    return ((dtStepLeafRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_step_composite_bbt_step_leaf"])));
+                    return ((dtStepLeafRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepComposite_dtStepLeaf"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtStepCompositeRow[] GetdtStepCompositeRows() {
-                if ((this.Table.ChildRelations["bbt_step_composite_bbt_step_composite"] == null)) {
+                if ((this.Table.ChildRelations["dtStepComposite_dtStepComposite"] == null)) {
                     return new dtStepCompositeRow[0];
                 }
                 else {
-                    return ((dtStepCompositeRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_step_composite_bbt_step_composite"])));
+                    return ((dtStepCompositeRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepComposite_dtStepComposite"])));
                 }
             }
         }
@@ -9447,7 +9446,15 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
                 return this._adapter;
             }
         }
-        
+             public virtual int Select(dsModuleStructure2.dtStepCompositeDataTable dataTable, int pk_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pk_id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal global::System.Data.Odbc.OdbcConnection Connection {
@@ -10099,7 +10106,7 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    this.SortSelfReferenceRows(updatedRows, dataSet.Relations["bbt_step_composite_bbt_step_composite"], false);
+                    this.SortSelfReferenceRows(updatedRows, dataSet.Relations["dtStepComposite_dtStepComposite"], false);
                     result = (result + this._taStepComposite.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
@@ -10215,7 +10222,7 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
                 global::System.Data.DataRow[] addedRows = dataSet.dtStepComposite.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    this.SortSelfReferenceRows(addedRows, dataSet.Relations["bbt_step_composite_bbt_step_composite"], false);
+                    this.SortSelfReferenceRows(addedRows, dataSet.Relations["dtStepComposite_dtStepComposite"], false);
                     result = (result + this._taStepComposite.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
@@ -10378,7 +10385,7 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
                 global::System.Data.DataRow[] deletedRows = dataSet.dtStepComposite.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    this.SortSelfReferenceRows(deletedRows, dataSet.Relations["bbt_step_composite_bbt_step_composite"], true);
+                    this.SortSelfReferenceRows(deletedRows, dataSet.Relations["dtStepComposite_dtStepComposite"], true);
                     result = (result + this._taStepComposite.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }

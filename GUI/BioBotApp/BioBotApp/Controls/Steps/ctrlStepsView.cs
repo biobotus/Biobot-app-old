@@ -190,7 +190,7 @@ namespace BioBotApp.Controls.Steps
                     c.fk_module_id = moduleRow.pk_id;
                     //c.fk
 
-                    String headerTitle = moduleRow.pk_id;
+                    String headerTitle = moduleRow.pk_id.ToString();
 
                     _frmNewStep = new frmNewStep(_dsModuleStructure, moduleRow);
 
