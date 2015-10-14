@@ -45,7 +45,7 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
                 id = (int) Tag;
             }
 
-            taStepComposite.Select(stepCompositeDataTable, id);
+            //taStepComposite.Select(stepCompositeDataTable, id);
             if (stepCompositeDataTable.Rows.Count != 1)
             {
                 System.Windows.Forms.MessageBox.Show("An error occured while loading protols !");

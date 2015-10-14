@@ -48,14 +48,14 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
             {
                 id = (int)Tag;
             }
-            taStepLeaf.Select(stepLeafDataTable, id);
+            //taStepLeaf.Select(stepLeafDataTable, id);
             if (stepLeafDataTable.Rows.Count != 1)
             {
                 System.Windows.Forms.MessageBox.Show("An error occured while loading Steps !");
             }
             _stepLeaf = stepLeafDataTable.FindBypk_id(id);
 
-            taActionValue.SelectById(actionValueDataValueTable, id);
+            //taActionValue.SelectById(actionValueDataValueTable, id);
         }
 
         public DataSets.dsModuleStructure3.dtStepLeafRow getStepLeaf()
