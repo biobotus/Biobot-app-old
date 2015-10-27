@@ -86,6 +86,8 @@ namespace BioBotApp.Controls.Option.Options
                 row.fk_step_composite = ProtocolSelectedRow.pk_id;
                 dsModuleStructureGUI.dtStepLeaf.AdddtStepLeafRow(row);
                 updateStepRow(row);
+
+                
             }
         }
 

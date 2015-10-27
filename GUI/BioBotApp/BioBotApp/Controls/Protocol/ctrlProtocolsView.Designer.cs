@@ -198,5 +198,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button LoadButton;
+        private DataSets.dsModuleStructure3 dsModuleStructureGUI;
+        private DataSets.dsModuleStructure3TableAdapters.taSavedProtocol ta_Saved_Protocol;
     }
 }
