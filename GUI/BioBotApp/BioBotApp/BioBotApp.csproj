@@ -183,6 +183,12 @@
     <Compile Include="Controls\Option\Options\optionProtocol.Designer.cs">
       <DependentUpon>optionProtocol.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Option\Options\optionSavedProtocol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionSavedProtocol.Designer.cs">
+      <DependentUpon>optionSavedProtocol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\optionProtocol.resx">
       <DependentUpon>optionProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionSavedProtocol.resx">
+      <DependentUpon>optionSavedProtocol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Protocol\ctrlProtocolsView.resx">
       <DependentUpon>ctrlProtocolsView.cs</DependentUpon>

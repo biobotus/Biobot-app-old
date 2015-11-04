@@ -76,6 +76,7 @@
             this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taStepComposite();
             this.taStepLeaf = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taStepLeaf();
             this.taActionValue = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionValue();
+            this.taSavedProtocol = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taSavedProtocol();
             ((System.ComponentModel.ISupportInitialize)(this.bsModuleStructure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtActionTypeBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -106,10 +107,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.optionsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Location = new System.Drawing.Point(4, 4);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(1059, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(1412, 26);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -118,13 +119,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.canCommunicationToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // canCommunicationToolStripMenuItem
             // 
             this.canCommunicationToolStripMenuItem.Name = "canCommunicationToolStripMenuItem";
-            this.canCommunicationToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.canCommunicationToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.canCommunicationToolStripMenuItem.Text = "Can Communication";
             this.canCommunicationToolStripMenuItem.Click += new System.EventHandler(this.canCommunicationToolStripMenuItem_Click);
             // 
@@ -134,20 +135,20 @@
             this.parametersToolStripMenuItem,
             this.playToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(47, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
             this.optionsToolStripMenuItem.Text = "&Tools";
             // 
             // parametersToolStripMenuItem
             // 
             this.parametersToolStripMenuItem.Name = "parametersToolStripMenuItem";
-            this.parametersToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.parametersToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.parametersToolStripMenuItem.Text = "&Options";
             this.parametersToolStripMenuItem.Click += new System.EventHandler(this.parametersToolStripMenuItem_Click);
             // 
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.playToolStripMenuItem.Text = "Play";
             this.playToolStripMenuItem.Click += new System.EventHandler(this.playToolStripMenuItem_Click);
             // 
@@ -162,9 +163,10 @@
             this.panel1.Controls.Add(this.splitter1);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 27);
+            this.panel1.Location = new System.Drawing.Point(4, 30);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1059, 517);
+            this.panel1.Size = new System.Drawing.Size(1412, 648);
             this.panel1.TabIndex = 18;
             // 
             // panel5
@@ -173,9 +175,10 @@
             this.panel5.Controls.Add(this.splitter4);
             this.panel5.Controls.Add(this.panel10);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(615, 0);
+            this.panel5.Location = new System.Drawing.Point(821, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(442, 515);
+            this.panel5.Size = new System.Drawing.Size(589, 646);
             this.panel5.TabIndex = 23;
             // 
             // panel6
@@ -183,8 +186,9 @@
             this.panel6.Controls.Add(this.ctrlDeck);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(442, 292);
+            this.panel6.Size = new System.Drawing.Size(589, 371);
             this.panel6.TabIndex = 2;
             // 
             // ctrlDeck
@@ -192,19 +196,20 @@
             this.ctrlDeck.AllowDrop = true;
             this.ctrlDeck.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlDeck.Location = new System.Drawing.Point(0, 0);
-            this.ctrlDeck.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlDeck.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctrlDeck.Name = "ctrlDeck";
-            this.ctrlDeck.Padding = new System.Windows.Forms.Padding(3);
-            this.ctrlDeck.Size = new System.Drawing.Size(442, 292);
+            this.ctrlDeck.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlDeck.Size = new System.Drawing.Size(589, 371);
             this.ctrlDeck.TabIndex = 0;
             // 
             // splitter4
             // 
             this.splitter4.BackColor = System.Drawing.Color.Silver;
             this.splitter4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter4.Location = new System.Drawing.Point(0, 292);
+            this.splitter4.Location = new System.Drawing.Point(0, 371);
+            this.splitter4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitter4.Name = "splitter4";
-            this.splitter4.Size = new System.Drawing.Size(442, 3);
+            this.splitter4.Size = new System.Drawing.Size(589, 4);
             this.splitter4.TabIndex = 1;
             this.splitter4.TabStop = false;
             // 
@@ -212,26 +217,28 @@
             // 
             this.panel10.Controls.Add(this.ctrlConsole);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(0, 295);
+            this.panel10.Location = new System.Drawing.Point(0, 375);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(442, 220);
+            this.panel10.Size = new System.Drawing.Size(589, 271);
             this.panel10.TabIndex = 0;
             // 
             // ctrlConsole
             // 
             this.ctrlConsole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlConsole.Location = new System.Drawing.Point(0, 0);
-            this.ctrlConsole.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlConsole.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctrlConsole.Name = "ctrlConsole";
-            this.ctrlConsole.Size = new System.Drawing.Size(442, 220);
+            this.ctrlConsole.Size = new System.Drawing.Size(589, 271);
             this.ctrlConsole.TabIndex = 0;
             // 
             // splitter3
             // 
             this.splitter3.BackColor = System.Drawing.Color.Silver;
-            this.splitter3.Location = new System.Drawing.Point(612, 0);
+            this.splitter3.Location = new System.Drawing.Point(817, 0);
+            this.splitter3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(3, 515);
+            this.splitter3.Size = new System.Drawing.Size(4, 646);
             this.splitter3.TabIndex = 22;
             this.splitter3.TabStop = false;
             // 
@@ -239,9 +246,10 @@
             // 
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(412, 0);
+            this.panel3.Location = new System.Drawing.Point(550, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 515);
+            this.panel3.Size = new System.Drawing.Size(267, 646);
             this.panel3.TabIndex = 21;
             // 
             // panel7
@@ -251,8 +259,9 @@
             this.panel7.Controls.Add(this.panel9);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(200, 515);
+            this.panel7.Size = new System.Drawing.Size(267, 646);
             this.panel7.TabIndex = 16;
             // 
             // panel8
@@ -260,8 +269,9 @@
             this.panel8.Controls.Add(this.ctrlTools);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(200, 314);
+            this.panel8.Size = new System.Drawing.Size(267, 398);
             this.panel8.TabIndex = 2;
             // 
             // ctrlTools
@@ -269,10 +279,10 @@
             this.ctrlTools.BackColor = System.Drawing.Color.Transparent;
             this.ctrlTools.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTools.Location = new System.Drawing.Point(0, 0);
-            this.ctrlTools.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlTools.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctrlTools.Name = "ctrlTools";
-            this.ctrlTools.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.ctrlTools.Size = new System.Drawing.Size(200, 314);
+            this.ctrlTools.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlTools.Size = new System.Drawing.Size(267, 398);
             this.ctrlTools.TabIndex = 0;
             this.ctrlTools.ToolSelectionChanged += new System.EventHandler<BioBotApp.Controls.Tools_controls.ModuleTypeSelectionEventArgs>(this.ctrlTools_ToolSelectionChanged);
             // 
@@ -280,9 +290,10 @@
             // 
             this.splitter5.BackColor = System.Drawing.Color.Silver;
             this.splitter5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter5.Location = new System.Drawing.Point(0, 314);
+            this.splitter5.Location = new System.Drawing.Point(0, 398);
+            this.splitter5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitter5.Name = "splitter5";
-            this.splitter5.Size = new System.Drawing.Size(200, 3);
+            this.splitter5.Size = new System.Drawing.Size(267, 4);
             this.splitter5.TabIndex = 1;
             this.splitter5.TabStop = false;
             // 
@@ -290,27 +301,29 @@
             // 
             this.panel9.Controls.Add(this.ctrlLabware);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(0, 317);
+            this.panel9.Location = new System.Drawing.Point(0, 402);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(200, 198);
+            this.panel9.Size = new System.Drawing.Size(267, 244);
             this.panel9.TabIndex = 0;
             // 
             // ctrlLabware
             // 
             this.ctrlLabware.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlLabware.Location = new System.Drawing.Point(0, 0);
-            this.ctrlLabware.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlLabware.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctrlLabware.Name = "ctrlLabware";
-            this.ctrlLabware.Padding = new System.Windows.Forms.Padding(3);
-            this.ctrlLabware.Size = new System.Drawing.Size(200, 198);
+            this.ctrlLabware.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlLabware.Size = new System.Drawing.Size(267, 244);
             this.ctrlLabware.TabIndex = 0;
             // 
             // splitter2
             // 
             this.splitter2.BackColor = System.Drawing.Color.Silver;
-            this.splitter2.Location = new System.Drawing.Point(409, 0);
+            this.splitter2.Location = new System.Drawing.Point(546, 0);
+            this.splitter2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(3, 515);
+            this.splitter2.Size = new System.Drawing.Size(4, 646);
             this.splitter2.TabIndex = 20;
             this.splitter2.TabStop = false;
             // 
@@ -318,27 +331,29 @@
             // 
             this.panel2.Controls.Add(this.ctrlSteps);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(209, 0);
+            this.panel2.Location = new System.Drawing.Point(279, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 515);
+            this.panel2.Size = new System.Drawing.Size(267, 646);
             this.panel2.TabIndex = 18;
             // 
             // ctrlSteps
             // 
             this.ctrlSteps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlSteps.Location = new System.Drawing.Point(0, 0);
-            this.ctrlSteps.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlSteps.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctrlSteps.Name = "ctrlSteps";
-            this.ctrlSteps.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.ctrlSteps.Size = new System.Drawing.Size(200, 515);
+            this.ctrlSteps.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlSteps.Size = new System.Drawing.Size(267, 646);
             this.ctrlSteps.TabIndex = 7;
             // 
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.Color.Silver;
-            this.splitter1.Location = new System.Drawing.Point(206, 0);
+            this.splitter1.Location = new System.Drawing.Point(275, 0);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 515);
+            this.splitter1.Size = new System.Drawing.Size(4, 646);
             this.splitter1.TabIndex = 19;
             this.splitter1.TabStop = false;
             // 
@@ -347,18 +362,19 @@
             this.panel4.Controls.Add(this.ctrlProtocolsView);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(206, 515);
+            this.panel4.Size = new System.Drawing.Size(275, 646);
             this.panel4.TabIndex = 17;
             // 
             // ctrlProtocolsView
             // 
             this.ctrlProtocolsView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlProtocolsView.Location = new System.Drawing.Point(0, 0);
-            this.ctrlProtocolsView.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlProtocolsView.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctrlProtocolsView.Name = "ctrlProtocolsView";
-            this.ctrlProtocolsView.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.ctrlProtocolsView.Size = new System.Drawing.Size(206, 515);
+            this.ctrlProtocolsView.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlProtocolsView.Size = new System.Drawing.Size(275, 646);
             this.ctrlProtocolsView.TabIndex = 8;
             // 
             // statusStrip2
@@ -367,10 +383,10 @@
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel2,
             this.ttsDBConnection});
-            this.statusStrip2.Location = new System.Drawing.Point(3, 544);
+            this.statusStrip2.Location = new System.Drawing.Point(4, 678);
             this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip2.Size = new System.Drawing.Size(1059, 37);
+            this.statusStrip2.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStrip2.Size = new System.Drawing.Size(1412, 37);
             this.statusStrip2.TabIndex = 19;
             this.statusStrip2.Text = "statusStrip2";
             // 
@@ -450,17 +466,22 @@
             // 
             this.taActionValue.ClearBeforeFill = true;
             // 
+            // taSavedProtocol1
+            // 
+            this.taSavedProtocol.ClearBeforeFill = true;
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 584);
+            this.ClientSize = new System.Drawing.Size(1420, 719);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip2);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMain";
-            this.Padding = new System.Windows.Forms.Padding(3);
+            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.bsModuleStructure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtActionTypeBindingSource)).EndInit();
@@ -533,8 +554,10 @@
         private DataSets.dsModuleStructure3TableAdapters.taStepComposite taStepComposite;
         private DataSets.dsModuleStructure3TableAdapters.taStepLeaf taStepLeaf;
         private DataSets.dsModuleStructure3TableAdapters.taActionValue taActionValue;
+        //private DataSets.dsModuleStructure3TableAdapters.taSavedProtocol taSavedProtocol;
         private System.Windows.Forms.ToolStripMenuItem canCommunicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playToolStripMenuItem;
+        private DataSets.dsModuleStructure3TableAdapters.taSavedProtocol taSavedProtocol;
     }
 }
 

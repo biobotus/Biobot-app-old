@@ -198,42 +198,36 @@ namespace BioBotApp.Controls.Protocol
             if (treeNode is StepCompositeNode)
             {
 
-                addrow(treeNode);
+                StepCompositeNode stepCompositeNode = treeNode as StepCompositeNode;
+
+                DataSets.dsModuleStructure3.dtStepCompositeRow stepComposite = stepCompositeNode.getStepCompositeRow();
+
+                DataSets.dsModuleStructure3.dtSavedProtocolRow row;
+                //DataSets.dsModuleStructure3.dtSavedProtocolRow test;
+                //row = dsModuleStructureGUI.dtSavedProtocol.NewdtSavedProtocolRow();
+                row = dsModuleStructure.dtSavedProtocol.NewdtSavedProtocolRow();
+                row.description = stepCompositeNode.Parent.Text;
+                row.fk_step_composite = stepComposite.pk_id;
+                dsModuleStructure.dtSavedProtocol.AdddtSavedProtocolRow(row);
+                updateRow(row);
                 
-
-
-
-                //row.Description = stepCompositeNode.Name;
-                //row.fk_step_composite = stepComposite.pk_id;
-                /*DataSets.dsModuleStructure3.dtSavedProtocol.AdddtStepLeafRow(row);
-                updateRow(row);*/
-
-
-                //foreach (DataSets.dsModuleStructure3.dtActionValueRow actionValueRow in table)
-                //{
-                //    mainProtocol.executeAction(actionValueRow);
-                //}
-
-                // TreeNodeCollection bubu;
-
-                //bubu = tree.Nodes;
 
             }
            
         }
         public  void addrow(TreeNode treeNode) {
 
-            StepCompositeNode stepCompositeNode = treeNode as StepCompositeNode;
+            //StepCompositeNode stepCompositeNode = treeNode as StepCompositeNode;
 
-            DataSets.dsModuleStructure3.dtStepCompositeRow stepComposite = stepCompositeNode.getStepCompositeRow();
+            //DataSets.dsModuleStructure3.dtStepCompositeRow stepComposite = stepCompositeNode.getStepCompositeRow();
 
-            DataSets.dsModuleStructure3.dtSavedProtocolRow row; 
-
-            row = dsModuleStructureGUI.dtSavedProtocol.NewdtSavedProtocolRow();
-            row.Description = stepCompositeNode.Parent.Text;
-            row.fk_step_composite = stepComposite.pk_id;
-            dsModuleStructureGUI.dtSavedProtocol.AdddtSavedProtocolRow(row);
-            updateRow(row);
+            //DataSets.dsModuleStructure3.dtSavedProtocolRow row;
+            ////DataSets.dsModuleStructure3.dtSavedProtocolRow test;
+            //row = dsModuleStructureGUI.dtSavedProtocol.NewdtSavedProtocolRow();
+            //row.Description = stepCompositeNode.Parent.Text;
+            //row.fk_step_composite = stepComposite.pk_id;
+            //dsModuleStructureGUI.dtSavedProtocol.AdddtSavedProtocolRow(row);
+            //updateRow(row);
 
         }
 
@@ -249,7 +243,7 @@ namespace BioBotApp.Controls.Protocol
                 "Error !",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
-                dsModuleStructureGUI.RejectChanges();
+                dsModuleStructure.RejectChanges();
             }
         }
 

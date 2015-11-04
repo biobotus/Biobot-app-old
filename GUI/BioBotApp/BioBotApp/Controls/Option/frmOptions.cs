@@ -88,6 +88,10 @@ namespace BioBotApp.Controls.Option
                 setOptionControl(new optionJoypad());
 
             }
+            else if (e.Node.Name.Equals("nodeSavedProtocol"))
+            {
+                setOptionControl(new optionSavedProtocol(dsModuleStructure));
+            }
             else
             {
                 //  setOptionControl(new optionActionValueType());

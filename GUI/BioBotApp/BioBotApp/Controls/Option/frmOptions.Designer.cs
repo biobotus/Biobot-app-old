@@ -53,6 +53,7 @@
             System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Movement");
             System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Protocol");
             System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Joypad");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Saved Protocol");
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlvOptions = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -75,7 +76,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 257);
+            this.panel1.Size = new System.Drawing.Size(200, 316);
             this.panel1.TabIndex = 0;
             // 
             // tlvOptions
@@ -120,13 +121,16 @@
             treeNode15.Name = "nodeJoypad";
             treeNode15.Tag = "Joypad";
             treeNode15.Text = "Joypad";
+            treeNode16.Name = "nodeSavedProtocol";
+            treeNode16.Text = "Saved Protocol";
             this.tlvOptions.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode9,
             treeNode12,
             treeNode13,
             treeNode14,
-            treeNode15});
-            this.tlvOptions.Size = new System.Drawing.Size(150, 257);
+            treeNode15,
+            treeNode16});
+            this.tlvOptions.Size = new System.Drawing.Size(200, 316);
             this.tlvOptions.TabIndex = 0;
             this.tlvOptions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tlvOptions_AfterSelect);
             // 
@@ -134,10 +138,10 @@
             // 
             this.panel2.Controls.Add(this.lblTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(152, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.panel2.Location = new System.Drawing.Point(203, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(356, 38);
+            this.panel2.Size = new System.Drawing.Size(474, 47);
             this.panel2.TabIndex = 1;
             // 
             // lblTitle
@@ -148,7 +152,7 @@
             this.lblTitle.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTitle.Size = new System.Drawing.Size(356, 38);
+            this.lblTitle.Size = new System.Drawing.Size(474, 47);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,10 +161,10 @@
             // 
             this.mainPanel.AutoSize = true;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(152, 38);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.mainPanel.Location = new System.Drawing.Point(203, 47);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(356, 185);
+            this.mainPanel.Size = new System.Drawing.Size(474, 227);
             this.mainPanel.TabIndex = 2;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
@@ -171,10 +175,10 @@
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(150, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.splitter1.Location = new System.Drawing.Point(200, 0);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(2, 257);
+            this.splitter1.Size = new System.Drawing.Size(3, 316);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
@@ -182,10 +186,10 @@
             // 
             this.panel3.Controls.Add(this.btnClose);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(152, 223);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.panel3.Location = new System.Drawing.Point(203, 274);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(356, 34);
+            this.panel3.Size = new System.Drawing.Size(474, 42);
             this.panel3.TabIndex = 0;
             // 
             // btnClose
@@ -193,20 +197,20 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(291, 5);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnClose.Location = new System.Drawing.Point(387, 6);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(56, 25);
+            this.btnClose.Size = new System.Drawing.Size(75, 31);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
             // frmOptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(508, 257);
+            this.ClientSize = new System.Drawing.Size(677, 316);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
