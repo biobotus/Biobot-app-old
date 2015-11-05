@@ -20,43 +20,26 @@ namespace BioBotApp.Controls.Option.Options
         {
             this.dsModuleStructureGUI = dsModuleStructure;
 
-
-
             this.dtSavedProtocolBindingSource.DataSource = dsModuleStructureGUI;
-            //this.bindingSource1.DataMember = "dtSavedProtocol_dtSavedProtocol";
-            //this.bindingSource1.DataSource = dtSavedProtocolBindingSource;
-
             this.dataGridView1.DataSource = taSavedProtocol1.GetDataByDesc();
-
-            if (this.dataGridView1.CurrentCell == null)
-            {
-                this.dataGridView2.DataSource = taSavedProtocol1.GetDataByDesc2(null);
-            }
-            else
-            {
-                this.dataGridView2.DataSource = taSavedProtocol1.GetDataByDesc2(this.dataGridView1.CurrentCell.Value.ToString());
-            }
-
-            //if (this.dsModuleStructureGUI.dtSavedProtocol.Count == 0)
-            //{
-            //    taSavedProtocol1.Fill(this.dsModuleStructureGUI.dtSavedProtocol);
-            //}
-
-
+            this.dataGridView2.DataSource = taSavedProtocol1.GetData();
+            bindingSource1.DataSource = dataGridView2.DataSource;
+            this.bindingSource1.Filter = "description = null";
         }
-        private void dtModuleBindingSource_CurrentChanged(object sender, EventArgs e)
+        private void dtSavedProtocolBindingSource_CurrentChanged(object sender, EventArgs e)
         {
+
             if (this.dataGridView1.CurrentCell == null)
             {
-                this.dataGridView2.DataSource = taSavedProtocol1.GetDataByDesc2(null);
+                this.bindingSource1.Filter = "description = null";
             }
             else
             {
-                this.dataGridView2.DataSource = taSavedProtocol1.GetDataByDesc2(this.dataGridView1.CurrentCell.Value.ToString());
+                bindingSource1.Filter = "description  = '" + dataGridView1.CurrentCell.Value.ToString() + "'";
+                dataGridView2.DataSource = bindingSource1;
             }
+
         }
-
-
 
     }
 }

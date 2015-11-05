@@ -37,14 +37,14 @@
             this.dsModuleStructure3 = new BioBotApp.DataSets.dsModuleStructure3();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.crudOptions2 = new BioBotApp.Controls.Utils.crudOptions();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.taSavedProtocol1 = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taSavedProtocol();
             this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fkstepcompositeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fksavedprotocolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.crudOptions2 = new BioBotApp.Controls.Utils.crudOptions();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.taSavedProtocol1 = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taSavedProtocol();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtSavedProtocolBindingSource)).BeginInit();
@@ -97,7 +97,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(351, 418);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Tag = "SavedProtocol";
-            this.dataGridView1.CurrentCellChanged += new System.EventHandler(this.dtModuleBindingSource_CurrentChanged);
+            this.dataGridView1.CurrentCellChanged += new System.EventHandler(this.dtSavedProtocolBindingSource_CurrentChanged);
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
@@ -138,7 +138,7 @@
             this.descriptionDataGridViewTextBoxColumn1,
             this.fkstepcompositeDataGridViewTextBoxColumn,
             this.fksavedprotocolDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.dtSavedProtocolBindingSource;
+            this.dataGridView2.DataSource = this.bindingSource1;
             this.dataGridView2.Location = new System.Drawing.Point(6, 91);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
@@ -146,6 +146,43 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(351, 418);
             this.dataGridView2.TabIndex = 2;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "dtSavedProtocol";
+            this.bindingSource1.DataSource = this.dsModuleStructure3;
+            this.bindingSource1.Filter = "description = null";
+            // 
+            // crudOptions2
+            // 
+            this.crudOptions2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.crudOptions2.ButtonRefreshVisible = false;
+            this.crudOptions2.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.crudOptions2.Location = new System.Drawing.Point(230, 21);
+            this.crudOptions2.MinimumSize = new System.Drawing.Size(37, 37);
+            this.crudOptions2.Name = "crudOptions2";
+            this.crudOptions2.Size = new System.Drawing.Size(127, 37);
+            this.crudOptions2.TabIndex = 1;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer2.Size = new System.Drawing.Size(739, 515);
+            this.splitContainer2.SplitterDistance = 369;
+            this.splitContainer2.TabIndex = 3;
+            // 
+            // taSavedProtocol1
+            // 
+            this.taSavedProtocol1.ClearBeforeFill = true;
             // 
             // pkidDataGridViewTextBoxColumn
             // 
@@ -170,42 +207,6 @@
             this.fksavedprotocolDataGridViewTextBoxColumn.DataPropertyName = "fk_saved_protocol";
             this.fksavedprotocolDataGridViewTextBoxColumn.HeaderText = "fk_saved_protocol";
             this.fksavedprotocolDataGridViewTextBoxColumn.Name = "fksavedprotocolDataGridViewTextBoxColumn";
-            // 
-            // crudOptions2
-            // 
-            this.crudOptions2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.crudOptions2.ButtonRefreshVisible = false;
-            this.crudOptions2.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.crudOptions2.Location = new System.Drawing.Point(230, 21);
-            this.crudOptions2.MinimumSize = new System.Drawing.Size(37, 37);
-            this.crudOptions2.Name = "crudOptions2";
-            this.crudOptions2.Size = new System.Drawing.Size(127, 37);
-            this.crudOptions2.TabIndex = 1;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "dtSavedProtocol_dtSavedProtocol";
-            this.bindingSource1.DataSource = this.dtSavedProtocolBindingSource;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer2.Size = new System.Drawing.Size(739, 515);
-            this.splitContainer2.SplitterDistance = 369;
-            this.splitContainer2.TabIndex = 3;
-            // 
-            // taSavedProtocol1
-            // 
-            this.taSavedProtocol1.ClearBeforeFill = true;
             // 
             // optionSavedProtocol
             // 
@@ -243,11 +244,11 @@
         private DataSets.dsModuleStructure3 dsModuleStructure3;
         private DataSets.dsModuleStructure3TableAdapters.taSavedProtocol taSavedProtocol1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fkstepcompositeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fksavedprotocolDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     }
 }
