@@ -78,9 +78,7 @@ namespace BioBotApp.DataSets {
         
         private global::System.Data.DataRelation relationdtModuleType_dtModule;
         
-        private global::System.Data.DataRelation relationdtStepComposite_bbt_saved_protocol;
-        
-        private global::System.Data.DataRelation relationdtSavedProtocol_dtSavedProtocol;
+        private global::System.Data.DataRelation relationdtStepComposite_dtSavedProtocol;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -528,8 +526,7 @@ namespace BioBotApp.DataSets {
             this.relationdtStepComposite_dtStepComposite = this.Relations["dtStepComposite_dtStepComposite"];
             this.relationdtModule_dtStepComposite = this.Relations["dtModule_dtStepComposite"];
             this.relationdtModuleType_dtModule = this.Relations["dtModuleType_dtModule"];
-            this.relationdtStepComposite_bbt_saved_protocol = this.Relations["dtStepComposite_bbt_saved_protocol"];
-            this.relationdtSavedProtocol_dtSavedProtocol = this.Relations["dtSavedProtocol_dtSavedProtocol"];
+            this.relationdtStepComposite_dtSavedProtocol = this.Relations["dtStepComposite_dtSavedProtocol"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -622,14 +619,10 @@ namespace BioBotApp.DataSets {
                         this.tabledtModuleType.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtModule.fk_module_typeColumn}, false);
             this.Relations.Add(this.relationdtModuleType_dtModule);
-            this.relationdtStepComposite_bbt_saved_protocol = new global::System.Data.DataRelation("dtStepComposite_bbt_saved_protocol", new global::System.Data.DataColumn[] {
+            this.relationdtStepComposite_dtSavedProtocol = new global::System.Data.DataRelation("dtStepComposite_dtSavedProtocol", new global::System.Data.DataColumn[] {
                         this.tabledtStepComposite.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtSavedProtocol.fk_step_compositeColumn}, false);
-            this.Relations.Add(this.relationdtStepComposite_bbt_saved_protocol);
-            this.relationdtSavedProtocol_dtSavedProtocol = new global::System.Data.DataRelation("dtSavedProtocol_dtSavedProtocol", new global::System.Data.DataColumn[] {
-                        this.tabledtSavedProtocol.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtSavedProtocol.fk_saved_protocolColumn}, false);
-            this.Relations.Add(this.relationdtSavedProtocol_dtSavedProtocol);
+            this.Relations.Add(this.relationdtStepComposite_dtSavedProtocol);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4396,8 +4389,6 @@ namespace BioBotApp.DataSets {
             
             private global::System.Data.DataColumn columnfk_step_composite;
             
-            private global::System.Data.DataColumn columnfk_saved_protocol;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtSavedProtocolDataTable() {
@@ -4457,14 +4448,6 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fk_saved_protocolColumn {
-                get {
-                    return this.columnfk_saved_protocol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4500,22 +4483,25 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtSavedProtocolRow AdddtSavedProtocolRow(string description, dtStepCompositeRow parentdtStepCompositeRowBydtStepComposite_bbt_saved_protocol, dtSavedProtocolRow parentdtSavedProtocolRowBydtSavedProtocol_dtSavedProtocol) {
+            public dtSavedProtocolRow AdddtSavedProtocolRow(string description, dtStepCompositeRow parentdtStepCompositeRowBydtStepComposite_dtSavedProtocol) {
                 dtSavedProtocolRow rowdtSavedProtocolRow = ((dtSavedProtocolRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         description,
-                        null,
                         null};
-                if ((parentdtStepCompositeRowBydtStepComposite_bbt_saved_protocol != null)) {
-                    columnValuesArray[2] = parentdtStepCompositeRowBydtStepComposite_bbt_saved_protocol[0];
-                }
-                if ((parentdtSavedProtocolRowBydtSavedProtocol_dtSavedProtocol != null)) {
-                    columnValuesArray[3] = parentdtSavedProtocolRowBydtSavedProtocol_dtSavedProtocol[0];
+                if ((parentdtStepCompositeRowBydtStepComposite_dtSavedProtocol != null)) {
+                    columnValuesArray[2] = parentdtStepCompositeRowBydtStepComposite_dtSavedProtocol[0];
                 }
                 rowdtSavedProtocolRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtSavedProtocolRow);
                 return rowdtSavedProtocolRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtSavedProtocolRow FindBypk_id(int pk_id) {
+                return ((dtSavedProtocolRow)(this.Rows.Find(new object[] {
+                            pk_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4538,7 +4524,6 @@ namespace BioBotApp.DataSets {
                 this.columnpk_id = base.Columns["pk_id"];
                 this.columndescription = base.Columns["description"];
                 this.columnfk_step_composite = base.Columns["fk_step_composite"];
-                this.columnfk_saved_protocol = base.Columns["fk_saved_protocol"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4550,12 +4535,11 @@ namespace BioBotApp.DataSets {
                 base.Columns.Add(this.columndescription);
                 this.columnfk_step_composite = new global::System.Data.DataColumn("fk_step_composite", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfk_step_composite);
-                this.columnfk_saved_protocol = new global::System.Data.DataColumn("fk_saved_protocol", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfk_saved_protocol);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnpk_id}, false));
+                                this.columnpk_id}, true));
                 this.columnpk_id.AutoIncrement = true;
-                this.columnpk_id.AutoIncrementSeed = 1;
+                this.columnpk_id.AutoIncrementSeed = -1;
+                this.columnpk_id.AutoIncrementStep = -1;
                 this.columnpk_id.AllowDBNull = false;
                 this.columnpk_id.Unique = true;
                 this.columndescription.MaxLength = 8190;
@@ -5705,11 +5689,11 @@ namespace BioBotApp.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtSavedProtocolRow[] GetdtSavedProtocolRows() {
-                if ((this.Table.ChildRelations["dtStepComposite_bbt_saved_protocol"] == null)) {
+                if ((this.Table.ChildRelations["dtStepComposite_dtSavedProtocol"] == null)) {
                     return new dtSavedProtocolRow[0];
                 }
                 else {
-                    return ((dtSavedProtocolRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepComposite_bbt_saved_protocol"])));
+                    return ((dtSavedProtocolRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepComposite_dtSavedProtocol"])));
                 }
             }
         }
@@ -5989,39 +5973,12 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int fk_saved_protocol {
-                get {
-                    try {
-                        return ((int)(this[this.tabledtSavedProtocol.fk_saved_protocolColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fk_saved_protocol\' in table \'dtSavedProtocol\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtSavedProtocol.fk_saved_protocolColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtStepCompositeRow dtStepCompositeRow {
                 get {
-                    return ((dtStepCompositeRow)(this.GetParentRow(this.Table.ParentRelations["dtStepComposite_bbt_saved_protocol"])));
+                    return ((dtStepCompositeRow)(this.GetParentRow(this.Table.ParentRelations["dtStepComposite_dtSavedProtocol"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["dtStepComposite_bbt_saved_protocol"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtSavedProtocolRow dtSavedProtocolRowParent {
-                get {
-                    return ((dtSavedProtocolRow)(this.GetParentRow(this.Table.ParentRelations["dtSavedProtocol_dtSavedProtocol"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["dtSavedProtocol_dtSavedProtocol"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtStepComposite_dtSavedProtocol"]);
                 }
             }
             
@@ -6047,29 +6004,6 @@ namespace BioBotApp.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setfk_step_compositeNull() {
                 this[this.tabledtSavedProtocol.fk_step_compositeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isfk_saved_protocolNull() {
-                return this.IsNull(this.tabledtSavedProtocol.fk_saved_protocolColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setfk_saved_protocolNull() {
-                this[this.tabledtSavedProtocol.fk_saved_protocolColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtSavedProtocolRow[] GetdtSavedProtocolRows() {
-                if ((this.Table.ChildRelations["dtSavedProtocol_dtSavedProtocol"] == null)) {
-                    return new dtSavedProtocolRow[0];
-                }
-                else {
-                    return ((dtSavedProtocolRow[])(base.GetChildRows(this.Table.ChildRelations["dtSavedProtocol_dtSavedProtocol"])));
-                }
             }
         }
         
@@ -10388,39 +10322,33 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
             tableMapping.ColumnMappings.Add("pk_id", "pk_id");
             tableMapping.ColumnMappings.Add("description", "description");
             tableMapping.ColumnMappings.Add("fk_step_composite", "fk_step_composite");
-            tableMapping.ColumnMappings.Add("fk_saved_protocol", "fk_saved_protocol");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM \"biobotalpha\".\"biobot\".\"bbt_saved_protocol\" WHERE ((\"pk_id\" = ?) AND " +
-                "((? = 1 AND \"fk_step_composite\" IS NULL) OR (\"fk_step_composite\" = ?)) AND ((? =" +
-                " 1 AND \"fk_saved_protocol\" IS NULL) OR (\"fk_saved_protocol\" = ?)))";
+                "((? = 1 AND \"fk_step_composite\" IS NULL) OR (\"fk_step_composite\" = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_fk_step_composite", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_composite", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_step_composite", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_composite", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_fk_saved_protocol", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_saved_protocol", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_saved_protocol", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_saved_protocol", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO \"biobotalpha\".\"biobot\".\"bbt_saved_protocol\" (\"description\", \"fk_step_" +
-                "composite\", \"fk_saved_protocol\") VALUES (?, ?, ?)";
+                "composite\") VALUES (?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_step_composite", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_composite", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_saved_protocol", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_saved_protocol", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""biobotalpha"".""biobot"".""bbt_saved_protocol"" SET ""description"" = ?, ""fk_step_composite"" = ?, ""fk_saved_protocol"" = ? WHERE ((""pk_id"" = ?) AND ((? = 1 AND ""fk_step_composite"" IS NULL) OR (""fk_step_composite"" = ?)) AND ((? = 1 AND ""fk_saved_protocol"" IS NULL) OR (""fk_saved_protocol"" = ?)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"biobotalpha\".\"biobot\".\"bbt_saved_protocol\" SET \"description\" = ?, \"fk_ste" +
+                "p_composite\" = ? WHERE ((\"pk_id\" = ?) AND ((? = 1 AND \"fk_step_composite\" IS NUL" +
+                "L) OR (\"fk_step_composite\" = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_step_composite", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_composite", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_saved_protocol", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_saved_protocol", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_fk_step_composite", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_composite", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_step_composite", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_composite", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_fk_saved_protocol", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_saved_protocol", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_saved_protocol", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_saved_protocol", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10433,22 +10361,16 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[3];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[2];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \"pk_id\", \"description\", \"fk_step_composite\", \"fk_saved_protocol\" FROM \"bio" +
-                "bot\".\"bbt_saved_protocol\"";
+            this._commandCollection[0].CommandText = "SELECT \"pk_id\", \"description\", \"fk_step_composite\" FROM \"biobot\".\"bbt_saved_proto" +
+                "col\"";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT  distinct \"description\" FROM \"biobot\".\"bbt_saved_protocol\"";
+            this._commandCollection[1].CommandText = "SELECT DISTINCT description\r\nFROM     biobot.bbt_saved_protocol";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2] = new global::System.Data.Odbc.OdbcCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT pk_id, description, fk_step_composite, fk_saved_protocol\r\nFROM     biobot." +
-                "bbt_saved_protocol\r\nWHERE  (description = ?)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10502,42 +10424,6 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByDesc2(dsModuleStructure3.dtSavedProtocolDataTable dataTable, string description) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((description == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(description));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsModuleStructure3.dtSavedProtocolDataTable GetDataByDesc2(string description) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((description == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(description));
-            }
-            dsModuleStructure3.dtSavedProtocolDataTable dataTable = new dsModuleStructure3.dtSavedProtocolDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(dsModuleStructure3.dtSavedProtocolDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
@@ -10568,12 +10454,10 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_pk_id, int Original_fk_step_composite, int Original_fk_saved_protocol) {
+        public virtual int Delete(int Original_pk_id, int Original_fk_step_composite) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_pk_id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_fk_step_composite));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_fk_saved_protocol));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10594,15 +10478,14 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string description, int fk_step_composite, int fk_saved_protocol) {
+        public virtual int Insert(string description, int fk_step_composite) {
             if ((description == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("description");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(description));
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(fk_step_composite));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(fk_saved_protocol));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10623,20 +10506,17 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string description, int fk_step_composite, int fk_saved_protocol, int Original_pk_id, int Original_fk_step_composite, int Original_fk_saved_protocol) {
+        public virtual int Update(string description, int fk_step_composite, int Original_pk_id, int Original_fk_step_composite) {
             if ((description == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("description");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(description));
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(fk_step_composite));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(fk_saved_protocol));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_pk_id));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_fk_step_composite));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_fk_saved_protocol));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_pk_id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_fk_step_composite));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11137,7 +11017,6 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    this.SortSelfReferenceRows(updatedRows, dataSet.Relations["dtSavedProtocol_dtSavedProtocol"], false);
                     result = (result + this._taSavedProtocol.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
@@ -11253,7 +11132,6 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
                 global::System.Data.DataRow[] addedRows = dataSet.dtSavedProtocol.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    this.SortSelfReferenceRows(addedRows, dataSet.Relations["dtSavedProtocol_dtSavedProtocol"], false);
                     result = (result + this._taSavedProtocol.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
@@ -11272,7 +11150,6 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
                 global::System.Data.DataRow[] deletedRows = dataSet.dtSavedProtocol.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    this.SortSelfReferenceRows(deletedRows, dataSet.Relations["dtSavedProtocol_dtSavedProtocol"], true);
                     result = (result + this._taSavedProtocol.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
