@@ -33,13 +33,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnStart = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure3();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.LoadButton = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure3();
+            this.ta_Saved_Protocol = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taSavedProtocol();
+            this.taStepComposite1 = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taStepComposite();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure)).BeginInit();
@@ -103,15 +105,6 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // btnStop
-            // 
-            this.btnStop.Location = new System.Drawing.Point(84, 3);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(75, 23);
-            this.btnStop.TabIndex = 1;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
-            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(3, 32);
@@ -121,31 +114,6 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(165, 3);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 3;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(84, 32);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // dsModuleStructure
-            // 
-            this.dsModuleStructure.DataSetName = "dsModuleStructure3";
-            this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // SaveButton
             // 
@@ -157,6 +125,25 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(84, 3);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.TabIndex = 1;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(84, 32);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // LoadButton
             // 
             this.LoadButton.Location = new System.Drawing.Point(84, 61);
@@ -167,6 +154,29 @@
             this.LoadButton.UseVisualStyleBackColor = true;
             this.LoadButton.Click += new System.EventHandler(this.LoadButton_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(165, 3);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 3;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // dsModuleStructure
+            // 
+            this.dsModuleStructure.DataSetName = "dsModuleStructure3";
+            this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ta_Saved_Protocol
+            // 
+            this.ta_Saved_Protocol.ClearBeforeFill = true;
+            // 
+            // taStepComposite1
+            // 
+            this.taStepComposite1.ClearBeforeFill = true;
+            // 
             // ctrlProtocolsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,7 +185,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "ctrlProtocolsView";
-            this.Padding = new System.Windows.Forms.Padding(3);
+            this.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.Size = new System.Drawing.Size(249, 319);
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -198,5 +208,9 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button LoadButton;
+        //private DataSets.dsModuleStructure3 dsModuleStructureGUI;
+        //private DataSets.dsModuleStructure3TableAdapters.taSavedProtocol ta_Saved_Protocol;
+        private DataSets.dsModuleStructure3TableAdapters.taSavedProtocol ta_Saved_Protocol;
+        private DataSets.dsModuleStructure3TableAdapters.taStepComposite taStepComposite1;
     }
 }

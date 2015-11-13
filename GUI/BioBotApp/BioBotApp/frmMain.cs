@@ -59,6 +59,7 @@ namespace BioBotApp
             taStepLeaf.Fill(dsModuleStructure.dtStepLeaf);
             taStepComposite.Fill(dsModuleStructure.dtStepComposite);
             taActionValue.Fill(dsModuleStructure.dtActionValue);
+            taSavedProtocol.Fill(dsModuleStructure.dtSavedProtocol);
         }
 
         public void initControls()

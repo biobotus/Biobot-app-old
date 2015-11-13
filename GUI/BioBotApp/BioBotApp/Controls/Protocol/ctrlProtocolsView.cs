@@ -12,24 +12,26 @@ using BioBotApp.Controls.Steps.Parameter_controls;
 using BioBotApp.Utils.FSM;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using BioBotApp.Controls.Load;
 
 namespace BioBotApp.Controls.Protocol
 {
     
+    
     public partial class ctrlProtocolsView : UserControl
     {
+
         fsmMainProtocol mainProtocol; 
         public ctrlProtocolsView()
         {
             InitializeComponent();
             mainProtocol = new fsmMainProtocol();
         }
-
         private void tlvProtocol_DragDrop(object sender, DragEventArgs e)
         {
             // Retrieve the client coordinates of the drop location.
             Point targetPoint = tlvProtocol.PointToClient(new Point(e.X, e.Y));
-
+            
             // Retrieve the node at the drop location.
             TreeNode targetNode = tlvProtocol.GetNodeAt(targetPoint);
             TreeNode dropNode = new TreeNode();
@@ -49,7 +51,7 @@ namespace BioBotApp.Controls.Protocol
         public void addNodes(DataSets.dsModuleStructure3.dtStepCompositeRow row, TreeNode parentNode)
         {
             TreeNode treeNode = new StepCompositeNode(row);
-
+            
             if (parentNode == null)
             {
                 tlvProtocol.Nodes.Add(treeNode);
@@ -74,7 +76,7 @@ namespace BioBotApp.Controls.Protocol
 
         private void tlvProtocol_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Move;
+            e.Effect = DragDropEffects.Move; 
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -105,7 +107,7 @@ namespace BioBotApp.Controls.Protocol
             {
                 return;
             }
-
+            
             executeAction(tlvProtocol.SelectedNode);
         }
 
@@ -118,7 +120,7 @@ namespace BioBotApp.Controls.Protocol
                     executeAction(childNodes);
                 }
             }
-
+            
             if(treeNode is StepLeafNode)
             {
                 StepLeafNode stepLeafNode = treeNode as StepLeafNode;
@@ -128,8 +130,9 @@ namespace BioBotApp.Controls.Protocol
                 DataSets.dsModuleStructure3.dtActionValueRow[] actionValueRows = stepLeaf.GetdtActionValueRows();
 
                 */
-
+                
                 DataSets.dsModuleStructure3.dtActionValueDataTable table = stepLeafNode.getActionValueDataTable();
+
                 foreach (DataSets.dsModuleStructure3.dtActionValueRow actionValueRow in table)
                 {
                     mainProtocol.executeAction(actionValueRow);
@@ -151,51 +154,137 @@ namespace BioBotApp.Controls.Protocol
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            SaveFileDialog dialogue = new SaveFileDialog();
-            dialogue.Filter = "Biobot file (.biobot) | *.biobot";
-            DialogResult result = dialogue.ShowDialog();
+            //SaveFileDialog dialogue = new SaveFileDialog();
+            //dialogue.Filter = "Biobot file (.biobot) | *.biobot";
+            //DialogResult result = dialogue.ShowDialog();
 
-            if(result == DialogResult.OK)
-            {
-                SaveTree(tlvProtocol, dialogue.FileName);
-            }
-            
+            //if(result == DialogResult.OK)
+            //{
+            //    SaveTree(tlvProtocol, dialogue.FileName);
+            //}
+
+           // tlvProtocol.
+           
+            SaveTree(tlvProtocol.SelectedNode);
+
         }
 
         private void LoadButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialogue = new OpenFileDialog();
-            dialogue.Filter = "Biobot file (.biobot) | *.biobot";
-            DialogResult result = dialogue.ShowDialog();
 
-            if (result == DialogResult.OK)
-            {
-                LoadTree(tlvProtocol, dialogue.FileName);
-            }
+            LoadDialog LoadDialogAdd = new LoadDialog();
+            DialogResult dialogResultAddNode = DialogResult.Cancel;
+            dialogResultAddNode = LoadDialogAdd.ShowDialog();
+
+            if(dialogResultAddNode == DialogResult.OK)
+                if (LoadDialogAdd.DialogResult.Equals(DialogResult.OK))
+                {
+                    ProtocolNode treeNode = new ProtocolNode(LoadDialogAdd.getProtocolName());
+                    DataGridView DGV = LoadDialogAdd.getDGV();
+                    tlvProtocol.Nodes.Add(treeNode);
+                    DataSets.dsModuleStructure3.dtSavedProtocolRow row;
+                    DataSets.dsModuleStructure3.dtStepCompositeRow Compositerow;
+
+                    foreach (DataGridViewRow DGVrow in DGV.Rows)
+                    {
+                        
+                        DataRowView rowView = DGVrow.DataBoundItem as DataRowView;
+                        row = rowView.Row as DataSets.dsModuleStructure3.dtSavedProtocolRow;
+                        Compositerow = taStepComposite1.GetData().FindBypk_id(row.fk_step_composite);
+                        //Compositerow = stepCompositeDataTable.FindBypk_id(row.pk_id);
+                        // StepCompositeNode treeNodeStepComposite = ;
+                        addNodes(Compositerow, treeNode);
+                    }
+                }
+
+            //if (result == DialogResult.OK)
+            //{
+            //    LoadTree(tlvProtocol, dialogue.FileName);
+            //}
         }
-        public static void SaveTree(TreeView tree, string filename)
+        public  void SaveTree(TreeNode treeNode)
         {
-            using (Stream file = File.Open(filename, FileMode.Create))
+            //using (Stream file = File.Open(filename, FileMode.Create))
+            //{
+            //    BinaryFormatter bf = new BinaryFormatter();
+            //    bf.Serialize(file, tree.Nodes.Cast<TreeNode>().ToList());
+            //}
+            
+            
+            if (treeNode is TreeNode && !(treeNode is StepCompositeNode))
             {
-                BinaryFormatter bf = new BinaryFormatter();
-                bf.Serialize(file, tree.Nodes.Cast<TreeNode>().ToList());
+                foreach (TreeNode childNodes in treeNode.Nodes)
+                {
+                    SaveTree(childNodes);
+                }
+            }
+
+            if (treeNode is StepCompositeNode)
+            {
+
+                StepCompositeNode stepCompositeNode = treeNode as StepCompositeNode;
+
+                DataSets.dsModuleStructure3.dtStepCompositeRow stepComposite = stepCompositeNode.getStepCompositeRow();
+
+                DataSets.dsModuleStructure3.dtSavedProtocolRow row;
+                //DataSets.dsModuleStructure3.dtSavedProtocolRow test;
+                //row = dsModuleStructureGUI.dtSavedProtocol.NewdtSavedProtocolRow();
+                row = dsModuleStructure.dtSavedProtocol.NewdtSavedProtocolRow();
+                row.description = stepCompositeNode.Parent.Text;
+                row.fk_step_composite = stepComposite.pk_id;
+                dsModuleStructure.dtSavedProtocol.AdddtSavedProtocolRow(row);
+                updateRow(row);
+                
+
+            }
+           
+        }
+        public  void addrow(TreeNode treeNode) {
+
+            //StepCompositeNode stepCompositeNode = treeNode as StepCompositeNode;
+
+            //DataSets.dsModuleStructure3.dtStepCompositeRow stepComposite = stepCompositeNode.getStepCompositeRow();
+
+            //DataSets.dsModuleStructure3.dtSavedProtocolRow row;
+            ////DataSets.dsModuleStructure3.dtSavedProtocolRow test;
+            //row = dsModuleStructureGUI.dtSavedProtocol.NewdtSavedProtocolRow();
+            //row.Description = stepCompositeNode.Parent.Text;
+            //row.fk_step_composite = stepComposite.pk_id;
+            //dsModuleStructureGUI.dtSavedProtocol.AdddtSavedProtocolRow(row);
+            //updateRow(row);
+
+        }
+
+        private void updateRow(DataSets.dsModuleStructure3.dtSavedProtocolRow updateRow)
+        {
+            try
+            {
+                ta_Saved_Protocol.Update(updateRow);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid action type, try again !",
+                "Error !",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                dsModuleStructure.RejectChanges();
             }
         }
 
         public static void LoadTree(TreeView tree, string filename)
-        {
-            using (Stream file = File.Open(filename, FileMode.Open))
-            {
-                BinaryFormatter bf = new BinaryFormatter();
-                object obj = bf.Deserialize(file);
+                    {
+                        using (Stream file = File.Open(filename, FileMode.Open))
+                        {
+                            BinaryFormatter bf = new BinaryFormatter();
+                            object obj = bf.Deserialize(file);
 
-                TreeNode[] nodeList = (obj as IEnumerable<TreeNode>).ToArray();
-                tree.Nodes.AddRange(nodeList);
+                            TreeNode[] nodeList = (obj as IEnumerable<TreeNode>).ToArray();
+                            tree.Nodes.AddRange(nodeList);
+                        }
+                    }
+
+                    private void tlvProtocol_AfterSelect(object sender, TreeViewEventArgs e)
+                    {
+                    }
+                }
             }
-        }
-
-        private void tlvProtocol_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-        }
-    }
-}
