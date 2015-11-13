@@ -18,6 +18,7 @@ namespace BioBotApp.Controls.Steps
     public partial class ctrlStepsView : UserControl
     {
         //Node types
+        //dev
         private const String PROTOCOL_TYPE = "Protocol";
         private const String STEP_TYPE = "Step";
 
