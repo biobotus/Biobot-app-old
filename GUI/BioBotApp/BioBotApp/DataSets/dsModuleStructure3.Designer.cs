@@ -4244,8 +4244,7 @@ namespace BioBotApp.DataSets {
                 base.Columns.Add(this.columnactivated);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnpk_id}, true));
-                this.columnpk_id.AutoIncrementSeed = -1;
-                this.columnpk_id.AutoIncrementStep = -1;
+                this.columnpk_id.AutoIncrementSeed = 1;
                 this.columnpk_id.AllowDBNull = false;
                 this.columnpk_id.Unique = true;
                 this.columndescription.MaxLength = 8190;
@@ -4538,8 +4537,7 @@ namespace BioBotApp.DataSets {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnpk_id}, true));
                 this.columnpk_id.AutoIncrement = true;
-                this.columnpk_id.AutoIncrementSeed = -1;
-                this.columnpk_id.AutoIncrementStep = -1;
+                this.columnpk_id.AutoIncrementSeed = 1;
                 this.columnpk_id.AllowDBNull = false;
                 this.columnpk_id.Unique = true;
                 this.columndescription.MaxLength = 8190;
@@ -9735,10 +9733,16 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_pk_id, int Original_fk_step_parent_id, int Original_fk_module_id) {
+        public virtual int Delete(int Original_pk_id, global::System.Nullable<int> Original_fk_step_parent_id, int Original_fk_module_id) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_pk_id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_fk_step_parent_id));
+            if ((Original_fk_step_parent_id.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_fk_step_parent_id.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
             this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_fk_module_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
@@ -9761,10 +9765,15 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int fk_step_parent_id, string description, int fk_module_id) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(fk_step_parent_id));
+        public virtual int Insert(global::System.Nullable<int> fk_step_parent_id, string description, int fk_module_id) {
+            if ((fk_step_parent_id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(fk_step_parent_id.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((description == null)) {
-                throw new global::System.ArgumentNullException("description");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(description));
@@ -9790,18 +9799,29 @@ namespace BioBotApp.DataSets.dsModuleStructure3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int fk_step_parent_id, string description, int fk_module_id, int Original_pk_id, int Original_fk_step_parent_id, int Original_fk_module_id) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(fk_step_parent_id));
+        public virtual int Update(global::System.Nullable<int> fk_step_parent_id, string description, int fk_module_id, int Original_pk_id, global::System.Nullable<int> Original_fk_step_parent_id, int Original_fk_module_id) {
+            if ((fk_step_parent_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(fk_step_parent_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((description == null)) {
-                throw new global::System.ArgumentNullException("description");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(description));
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(fk_module_id));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_pk_id));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_fk_step_parent_id));
+            if ((Original_fk_step_parent_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_fk_step_parent_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_fk_module_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;

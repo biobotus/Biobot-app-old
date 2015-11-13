@@ -75,6 +75,12 @@
     <Compile Include="Controls\Labware\ctrlLabware.Designer.cs">
       <DependentUpon>ctrlLabware.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Load\LoadDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Load\LoadDialog.Designer.cs">
+      <DependentUpon>LoadDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Option\Options\abstractDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     <EmbeddedResource Include="Controls\Labware\ctrlLabware.resx">
       <DependentUpon>ctrlLabware.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Load\LoadDialog.resx">
+      <DependentUpon>LoadDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\abstractDialog.resx">
       <DependentUpon>abstractDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -435,7 +444,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\link.png" />

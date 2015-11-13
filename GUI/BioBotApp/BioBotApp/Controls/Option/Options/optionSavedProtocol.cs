@@ -12,7 +12,7 @@ namespace BioBotApp.Controls.Option.Options
 {
     public partial class optionSavedProtocol : UserControl
     {
-        private int index;
+        private int flag;
 
         public optionSavedProtocol()
         {
@@ -46,7 +46,8 @@ namespace BioBotApp.Controls.Option.Options
 
         private void crudOptionsSavedProtocol_AddClickHandler(object sender, EventArgs e)
         {
-            DataSets.dsModuleStructure3.dtSavedProtocolRow ProtocolSavedRow = getSavedProtocolRow();
+            flag = 0;
+            DataSets.dsModuleStructure3.dtSavedProtocolRow ProtocolSavedRow = getSavedProtocolRow(flag);
             if (ProtocolSavedRow == null)
             {
                 return;
@@ -55,36 +56,51 @@ namespace BioBotApp.Controls.Option.Options
 
             //ComboBox ProtocolID = new ComboBox();
             namedInputTextBox description = new namedInputTextBox("Protocol Name");
+            namedComboBox FirstStepComboBox = new namedComboBox("First Saved Step");
 
-            //ProtocolID.DataSource = dsModuleStructureGUI.dtStepComposite;
-            //ProtocolID.DisplayMember = "description";
+            FirstStepComboBox.Text = "Action Type";
+            FirstStepComboBox.getComboBox().DataSource = dsModuleStructureGUI.dtStepComposite;
+            FirstStepComboBox.getComboBox().ValueMember = "pk_id";
+            FirstStepComboBox.getComboBox().DisplayMember = "description";
+
 
 
             dialog.addNamedInputTextBox(description);
+            dialog.addControl(FirstStepComboBox);
             //dialog.addControl(ProtocolID);
             dialog.ShowDialog();
+
+            DataSets.dsModuleStructure3.dtStepCompositeRow StepCompositerow;
+            DataRowView ActionCombo = FirstStepComboBox.getComboBox().SelectedItem as DataRowView;
+            StepCompositerow = ActionCombo.Row as DataSets.dsModuleStructure3.dtStepCompositeRow;
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
                 DataSets.dsModuleStructure3.dtSavedProtocolRow row;
                 row = dsModuleStructureGUI.dtSavedProtocol.NewdtSavedProtocolRow();
                 row.description = description.getInputTextValue();
+                row.fk_step_composite = StepCompositerow.pk_id;
                 dsModuleStructureGUI.dtSavedProtocol.AdddtSavedProtocolRow(row);
                 updateSavedProtocolRow(row);
+                this.dataGridView1.DataSource = taSavedProtocol1.GetDataByDesc();
+                this.dataGridView2.DataSource = taSavedProtocol1.GetData();
+                bindingSource1.DataSource = dataGridView2.DataSource;
+                bindingSource1.DataSource = dataGridView2.DataSource;
             }
         }
 
         private void crudOptionsSavedProtocol_DeleteClickHandler(object sender, EventArgs e)
         {
+            flag = 0;
             if (dataGridView1.SelectedRows.Count == 0)
             {
                 return;
             }
 
             DataSets.dsModuleStructure3.dtSavedProtocolRow row;
-            row = getSavedProtocolRow();
+            row = getSavedProtocolRow(flag);
 
-            DialogResult result = MessageBox.Show("Delete : " + row.description + " ?", "Delete Step ?", MessageBoxButtons.YesNo,
+            DialogResult result = MessageBox.Show("Delete : " + row.description + " protocol ?", "Delete Protocol ?", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
 
             if (result.Equals(DialogResult.No)
@@ -93,14 +109,23 @@ namespace BioBotApp.Controls.Option.Options
                 return;
             }
 
-            row.Delete();
-            updateSavedProtocolRow(row);
+            int DatagridRow2 = dataGridView2.RowCount;
+            for (int i = 0; i < DatagridRow2; i++)
+            {
+                DataRowView rowView = dataGridView2.Rows[0].DataBoundItem as DataRowView;
+                row = rowView.Row as DataSets.dsModuleStructure3.dtSavedProtocolRow;
+                row.Delete();
+                updateSavedProtocolRow(row);
+            }
+            this.dataGridView1.DataSource = taSavedProtocol1.GetDataByDesc();
+
         }
 
         private void crudOptionsSavedProtocol_ModifyClickHandler(object sender, EventArgs e)
         {
+            flag = 0;
             abstractDialog dialog = new abstractDialog("Saved Protocols", "Modify");
-            DataSets.dsModuleStructure3.dtSavedProtocolRow row = getSavedProtocolRow();
+            DataSets.dsModuleStructure3.dtSavedProtocolRow row = getSavedProtocolRow(flag);
 
             if (row == null)
             {
@@ -114,8 +139,15 @@ namespace BioBotApp.Controls.Option.Options
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
-                row.description = description.getInputTextValue();
-                updateSavedProtocolRow(row);
+                int DatagridRow2 = dataGridView2.RowCount;
+                for (int i = 0; i < DatagridRow2; i++)
+                {
+                    DataRowView rowView = dataGridView2.Rows[0].DataBoundItem as DataRowView;
+                    row = rowView.Row as DataSets.dsModuleStructure3.dtSavedProtocolRow;
+                    row.description = description.getInputTextValue();
+                    updateSavedProtocolRow(row);
+                }
+                this.dataGridView2.DataSource = taSavedProtocol1.GetData();
             }
         }
 
@@ -158,19 +190,20 @@ namespace BioBotApp.Controls.Option.Options
                 row.fk_step_composite = StepCompositerow.pk_id;
                 dsModuleStructureGUI.dtSavedProtocol.AdddtSavedProtocolRow(row);
                 updateSavedProtocolRow(row);
-                
+                this.dataGridView2.DataSource = taSavedProtocol1.GetData();
             }
         }
 
         private void crudOptionsSavedSteps_DeleteClickHandler(object sender, EventArgs e)
         {
+            flag = 1;
             if (dataGridView2.SelectedRows.Count == 0)
             {
                 return;
             }
 
             DataSets.dsModuleStructure3.dtSavedProtocolRow row;
-            row = getSavedProtocolRow();
+            row = getSavedProtocolRow(flag);
 
             DialogResult result = MessageBox.Show("Delete Step ID: " + row.fk_step_composite + " ?", "Delete Step ?", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -187,38 +220,75 @@ namespace BioBotApp.Controls.Option.Options
 
         private void crudOptionsSavedSteps_ModifyClickHandler(object sender, EventArgs e)
         {
+            flag = 1; 
             abstractDialog dialog = new abstractDialog("Saved Steps", "Modify");
-            DataSets.dsModuleStructure3.dtSavedProtocolRow row = getSavedProtocolRow();
+            DataSets.dsModuleStructure3.dtSavedProtocolRow row = getSavedProtocolRow(flag);
 
             if (row == null)
             {
                 return;
             }
+            
+            namedComboBox ComboBoxStep = new namedComboBox("Step :");
 
-            namedInputTextBox description = new namedInputTextBox("Description", row.description);
-            dialog.addNamedInputTextBox(description);
+            ComboBoxStep.Text = "Action Type";
+            ComboBoxStep.getComboBox().DataSource = dsModuleStructureGUI.dtStepComposite;
+            ComboBoxStep.getComboBox().ValueMember = "pk_id";
+            ComboBoxStep.getComboBox().DisplayMember = "description"; 
+            ComboBoxStep.getComboBox().SelectedValue = row.fk_step_composite;
+
+            
+            dialog.addControl(ComboBoxStep);
 
             dialog.ShowDialog();
 
+            DataSets.dsModuleStructure3.dtStepCompositeRow StepRow;
+            DataRowView StepCombo = ComboBoxStep.getComboBox().SelectedItem as DataRowView;
+            StepRow = StepCombo.Row as DataSets.dsModuleStructure3.dtStepCompositeRow;
+
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
-                row.description = description.getInputTextValue();
+                row.fk_step_composite = StepRow.pk_id;
                 updateSavedProtocolRow(row);
             }
         }
 
-        public DataSets.dsModuleStructure3.dtSavedProtocolRow getSavedProtocolRow()
+        public DataSets.dsModuleStructure3.dtSavedProtocolRow getSavedProtocolRow(int flag)
         {
-            DataSets.dsModuleStructure3.dtSavedProtocolRow row;
+            switch (flag)
+            {
+                case 0:
+                    {
+                        DataSets.dsModuleStructure3.dtSavedProtocolRow row;
 
-                if (dtSavedProtocolBindingSource.Current == null)
-                {
-                    return null;
-                }
-            
-            DataRowView rowView = dtSavedProtocolBindingSource.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure3.dtSavedProtocolRow;
-            return row;
+                        if (dataGridView1.CurrentRow.DataBoundItem == null)
+                        {
+                            return null;
+                        }
+
+                        DataRowView rowView = dataGridView1.CurrentRow.DataBoundItem as DataRowView;
+                        row = rowView.Row as DataSets.dsModuleStructure3.dtSavedProtocolRow;
+                        return row;
+                    }
+
+                case 1:
+                    {
+                        DataSets.dsModuleStructure3.dtSavedProtocolRow row;
+
+                        if (dataGridView2.CurrentRow.DataBoundItem == null)
+                        {
+                            return null;
+                        }
+
+                        DataRowView rowView = dataGridView2.CurrentRow.DataBoundItem as DataRowView;
+                        row = rowView.Row as DataSets.dsModuleStructure3.dtSavedProtocolRow;
+                        return row;
+                    }
+                default:
+                    {
+                        return null;
+                    }
+            }
         }
 
         public void updateSavedProtocolRow(DataSets.dsModuleStructure3.dtSavedProtocolRow updateRow)
