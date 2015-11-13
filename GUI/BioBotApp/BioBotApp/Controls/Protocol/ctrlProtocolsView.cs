@@ -12,6 +12,7 @@ using BioBotApp.Controls.Steps.Parameter_controls;
 using BioBotApp.Utils.FSM;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using BioBotApp.Controls.Load;
 
 namespace BioBotApp.Controls.Protocol
 {
@@ -19,13 +20,13 @@ namespace BioBotApp.Controls.Protocol
     
     public partial class ctrlProtocolsView : UserControl
     {
+
         fsmMainProtocol mainProtocol; 
         public ctrlProtocolsView()
         {
             InitializeComponent();
             mainProtocol = new fsmMainProtocol();
         }
-
         private void tlvProtocol_DragDrop(object sender, DragEventArgs e)
         {
             // Retrieve the client coordinates of the drop location.
@@ -131,6 +132,7 @@ namespace BioBotApp.Controls.Protocol
                 */
                 
                 DataSets.dsModuleStructure3.dtActionValueDataTable table = stepLeafNode.getActionValueDataTable();
+
                 foreach (DataSets.dsModuleStructure3.dtActionValueRow actionValueRow in table)
                 {
                     mainProtocol.executeAction(actionValueRow);
@@ -169,14 +171,36 @@ namespace BioBotApp.Controls.Protocol
 
         private void LoadButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialogue = new OpenFileDialog();
-            dialogue.Filter = "Biobot file (.biobot) | *.biobot";
-            DialogResult result = dialogue.ShowDialog();
 
-            if (result == DialogResult.OK)
-            {
-                LoadTree(tlvProtocol, dialogue.FileName);
-            }
+            LoadDialog LoadDialogAdd = new LoadDialog();
+            DialogResult dialogResultAddNode = DialogResult.Cancel;
+            dialogResultAddNode = LoadDialogAdd.ShowDialog();
+
+            if(dialogResultAddNode == DialogResult.OK)
+                if (LoadDialogAdd.DialogResult.Equals(DialogResult.OK))
+                {
+                    ProtocolNode treeNode = new ProtocolNode(LoadDialogAdd.getProtocolName());
+                    DataGridView DGV = LoadDialogAdd.getDGV();
+                    tlvProtocol.Nodes.Add(treeNode);
+                    DataSets.dsModuleStructure3.dtSavedProtocolRow row;
+                    DataSets.dsModuleStructure3.dtStepCompositeRow Compositerow;
+
+                    foreach (DataGridViewRow DGVrow in DGV.Rows)
+                    {
+                        
+                        DataRowView rowView = DGVrow.DataBoundItem as DataRowView;
+                        row = rowView.Row as DataSets.dsModuleStructure3.dtSavedProtocolRow;
+                        Compositerow = taStepComposite1.GetData().FindBypk_id(row.fk_step_composite);
+                        //Compositerow = stepCompositeDataTable.FindBypk_id(row.pk_id);
+                        // StepCompositeNode treeNodeStepComposite = ;
+                        addNodes(Compositerow, treeNode);
+                    }
+                }
+
+            //if (result == DialogResult.OK)
+            //{
+            //    LoadTree(tlvProtocol, dialogue.FileName);
+            //}
         }
         public  void SaveTree(TreeNode treeNode)
         {

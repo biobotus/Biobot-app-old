@@ -85,7 +85,6 @@ namespace BioBotApp.Controls.Option.Options
                 this.dataGridView1.DataSource = taSavedProtocol1.GetDataByDesc();
                 this.dataGridView2.DataSource = taSavedProtocol1.GetData();
                 bindingSource1.DataSource = dataGridView2.DataSource;
-                bindingSource1.DataSource = dataGridView2.DataSource;
             }
         }
 
@@ -147,7 +146,9 @@ namespace BioBotApp.Controls.Option.Options
                     row.description = description.getInputTextValue();
                     updateSavedProtocolRow(row);
                 }
+                this.dataGridView1.DataSource = taSavedProtocol1.GetDataByDesc();
                 this.dataGridView2.DataSource = taSavedProtocol1.GetData();
+                bindingSource1.DataSource = dataGridView2.DataSource;
             }
         }
 
@@ -191,6 +192,7 @@ namespace BioBotApp.Controls.Option.Options
                 dsModuleStructureGUI.dtSavedProtocol.AdddtSavedProtocolRow(row);
                 updateSavedProtocolRow(row);
                 this.dataGridView2.DataSource = taSavedProtocol1.GetData();
+                bindingSource1.DataSource = dataGridView2.DataSource;
             }
         }
 

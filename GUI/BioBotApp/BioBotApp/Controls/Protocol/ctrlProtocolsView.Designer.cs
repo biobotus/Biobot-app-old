@@ -41,6 +41,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure3();
             this.ta_Saved_Protocol = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taSavedProtocol();
+            this.taStepComposite1 = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taStepComposite();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure)).BeginInit();
@@ -50,10 +51,9 @@
             // 
             this.tlvProtocol.AllowDrop = true;
             this.tlvProtocol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlvProtocol.Location = new System.Drawing.Point(4, 30);
-            this.tlvProtocol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlvProtocol.Location = new System.Drawing.Point(3, 24);
             this.tlvProtocol.Name = "tlvProtocol";
-            this.tlvProtocol.Size = new System.Drawing.Size(324, 237);
+            this.tlvProtocol.Size = new System.Drawing.Size(243, 193);
             this.tlvProtocol.TabIndex = 6;
             this.tlvProtocol.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tlvProtocol_AfterSelect);
             this.tlvProtocol.DragDrop += new System.Windows.Forms.DragEventHandler(this.tlvProtocol_DragDrop);
@@ -63,10 +63,9 @@
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(4, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(324, 26);
+            this.panel2.Size = new System.Drawing.Size(243, 21);
             this.panel2.TabIndex = 8;
             // 
             // label1
@@ -74,9 +73,8 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(324, 26);
+            this.label1.Size = new System.Drawing.Size(243, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Protocols";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,18 +90,16 @@
             this.flowLayoutPanel1.Controls.Add(this.btnReset);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 267);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 217);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 122);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(243, 99);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(4, 4);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStart.Location = new System.Drawing.Point(3, 3);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(100, 28);
+            this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -111,10 +107,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(4, 40);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Location = new System.Drawing.Point(3, 32);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -122,10 +117,9 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(4, 76);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveButton.Location = new System.Drawing.Point(3, 61);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(100, 28);
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 5;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -133,20 +127,18 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(112, 4);
-            this.btnStop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStop.Location = new System.Drawing.Point(84, 3);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(100, 28);
+            this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 1;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(112, 40);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Location = new System.Drawing.Point(84, 32);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 28);
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -154,10 +146,9 @@
             // 
             // LoadButton
             // 
-            this.LoadButton.Location = new System.Drawing.Point(112, 76);
-            this.LoadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LoadButton.Location = new System.Drawing.Point(84, 61);
             this.LoadButton.Name = "LoadButton";
-            this.LoadButton.Size = new System.Drawing.Size(100, 28);
+            this.LoadButton.Size = new System.Drawing.Size(75, 23);
             this.LoadButton.TabIndex = 6;
             this.LoadButton.Text = "Load";
             this.LoadButton.UseVisualStyleBackColor = true;
@@ -165,10 +156,9 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(220, 4);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReset.Location = new System.Drawing.Point(165, 3);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(100, 28);
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 3;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -179,21 +169,24 @@
             this.dsModuleStructure.DataSetName = "dsModuleStructure3";
             this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // taSavedProtocol1
+            // ta_Saved_Protocol
             // 
             this.ta_Saved_Protocol.ClearBeforeFill = true;
             // 
+            // taStepComposite1
+            // 
+            this.taStepComposite1.ClearBeforeFill = true;
+            // 
             // ctrlProtocolsView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlvProtocol);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ctrlProtocolsView";
-            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Size = new System.Drawing.Size(332, 393);
+            this.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Size = new System.Drawing.Size(249, 319);
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure)).EndInit();
@@ -218,5 +211,6 @@
         //private DataSets.dsModuleStructure3 dsModuleStructureGUI;
         //private DataSets.dsModuleStructure3TableAdapters.taSavedProtocol ta_Saved_Protocol;
         private DataSets.dsModuleStructure3TableAdapters.taSavedProtocol ta_Saved_Protocol;
+        private DataSets.dsModuleStructure3TableAdapters.taStepComposite taStepComposite1;
     }
 }
