@@ -126,3 +126,6 @@ C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.csproj.GenerateResource.Cache
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.pdb
+C:\Users\Regis\Documents\biobot\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe.config
+C:\Users\Regis\Documents\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.exe
+C:\Users\Regis\Documents\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.pdb
