@@ -129,15 +129,15 @@ namespace BioBotApp.Controls.Protocol
             {
                 StepLeafNode stepLeafNode = treeNode as StepLeafNode;
 
-                /*
+                
                 DataSets.dsModuleStructure3.dtStepLeafRow stepLeaf = stepLeafNode.getStepLeaf();
                 DataSets.dsModuleStructure3.dtActionValueRow[] actionValueRows = stepLeaf.GetdtActionValueRows();
 
-                */
                 
-                DataSets.dsModuleStructure3.dtActionValueDataTable table = stepLeafNode.getActionValueDataTable();
+                
+                //DataSets.dsModuleStructure3.dtActionValueDataTable table = stepLeafNode.getActionValueDataTable();
 
-                foreach (DataSets.dsModuleStructure3.dtActionValueRow actionValueRow in table)
+                foreach (DataSets.dsModuleStructure3.dtActionValueRow actionValueRow in actionValueRows)
                 {
                     mainProtocol.executeAction(actionValueRow);
                 }
@@ -191,13 +191,16 @@ namespace BioBotApp.Controls.Protocol
 
                     foreach (DataGridViewRow DGVrow in DGV.Rows)
                     {
-                        
                         DataRowView rowView = DGVrow.DataBoundItem as DataRowView;
                         row = rowView.Row as DataSets.dsModuleStructure3.dtSavedProtocolRow;
-                        Compositerow = taStepComposite1.GetData().FindBypk_id(row.fk_step_composite);
-                        //Compositerow = stepCompositeDataTable.FindBypk_id(row.pk_id);
-                        // StepCompositeNode treeNodeStepComposite = ;
-                        addNodes(Compositerow, treeNode);
+
+                        foreach (DataSets.dsModuleStructure3.dtStepCompositeRow CompositeRow in dsModuleStructure.dtStepComposite)
+                        {
+                            if (row.fk_step_composite == CompositeRow.pk_id)
+                            {
+                                addNodes(CompositeRow, treeNode);
+                            }
+                        }
                     }
                 }
 
