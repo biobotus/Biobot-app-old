@@ -67,6 +67,7 @@ namespace BioBotApp
             bsModule.CurrentChanged += bsModule_CurrentChanged;
             ctrlSteps.initControl(this.dsModuleStructure, bsModule);
             ctrlTools.initControl(this.dsModuleStructure, bsModule);
+            ctrlProtocolsView.initControl(this.dsModuleStructure);
             option = new frmOptions(this.dsModuleStructure);
         }
 

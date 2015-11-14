@@ -27,6 +27,10 @@ namespace BioBotApp.Controls.Protocol
             InitializeComponent();
             mainProtocol = new fsmMainProtocol();
         }
+        public void initControl(DataSets.dsModuleStructure3 _dsModuleStructure)
+        {
+            dsModuleStructure = _dsModuleStructure;          
+        }
         private void tlvProtocol_DragDrop(object sender, DragEventArgs e)
         {
             // Retrieve the client coordinates of the drop location.
