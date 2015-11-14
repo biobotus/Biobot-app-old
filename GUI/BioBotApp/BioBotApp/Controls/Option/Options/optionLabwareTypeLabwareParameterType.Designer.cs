@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure3();
             this.bsLabwareType = new System.Windows.Forms.BindingSource(this.components);
             this.dtLabwareTypeDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,9 +43,9 @@
             this.crudOptions = new BioBotApp.Controls.Utils.crudOptions();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.taLabwareTypeLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taLabwareTypeLabwareParameterType();
+            this.taLabwareTypeLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taLabwareTypeLabwareParameterType();
             this.dsModuleStructureGUIBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.taLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taLabwareParameterType();
+            this.taLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taLabwareParameterType();
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructureGUI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLabwareType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtLabwareTypeDataGridView)).BeginInit();
@@ -59,7 +59,7 @@
             // 
             // dsModuleStructureGUI
             // 
-            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure3";
             this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bsLabwareType
@@ -83,11 +83,12 @@
             this.dataGridViewTextBoxColumn7});
             this.dtLabwareTypeDataGridView.DataSource = this.bsLabwareType;
             this.dtLabwareTypeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtLabwareTypeDataGridView.Location = new System.Drawing.Point(3, 18);
+            this.dtLabwareTypeDataGridView.Location = new System.Drawing.Point(2, 15);
+            this.dtLabwareTypeDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.dtLabwareTypeDataGridView.Name = "dtLabwareTypeDataGridView";
             this.dtLabwareTypeDataGridView.RowHeadersVisible = false;
             this.dtLabwareTypeDataGridView.RowTemplate.Height = 24;
-            this.dtLabwareTypeDataGridView.Size = new System.Drawing.Size(407, 354);
+            this.dtLabwareTypeDataGridView.Size = new System.Drawing.Size(305, 288);
             this.dtLabwareTypeDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn6
@@ -119,11 +120,12 @@
             this.valueDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bsLabwareTypedtLabwareTypeLabwareParameterType;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 55);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 45);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(347, 317);
+            this.dataGridView1.Size = new System.Drawing.Size(261, 258);
             this.dataGridView1.TabIndex = 2;
             // 
             // fklabwaretypeidDataGridViewTextBoxColumn
@@ -177,9 +179,11 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.crudOptions);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox1.Location = new System.Drawing.Point(413, 0);
+            this.groupBox1.Location = new System.Drawing.Point(309, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 375);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(265, 305);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parameter type";
@@ -189,8 +193,10 @@
             this.groupBox2.Controls.Add(this.dtLabwareTypeDataGridView);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(413, 375);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(309, 305);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Labware type";
@@ -210,12 +216,13 @@
             // 
             // optionLabwareTypeLabwareParameterType
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "optionLabwareTypeLabwareParameterType";
-            this.Size = new System.Drawing.Size(766, 375);
+            this.Size = new System.Drawing.Size(574, 305);
             this.Tag = "Labware type labware parameters";
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructureGUI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLabwareType)).EndInit();
@@ -232,7 +239,7 @@
 
         #endregion
 
-        private DataSets.dsModuleStructure2 dsModuleStructureGUI;
+        private DataSets.dsModuleStructure3 dsModuleStructureGUI;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -248,9 +255,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.BindingSource bsLabwareTypedtLabwareTypeLabwareParameterType;
-        private DataSets.dsModuleStructure2TableAdapters.taLabwareTypeLabwareParameterType taLabwareTypeLabwareParameterType;
+        private DataSets.dsModuleStructure3TableAdapters.taLabwareTypeLabwareParameterType taLabwareTypeLabwareParameterType;
         private System.Windows.Forms.BindingSource dsModuleStructureGUIBindingSource;
-        private DataSets.dsModuleStructure2TableAdapters.taLabwareParameterType taLabwareParameterType;
+        private DataSets.dsModuleStructure3TableAdapters.taLabwareParameterType taLabwareParameterType;
         private System.Windows.Forms.DataGridViewTextBoxColumn fklabwaretypeidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn fklabwareparametertypeidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;

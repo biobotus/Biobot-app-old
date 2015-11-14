@@ -35,26 +35,31 @@
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Labware types labware parameters");
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Labware types");
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Labware parameter types");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Module type labware parameter type");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
             treeNode3,
             treeNode4,
             treeNode5,
             treeNode6,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Gcode Serial");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("serial -> can");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Communication", new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Movement");
+            treeNode7,
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Gcode Serial");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("serial -> can");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Communication", new System.Windows.Forms.TreeNode[] {
+            treeNode10,
+            treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Movement");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Protocol");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Joypad");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Saved Protocol");
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlvOptions = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure3();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
@@ -69,7 +74,7 @@
             this.panel1.Controls.Add(this.tlvOptions);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 316);
             this.panel1.TabIndex = 0;
@@ -78,7 +83,7 @@
             // 
             this.tlvOptions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlvOptions.Location = new System.Drawing.Point(0, 0);
-            this.tlvOptions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlvOptions.Margin = new System.Windows.Forms.Padding(1);
             this.tlvOptions.Name = "tlvOptions";
             treeNode1.Name = "nodeActionTypes";
             treeNode1.Tag = "actionTypes";
@@ -98,20 +103,33 @@
             treeNode6.Text = "Labware types";
             treeNode7.Name = "nodeLabwareParameterTypes";
             treeNode7.Text = "Labware parameter types";
-            treeNode8.Name = "nodeDB";
-            treeNode8.Text = "Database";
-            treeNode9.Name = "nodeGCode";
-            treeNode9.Text = "Gcode Serial";
-            treeNode10.Name = "nodeCan";
-            treeNode10.Text = "serial -> can";
-            treeNode11.Name = "nodeCom";
-            treeNode11.Text = "Communication";
-            treeNode12.Name = "nodeMovement";
-            treeNode12.Text = "Movement";
+            treeNode8.Name = "nodeModuleTypeLabwareParameterType";
+            treeNode8.Tag = "";
+            treeNode8.Text = "Module type labware parameter type";
+            treeNode9.Name = "nodeDB";
+            treeNode9.Text = "Database";
+            treeNode10.Name = "nodeGCode";
+            treeNode10.Text = "Gcode Serial";
+            treeNode11.Name = "nodeCan";
+            treeNode11.Text = "serial -> can";
+            treeNode12.Name = "nodeCom";
+            treeNode12.Text = "Communication";
+            treeNode13.Name = "nodeMovement";
+            treeNode13.Text = "Movement";
+            treeNode14.Name = "nodeProtocol";
+            treeNode14.Text = "Protocol";
+            treeNode15.Name = "nodeJoypad";
+            treeNode15.Tag = "Joypad";
+            treeNode15.Text = "Joypad";
+            treeNode16.Name = "nodeSavedProtocol";
+            treeNode16.Text = "Saved Protocol";
             this.tlvOptions.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode11,
-            treeNode12});
+            treeNode9,
+            treeNode12,
+            treeNode13,
+            treeNode14,
+            treeNode15,
+            treeNode16});
             this.tlvOptions.Size = new System.Drawing.Size(200, 316);
             this.tlvOptions.TabIndex = 0;
             this.tlvOptions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tlvOptions_AfterSelect);
@@ -121,9 +139,9 @@
             this.panel2.Controls.Add(this.lblTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(203, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(474, 46);
+            this.panel2.Size = new System.Drawing.Size(474, 47);
             this.panel2.TabIndex = 1;
             // 
             // lblTitle
@@ -131,32 +149,34 @@
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTitle.Size = new System.Drawing.Size(474, 46);
+            this.lblTitle.Size = new System.Drawing.Size(474, 47);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mainPanel
             // 
+            this.mainPanel.AutoSize = true;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(203, 46);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mainPanel.Location = new System.Drawing.Point(203, 47);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(474, 228);
+            this.mainPanel.Size = new System.Drawing.Size(474, 227);
             this.mainPanel.TabIndex = 2;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // dsModuleStructure
             // 
-            this.dsModuleStructure.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructure.DataSetName = "dsModuleStructure3";
             this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(200, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(3, 316);
             this.splitter1.TabIndex = 3;
@@ -167,7 +187,7 @@
             this.panel3.Controls.Add(this.btnClose);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(203, 274);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(474, 42);
             this.panel3.TabIndex = 0;
@@ -178,9 +198,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(387, 6);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 30);
+            this.btnClose.Size = new System.Drawing.Size(75, 31);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -189,13 +209,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(677, 316);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frmOptions";
             this.Text = "Options";
             this.panel1.ResumeLayout(false);
@@ -203,6 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -213,7 +235,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel mainPanel;
-        private DataSets.dsModuleStructure2 dsModuleStructure;
+        private DataSets.dsModuleStructure3 dsModuleStructure;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnClose;

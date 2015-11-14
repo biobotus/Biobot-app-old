@@ -15,17 +15,17 @@ namespace BioBotApp.Controls.Parameter_controls
 {
     public partial class ctrlModuleParameters : UserControl
     {
-        dsModuleStructure2 _dsModuleStructure;
-        dsModuleStructure2.dtModuleRow _moduleRow;
-        Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> actionTypeDict;
+        dsModuleStructure3 _dsModuleStructure;
+        dsModuleStructure3.dtModuleRow _moduleRow;
+        Dictionary<dsModuleStructure3.dtModuleTypeActionTypeRow, ctrlCommand> actionTypeDict;
 
         public ctrlModuleParameters()
         {
             InitializeComponent();
         }
 
-        public ctrlModuleParameters(dsModuleStructure2.dtModuleRow moduleRow,
-            dsModuleStructure2 dsModuleStructure)
+        public ctrlModuleParameters(dsModuleStructure3.dtModuleRow moduleRow,
+            dsModuleStructure3 dsModuleStructure)
             : this()
         {
             _moduleRow = moduleRow;
@@ -34,18 +34,18 @@ namespace BioBotApp.Controls.Parameter_controls
             setParameterActions(_dsModuleStructure, _moduleRow);
         }
 
-        public void setParameterActions(dsModuleStructure2 dsModuleStructure, dsModuleStructure2.dtModuleRow module)
+        public void setParameterActions(dsModuleStructure3 dsModuleStructure, dsModuleStructure3.dtModuleRow module)
         {
-            actionTypeDict = new Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand>();
+            actionTypeDict = new Dictionary<dsModuleStructure3.dtModuleTypeActionTypeRow, ctrlCommand>();
 
             _dsModuleStructure = dsModuleStructure;
 
-            dsModuleStructure2.dtModuleTypeActionTypeRow[] moduleTypeActionTypeRows = module.dtModuleTypeRow.GetdtModuleTypeActionTypeRows();
-            foreach (dsModuleStructure2.dtModuleTypeActionTypeRow moduleTypeActionTypeRow in moduleTypeActionTypeRows)
+            dsModuleStructure3.dtModuleTypeActionTypeRow[] moduleTypeActionTypeRows = module.dtModuleTypeRow.GetdtModuleTypeActionTypeRows();
+            foreach (dsModuleStructure3.dtModuleTypeActionTypeRow moduleTypeActionTypeRow in moduleTypeActionTypeRows)
             {
                 ctrlCommand command = new ctrlCommand();
 
-                foreach (KeyValuePair<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> kvp in actionTypeDict)
+                foreach (KeyValuePair<dsModuleStructure3.dtModuleTypeActionTypeRow, ctrlCommand> kvp in actionTypeDict)
                 {
                     if (moduleTypeActionTypeRow.fk_action_value_type_id == kvp.Key.fk_action_value_type_id)
                     {
@@ -78,7 +78,7 @@ namespace BioBotApp.Controls.Parameter_controls
             return btnCancel;
         }
 
-        public Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> getParameterActions()
+        public Dictionary<dsModuleStructure3.dtModuleTypeActionTypeRow, ctrlCommand> getParameterActions()
         {
             return this.actionTypeDict;
         }
