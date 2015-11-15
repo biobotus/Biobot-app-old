@@ -47,6 +47,10 @@ namespace BioBotApp.Controls.Option.Options
             return cbData.SelectedIndex;
         }
 
+        public ComboBox getComboBox()
+        {
+            return this.cbData;
+        }
         
     }
 }

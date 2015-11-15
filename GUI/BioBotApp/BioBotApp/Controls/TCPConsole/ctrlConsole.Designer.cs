@@ -43,13 +43,13 @@
             // edtCmdWindow
             // 
             this.edtCmdWindow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.edtCmdWindow.Location = new System.Drawing.Point(5, 5);
-            this.edtCmdWindow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.edtCmdWindow.Location = new System.Drawing.Point(4, 4);
+            this.edtCmdWindow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.edtCmdWindow.Multiline = true;
             this.edtCmdWindow.Name = "edtCmdWindow";
             this.edtCmdWindow.ReadOnly = true;
             this.edtCmdWindow.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.edtCmdWindow.Size = new System.Drawing.Size(722, 361);
+            this.edtCmdWindow.Size = new System.Drawing.Size(541, 294);
             this.edtCmdWindow.TabIndex = 2;
             // 
             // panel4
@@ -59,30 +59,30 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel4.Size = new System.Drawing.Size(740, 465);
+            this.panel4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.panel4.Size = new System.Drawing.Size(555, 378);
             this.panel4.TabIndex = 7;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.edtCmdWindow);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(4, 27);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panel1.Size = new System.Drawing.Size(732, 371);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Size = new System.Drawing.Size(549, 302);
             this.panel1.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 4);
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(732, 23);
+            this.label4.Size = new System.Drawing.Size(549, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "Console";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,30 +92,30 @@
             this.panel5.Controls.Add(this.edtSendCmd);
             this.panel5.Controls.Add(this.btnSendCmbToRemote);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(4, 398);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Location = new System.Drawing.Point(3, 324);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panel5.Size = new System.Drawing.Size(732, 63);
+            this.panel5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Size = new System.Drawing.Size(549, 51);
             this.panel5.TabIndex = 5;
             // 
             // edtSendCmd
             // 
             this.edtSendCmd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.edtSendCmd.Location = new System.Drawing.Point(5, 5);
-            this.edtSendCmd.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.edtSendCmd.Location = new System.Drawing.Point(4, 4);
+            this.edtSendCmd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edtSendCmd.Name = "edtSendCmd";
-            this.edtSendCmd.Size = new System.Drawing.Size(722, 22);
+            this.edtSendCmd.Size = new System.Drawing.Size(541, 20);
             this.edtSendCmd.TabIndex = 3;
             // 
             // btnSendCmbToRemote
             // 
             this.btnSendCmbToRemote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSendCmbToRemote.Location = new System.Drawing.Point(632, 31);
-            this.btnSendCmbToRemote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSendCmbToRemote.Location = new System.Drawing.Point(474, 25);
+            this.btnSendCmbToRemote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSendCmbToRemote.Name = "btnSendCmbToRemote";
-            this.btnSendCmbToRemote.Size = new System.Drawing.Size(96, 30);
+            this.btnSendCmbToRemote.Size = new System.Drawing.Size(72, 24);
             this.btnSendCmbToRemote.TabIndex = 4;
             this.btnSendCmbToRemote.Text = "Send";
             this.btnSendCmbToRemote.UseVisualStyleBackColor = true;
@@ -123,12 +123,11 @@
             // 
             // ctrlConsole
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ctrlConsole";
-            this.Size = new System.Drawing.Size(740, 465);
+            this.Size = new System.Drawing.Size(555, 378);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

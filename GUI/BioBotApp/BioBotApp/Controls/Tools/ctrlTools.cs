@@ -25,7 +25,7 @@ namespace BioBotApp.Controls.Tools_controls
             InitializeComponent();
         }
 
-        public void initControl(DataSets.dsModuleStructure2 dsModuleStructure, BindingSource bsModule)
+        public void initControl(DataSets.dsModuleStructure3 dsModuleStructure, BindingSource bsModule)
         {
             this.dsModuleStructure = dsModuleStructure;
             this.bsModule = bsModule;
@@ -41,8 +41,8 @@ namespace BioBotApp.Controls.Tools_controls
             //_dsModuleStructure.dtModule.dtModuleRowChanged += dtModule_dtModuleRowChanged;
         }
 
- 
-    
+
+
         public void initData()
         {
             //taModuleType.Fill(_dsModuleStructure.dtModuleType);
@@ -63,5 +63,17 @@ namespace BioBotApp.Controls.Tools_controls
         {
 
         }
+
+        private void dataGridView1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dataGridView1.DoDragDrop(dataGridView1.Name, DragDropEffects.Move);
+        }
     }
 }
+
+//Rows[e.RowIndex]

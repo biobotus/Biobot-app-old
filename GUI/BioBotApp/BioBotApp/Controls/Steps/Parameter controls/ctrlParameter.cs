@@ -12,14 +12,14 @@ namespace BioBotApp.Controls.Parameter_control
 {
     public partial class ParameterActions : UserControl
     {
-        private DataSets.dsModuleStructure2.dtActionTypeRow _parameterActionType;
+        private DataSets.dsModuleStructure3.dtActionTypeRow _parameterActionType;
         
         public ParameterActions()
         {
             InitializeComponent();
         }
 
-        public ParameterActions(DataSets.dsModuleStructure2.dtActionTypeRow parameterActionType) : this()
+        public ParameterActions(DataSets.dsModuleStructure3.dtActionTypeRow parameterActionType) : this()
         {
             this._parameterActionType = parameterActionType;
             txtParameterKey.Text = _parameterActionType.description;
@@ -30,7 +30,7 @@ namespace BioBotApp.Controls.Parameter_control
             return edtParameterValue.Text;
         }
 
-        public DataSets.dsModuleStructure2.dtActionTypeRow getParameterActionType()
+        public DataSets.dsModuleStructure3.dtActionTypeRow getParameterActionType()
         {
             return _parameterActionType;
         }

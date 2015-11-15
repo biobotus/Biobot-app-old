@@ -30,7 +30,7 @@ namespace BioBotApp.Controls.Steps
         private void InitializeComponent()
         {
             this.moduleParameters = new BioBotApp.Controls.Parameter_controls.ctrlModuleParameters();
-            this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
+            this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taStepComposite();
             this.SuspendLayout();
             // 
             // moduleParameters
@@ -65,6 +65,6 @@ namespace BioBotApp.Controls.Steps
         #endregion
 
         private ctrlModuleParameters moduleParameters;
-        private DataSets.dsModuleStructure2TableAdapters.taStepComposite taStepComposite;
+        private DataSets.dsModuleStructure3TableAdapters.taStepComposite taStepComposite;
     }
 }

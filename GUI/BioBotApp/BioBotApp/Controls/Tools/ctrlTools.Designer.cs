@@ -33,14 +33,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.taModuleType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModuleType();
+            this.taModuleType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModuleType();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fkmoduletypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bsModuleType = new System.Windows.Forms.BindingSource(this.components);
-            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure3();
             this.bsModule = new System.Windows.Forms.BindingSource(this.components);
-            this.taModule = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModule();
+            this.taModule = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModule();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -53,10 +53,10 @@
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(4, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(4, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(277, 26);
+            this.panel2.Size = new System.Drawing.Size(313, 32);
             this.panel2.TabIndex = 5;
             // 
             // label1
@@ -66,7 +66,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 26);
+            this.label1.Size = new System.Drawing.Size(313, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tools";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -76,18 +76,18 @@
             this.flowLayoutPanel1.Controls.Add(this.btnAdd);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 297);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 371);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(277, 36);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 45);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(173, 4);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(197, 5);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
+            this.btnAdd.Size = new System.Drawing.Size(112, 35);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Edit";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -110,14 +110,17 @@
             this.fkmoduletypeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bsModule;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 30);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 37);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(277, 267);
+            this.dataGridView1.Size = new System.Drawing.Size(313, 334);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
+            this.dataGridView1.DragEnter += new System.Windows.Forms.DragEventHandler(this.dataGridView1_DragEnter);
             this.dataGridView1.DragLeave += new System.EventHandler(this.dataGridView1_DragLeave);
             // 
             // pkidDataGridViewTextBoxColumn
@@ -147,7 +150,7 @@
             // 
             // dsModuleStructure
             // 
-            this.dsModuleStructure.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructure.DataSetName = "dsModuleStructure3";
             this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bsModule
@@ -161,15 +164,15 @@
             // 
             // ctrlTools
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ctrlTools";
-            this.Padding = new System.Windows.Forms.Padding(4);
-            this.Size = new System.Drawing.Size(285, 337);
+            this.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Size = new System.Drawing.Size(321, 421);
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -186,11 +189,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnAdd;
-        private DataSets.dsModuleStructure2TableAdapters.taModuleType taModuleType;
+        private DataSets.dsModuleStructure3TableAdapters.taModuleType taModuleType;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bsModule;
-        private DataSets.dsModuleStructure2 dsModuleStructure;
-        private DataSets.dsModuleStructure2TableAdapters.taModule taModule;
+        private DataSets.dsModuleStructure3 dsModuleStructure;
+        private DataSets.dsModuleStructure3TableAdapters.taModule taModule;
         private System.Windows.Forms.BindingSource bsModuleType;
         private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn fkmoduletypeDataGridViewTextBoxColumn;

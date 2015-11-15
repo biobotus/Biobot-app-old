@@ -32,8 +32,8 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.bsStepComposite = new System.Windows.Forms.BindingSource(this.components);
-            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
-            this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
+            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure3();
+            this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taStepComposite();
             this.dtStepLeafDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,7 +72,7 @@
             // 
             // dsModuleStructure
             // 
-            this.dsModuleStructure.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructure.DataSetName = "dsModuleStructure3";
             this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // taStepComposite
@@ -148,8 +148,8 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.BindingSource bsStepComposite;
-        private DataSets.dsModuleStructure2 dsModuleStructure;
-        private DataSets.dsModuleStructure2TableAdapters.taStepComposite taStepComposite;
+        private DataSets.dsModuleStructure3 dsModuleStructure;
+        private DataSets.dsModuleStructure3TableAdapters.taStepComposite taStepComposite;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

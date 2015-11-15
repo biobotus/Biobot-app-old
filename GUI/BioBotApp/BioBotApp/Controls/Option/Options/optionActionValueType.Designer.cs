@@ -33,9 +33,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.gvActionType = new System.Windows.Forms.DataGridView();
             this.bsActionValueType = new System.Windows.Forms.BindingSource(this.components);
-            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure3();
             this.crudOptions = new BioBotApp.Controls.Utils.crudOptions();
-            this.ta_bbt_action_value_type = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValueType();
+            this.ta_bbt_action_value_type = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionValueType();
             this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
@@ -93,7 +93,7 @@
             // 
             // dsModuleStructureGUI
             // 
-            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure3";
             this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // crudOptions
@@ -150,12 +150,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private DataSets.dsModuleStructure2 dsModuleStructureGUI;
+        private DataSets.dsModuleStructure3 dsModuleStructureGUI;
         private System.Windows.Forms.DataGridView gvActionType;
         private Utils.crudOptions crudOptions;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.BindingSource bsActionValueType;
-        private DataSets.dsModuleStructure2TableAdapters.taActionValueType ta_bbt_action_value_type;
+        private DataSets.dsModuleStructure3TableAdapters.taActionValueType ta_bbt_action_value_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     }

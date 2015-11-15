@@ -12,7 +12,7 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
         {
         }
         
-        public void addStepCompositeNode(DataSets.dsModuleStructure2.dtStepCompositeRow stepCompositeRow)
+        public void addStepCompositeNode(DataSets.dsModuleStructure3.dtStepCompositeRow stepCompositeRow)
         {
             SelectedNode.Nodes.Add(new StepCompositeNode(stepCompositeRow));
         }

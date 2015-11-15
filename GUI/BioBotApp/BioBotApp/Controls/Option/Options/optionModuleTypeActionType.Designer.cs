@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtModuleTypeDataGridView = new System.Windows.Forms.DataGridView();
             this.bsModuleType = new System.Windows.Forms.BindingSource(this.components);
-            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure3();
             this.crudOptions2 = new BioBotApp.Controls.Utils.crudOptions();
             this.bsActionType = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -43,10 +43,10 @@
             this.bsActionValueType = new System.Windows.Forms.BindingSource(this.components);
             this.bsModuleTypeActionType = new System.Windows.Forms.BindingSource(this.components);
             this.crudOptionsActionType = new BioBotApp.Controls.Utils.crudOptions();
-            this.taActionType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionType();
-            this.taModuleType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModuleType();
-            this.taModuleTypeActionType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModuleTypeActionType();
-            this.taActionValueType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValueType();
+            this.taActionType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionType();
+            this.taModuleType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModuleType();
+            this.taModuleTypeActionType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taModuleTypeActionType();
+            this.taActionValueType = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taActionValueType();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -98,7 +98,7 @@
             // 
             // dsModuleStructureGUI
             // 
-            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure3";
             this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // crudOptions2
@@ -265,20 +265,20 @@
 
         #endregion
 
-        private DataSets.dsModuleStructure2 dsModuleStructureGUI;
+        private DataSets.dsModuleStructure3 dsModuleStructureGUI;
         private System.Windows.Forms.GroupBox groupBox1;
         private Utils.crudOptions crudOptions2;
         private System.Windows.Forms.GroupBox groupBox2;
         private Utils.crudOptions crudOptionsActionType;
         private System.Windows.Forms.BindingSource bsActionType;
-        private DataSets.dsModuleStructure2TableAdapters.taActionType taActionType;
+        private DataSets.dsModuleStructure3TableAdapters.taActionType taActionType;
         private System.Windows.Forms.DataGridView dtModuleTypeDataGridView;
         private System.Windows.Forms.BindingSource bsModuleType;
         private System.Windows.Forms.DataGridView gvActionType;
-        private DataSets.dsModuleStructure2TableAdapters.taModuleType taModuleType;
+        private DataSets.dsModuleStructure3TableAdapters.taModuleType taModuleType;
         private System.Windows.Forms.BindingSource bsModuleTypeActionType;
-        private DataSets.dsModuleStructure2TableAdapters.taModuleTypeActionType taModuleTypeActionType;
-        private DataSets.dsModuleStructure2TableAdapters.taActionValueType taActionValueType;
+        private DataSets.dsModuleStructure3TableAdapters.taModuleTypeActionType taModuleTypeActionType;
+        private DataSets.dsModuleStructure3TableAdapters.taActionValueType taActionValueType;
         private System.Windows.Forms.BindingSource bsActionValueType;
         private System.Windows.Forms.DataGridViewTextBoxColumn fkmoduletypeidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn fkactiontypeidDataGridViewTextBoxColumn;

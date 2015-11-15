@@ -14,6 +14,16 @@ namespace BioBotApp.Utils.Communication
             if (gCodeSerialChannel == null)
             {
                 gCodeSerialChannel = new CustomSerial();
+
+                try
+                {
+                    gCodeSerialChannel.configure("COM3", "115200", "8", "One", "None");
+                    gCodeSerialChannel.Open();
+                }
+                catch(Exception e)
+                {
+
+                }
             }
             return gCodeSerialChannel;
         }

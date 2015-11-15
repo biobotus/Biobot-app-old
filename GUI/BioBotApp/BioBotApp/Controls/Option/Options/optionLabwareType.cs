@@ -16,7 +16,7 @@ namespace BioBotApp.Controls.Option.Options
         {
             InitializeComponent();
         }
-        public optionLabwareType(DataSets.dsModuleStructure2 dsModuleStructure)
+        public optionLabwareType(DataSets.dsModuleStructure3 dsModuleStructure)
             : this()
         {
             
@@ -39,7 +39,7 @@ namespace BioBotApp.Controls.Option.Options
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
-                DataSets.dsModuleStructure2.dtLabwareTypeRow row;
+                DataSets.dsModuleStructure3.dtLabwareTypeRow row;
 
                 row = dsModuleStructureGUI.dtLabwareType.NewdtLabwareTypeRow();
                 row.description = description.getInputTextValue();
@@ -55,7 +55,7 @@ namespace BioBotApp.Controls.Option.Options
                 return;
             }
 
-            DataSets.dsModuleStructure2.dtLabwareTypeRow row;
+            DataSets.dsModuleStructure3.dtLabwareTypeRow row;
             row = getSelectedRow();
 
             DialogResult result = MessageBox.Show( "Delete : " + row.description + " ?", "Delete action type ?", MessageBoxButtons.YesNo,
@@ -74,7 +74,7 @@ namespace BioBotApp.Controls.Option.Options
         private void crudOptions_ModifyClickHandler(object sender, EventArgs e)
         {
             abstractDialog dialog = new abstractDialog("Action type", "Modify");
-            DataSets.dsModuleStructure2.dtLabwareTypeRow row = getSelectedRow();
+            DataSets.dsModuleStructure3.dtLabwareTypeRow row = getSelectedRow();
 
             if(row == null)
             {
@@ -93,15 +93,15 @@ namespace BioBotApp.Controls.Option.Options
             }
         }
 
-        public DataSets.dsModuleStructure2.dtLabwareTypeRow getSelectedRow()
+        public DataSets.dsModuleStructure3.dtLabwareTypeRow getSelectedRow()
         {
-            DataSets.dsModuleStructure2.dtLabwareTypeRow row;
+            DataSets.dsModuleStructure3.dtLabwareTypeRow row;
             DataRowView rowView = bsLabwareType.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure2.dtLabwareTypeRow;
+            row = rowView.Row as DataSets.dsModuleStructure3.dtLabwareTypeRow;
             return row;
         }
 
-        public void updateRow(DataSets.dsModuleStructure2.dtLabwareTypeRow updateRow)
+        public void updateRow(DataSets.dsModuleStructure3.dtLabwareTypeRow updateRow)
         {
             try
             {

@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BioBotApp.Controls.Option.Options;
 using System.Configuration;
+using PCAN;
 
 namespace BioBotApp.Controls.Option
 {
     public partial class frmOptions : Form
     {
-        public frmOptions(DataSets.dsModuleStructure2 dsModuleStructure)
+        ctrCanConnector canCom = new ctrCanConnector();
+        public frmOptions(DataSets.dsModuleStructure3 dsModuleStructure)
         {
             InitializeComponent();
             this.dsModuleStructure = dsModuleStructure;
@@ -23,8 +25,8 @@ namespace BioBotApp.Controls.Option
         private void tlvOptions_AfterSelect(object sender, TreeViewEventArgs e)
         {
             //TODO: create a more generic way to identify the clicked node
-           
-            if(e.Node.Name.Equals("nodeDB"))
+
+            if (e.Node.Name.Equals("nodeDB"))
             {
                 setOptionControl(new optionDBConnection());
             }
@@ -54,7 +56,7 @@ namespace BioBotApp.Controls.Option
             }
             else if (e.Node.Name.Equals("nodeCan"))
             {
-                setOptionControl(new optionCustomSerial("Serial port : CAN", "test can"));
+                setOptionControl(canCom);
             }
             else if (e.Node.Name.Equals("nodeLabwareTypesLabwareParameterTypes"))
             {
@@ -72,10 +74,33 @@ namespace BioBotApp.Controls.Option
             {
                 setOptionControl(new optionMovement(dsModuleStructure));
             }
+            else if (e.Node.Name.Equals("nodeProtocol"))
+            {
+                setOptionControl(new optionProtocol(dsModuleStructure));
+            }
+            else if (e.Node.Name.Equals("nodeModuleTypeLabwareParameterType"))
+            {
+                setOptionControl(new optionModuleTypeLabwareParameterType(dsModuleStructure));
+
+            }
+            else if (e.Node.Name.Equals("nodeJoypad"))
+            {
+                setOptionControl(new optionJoypad());
+
+            }
+            else if (e.Node.Name.Equals("nodeSavedProtocol"))
+            {
+                setOptionControl(new optionSavedProtocol(dsModuleStructure));
+            }
             else
             {
-              //  setOptionControl(new optionActionValueType());
+                //  setOptionControl(new optionActionValueType());
             }
+        }
+
+        public void setDataSet(DataSets.dsModuleStructure3 dsModuleStructure)
+        {
+            this.dsModuleStructure = dsModuleStructure;
         }
 
         /// <summary>

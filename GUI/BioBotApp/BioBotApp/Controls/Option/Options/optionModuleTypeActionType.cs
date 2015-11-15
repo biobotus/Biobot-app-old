@@ -17,7 +17,7 @@ namespace BioBotApp.Controls.Option.Options
             InitializeComponent();
         }
 
-        public optionModuleTypeActionType(DataSets.dsModuleStructure2 dsModuleStructure)
+        public optionModuleTypeActionType(DataSets.dsModuleStructure3 dsModuleStructure)
             : this()
         {
             this.dsModuleStructureGUI = dsModuleStructure;
@@ -44,7 +44,7 @@ namespace BioBotApp.Controls.Option.Options
                 return;
             }
 
-            DataSets.dsModuleStructure2.dtModuleTypeRow row = getSelectedModuleTypeRow();
+            DataSets.dsModuleStructure3.dtModuleTypeRow row = getSelectedModuleTypeRow();
 
             if (row == null)
             {
@@ -59,7 +59,7 @@ namespace BioBotApp.Controls.Option.Options
 
         private void crudOptionsActionType_AddClickHandler(object sender, EventArgs e)
         {
-            DataSets.dsModuleStructure2.dtModuleTypeRow moduleTypeSelectedRow = getSelectedModuleTypeRow();
+            DataSets.dsModuleStructure3.dtModuleTypeRow moduleTypeSelectedRow = getSelectedModuleTypeRow();
 
             if (moduleTypeSelectedRow == null)
             {
@@ -89,10 +89,10 @@ namespace BioBotApp.Controls.Option.Options
 
         public void createModuleTypeActionTypeRow()
         {
-            DataSets.dsModuleStructure2.dtModuleTypeActionTypeRow row = dsModuleStructureGUI.dtModuleTypeActionType.NewdtModuleTypeActionTypeRow();
-            DataSets.dsModuleStructure2.dtActionTypeRow actionTypeRow = getSelectedActionTypeRow();
-            DataSets.dsModuleStructure2.dtModuleTypeRow moduleTypeRow = getSelectedModuleTypeRow();
-            DataSets.dsModuleStructure2.dtActionValueTypeRow actionValueTypeRow = getSelectedActionValueTypeRow();
+            DataSets.dsModuleStructure3.dtModuleTypeActionTypeRow row = dsModuleStructureGUI.dtModuleTypeActionType.NewdtModuleTypeActionTypeRow();
+            DataSets.dsModuleStructure3.dtActionTypeRow actionTypeRow = getSelectedActionTypeRow();
+            DataSets.dsModuleStructure3.dtModuleTypeRow moduleTypeRow = getSelectedModuleTypeRow();
+            DataSets.dsModuleStructure3.dtActionValueTypeRow actionValueTypeRow = getSelectedActionValueTypeRow();
 
             if (actionTypeRow == null || moduleTypeRow == null || actionValueTypeRow == null)
             {
@@ -109,9 +109,9 @@ namespace BioBotApp.Controls.Option.Options
 
         private void crudOptionsActionType_DeleteClickHandler(object sender, EventArgs e)
         {
-            DataSets.dsModuleStructure2.dtModuleTypeActionTypeRow row = getSelectedModuleTypeActionTypeRow();
-            DataSets.dsModuleStructure2.dtModuleTypeRow moduleTypeRow = getSelectedModuleTypeRow();
-            DataSets.dsModuleStructure2.dtActionTypeRow actionTypeRow = getSelectedActionTypeRow();
+            DataSets.dsModuleStructure3.dtModuleTypeActionTypeRow row = getSelectedModuleTypeActionTypeRow();
+            DataSets.dsModuleStructure3.dtModuleTypeRow moduleTypeRow = getSelectedModuleTypeRow();
+            DataSets.dsModuleStructure3.dtActionTypeRow actionTypeRow = getSelectedActionTypeRow();
 
             if (row == null || moduleTypeRow == null || actionTypeRow == null)
             {
@@ -132,9 +132,9 @@ namespace BioBotApp.Controls.Option.Options
         }
 
         #region Get selected binding sources row
-        public DataSets.dsModuleStructure2.dtActionTypeRow getSelectedActionTypeRow()
+        public DataSets.dsModuleStructure3.dtActionTypeRow getSelectedActionTypeRow()
         {
-            DataSets.dsModuleStructure2.dtActionTypeRow actionTypeRow;
+            DataSets.dsModuleStructure3.dtActionTypeRow actionTypeRow;
 
             if (bsActionType.Current == null)
             {
@@ -142,13 +142,13 @@ namespace BioBotApp.Controls.Option.Options
             }
            
             DataRowView dataRowViewActionType = bsActionType.Current as DataRowView;
-            actionTypeRow = dataRowViewActionType.Row as DataSets.dsModuleStructure2.dtActionTypeRow;
+            actionTypeRow = dataRowViewActionType.Row as DataSets.dsModuleStructure3.dtActionTypeRow;
             return actionTypeRow;
         }
 
-        public DataSets.dsModuleStructure2.dtModuleTypeRow getSelectedModuleTypeRow()
+        public DataSets.dsModuleStructure3.dtModuleTypeRow getSelectedModuleTypeRow()
         {
-            DataSets.dsModuleStructure2.dtModuleTypeRow row;
+            DataSets.dsModuleStructure3.dtModuleTypeRow row;
 
             if (bsModuleType.Current == null)
             {
@@ -156,13 +156,13 @@ namespace BioBotApp.Controls.Option.Options
             }
 
             DataRowView rowView = bsModuleType.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure2.dtModuleTypeRow;
+            row = rowView.Row as DataSets.dsModuleStructure3.dtModuleTypeRow;
             return row;
         }
 
-        public DataSets.dsModuleStructure2.dtModuleTypeActionTypeRow getSelectedModuleTypeActionTypeRow()
+        public DataSets.dsModuleStructure3.dtModuleTypeActionTypeRow getSelectedModuleTypeActionTypeRow()
         {
-            DataSets.dsModuleStructure2.dtModuleTypeActionTypeRow row;
+            DataSets.dsModuleStructure3.dtModuleTypeActionTypeRow row;
 
             if (bsModuleTypeActionType.Current == null)
             {
@@ -170,13 +170,13 @@ namespace BioBotApp.Controls.Option.Options
             }
 
             DataRowView rowView = bsModuleTypeActionType.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure2.dtModuleTypeActionTypeRow;
+            row = rowView.Row as DataSets.dsModuleStructure3.dtModuleTypeActionTypeRow;
             return row;
         }
 
-        public DataSets.dsModuleStructure2.dtActionValueTypeRow getSelectedActionValueTypeRow()
+        public DataSets.dsModuleStructure3.dtActionValueTypeRow getSelectedActionValueTypeRow()
         {
-            DataSets.dsModuleStructure2.dtActionValueTypeRow row;
+            DataSets.dsModuleStructure3.dtActionValueTypeRow row;
 
             if (bsActionValueType.Current == null)
             {
@@ -184,13 +184,13 @@ namespace BioBotApp.Controls.Option.Options
             }
 
             DataRowView rowView = bsActionValueType.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure2.dtActionValueTypeRow;
+            row = rowView.Row as DataSets.dsModuleStructure3.dtActionValueTypeRow;
             return row;
         }
 
         #endregion
 
-        public void updateRow(DataSets.dsModuleStructure2.dtModuleTypeActionTypeRow updateRow)
+        public void updateRow(DataSets.dsModuleStructure3.dtModuleTypeActionTypeRow updateRow)
         {
             try
             {

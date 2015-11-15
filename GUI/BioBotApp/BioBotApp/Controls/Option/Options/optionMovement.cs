@@ -19,18 +19,18 @@ namespace BioBotApp.Controls.Option.Options
             InitializeComponent();
         }
 
-        public optionMovement( DataSets.dsModuleStructure2 dsModuleStructure) : this()
+        public optionMovement( DataSets.dsModuleStructure3 dsModuleStructure) : this()
         {
             this.dsModuleStructure = dsModuleStructure;
             bsStepComposite.DataSource = dsModuleStructure;
 
         }
 
-        public DataSets.dsModuleStructure2.dtLabwareTypeRow getSelectedRow()
+        public DataSets.dsModuleStructure3.dtLabwareTypeRow getSelectedRow()
         {
-            DataSets.dsModuleStructure2.dtLabwareTypeRow row;
+            DataSets.dsModuleStructure3.dtLabwareTypeRow row;
             DataRowView rowView = bsStepComposite.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure2.dtLabwareTypeRow;
+            row = rowView.Row as DataSets.dsModuleStructure3.dtLabwareTypeRow;
             return row;
         }
         public void sendGCode(string text)
@@ -64,7 +64,7 @@ namespace BioBotApp.Controls.Option.Options
         */
         private void btnSend_Click(object sender, EventArgs e)
         {
-            DataSets.dsModuleStructure2.dtLabwareTypeRow row;
+            DataSets.dsModuleStructure3.dtLabwareTypeRow row;
             row = getSelectedRow();
             //sendGCode();
         }
