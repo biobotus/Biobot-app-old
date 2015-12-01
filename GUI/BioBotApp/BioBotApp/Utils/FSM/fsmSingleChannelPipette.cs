@@ -13,6 +13,9 @@ namespace BioBotApp.Utils.FSM
     {
         private const int PIPETTE = 24;
         private const int DISPENSE = 25;
+        private const int MOVE_Z1 = 16;
+        private const int HOME = 19;
+
         AutoResetEvent wait = new AutoResetEvent(false);
 
         public fsmSingleChannelPipette()
@@ -27,18 +30,38 @@ namespace BioBotApp.Utils.FSM
 
         public void executeAction(DataSets.dsModuleStructure3.dtActionValueRow row)
         {
-            if(row.dtActionTypeRow.pk_id == PIPETTE)
+            if (row.dtActionTypeRow.pk_id == PIPETTE)
             {
-                SingleChannelPipette.sendInstruction(0x01, Convert.ToInt16(row.description));
+                SingleChannelPipette.pipette(Convert.ToInt16(row.description));
+                wait.Reset();
+                wait.WaitOne();
+                Int16 delay = Convert.ToInt16(row.description);
+                System.Threading.Thread.Sleep(delay / 2);
             }
             else if (row.dtActionTypeRow.pk_id == DISPENSE)
             {
-                SingleChannelPipette.sendInstruction(0x00, Convert.ToInt16(row.description));
+                SingleChannelPipette.dispense(Convert.ToInt16(row.description));
+                wait.Reset();
+                wait.WaitOne();
+                Int16 delay = Convert.ToInt16(row.description);
+                System.Threading.Thread.Sleep(delay / 2);
             }
-
-            wait.Reset();
-            wait.WaitOne();
-           
+            else if (row.dtActionTypeRow.pk_id == MOVE_Z1)
+            {
+                Int16 tempValue = 0;
+                if (Int16.TryParse(row.description, out tempValue))
+                {
+                    SingleChannelPipette.sendPositionToMoveTo(tempValue);
+                    wait.Reset();
+                    wait.WaitOne();
+                }
+            }
+            else if (row.dtActionTypeRow.pk_id == HOME)
+            {
+                SingleChannelPipette.homeTool();
+                wait.Reset();
+                wait.WaitOne();
+            }     
         }
     }
 }

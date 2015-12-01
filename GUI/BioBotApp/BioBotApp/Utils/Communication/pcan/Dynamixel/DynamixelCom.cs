@@ -9,6 +9,7 @@ namespace BioBotApp.Utils.Communication.pcan.Dynamixel
 {
     class DynamixelCom
     {
+        private enum InstructionSet { Home = 0x01, GoTo = 0x00 };
 
         public static void sendInstruction(byte instruction, byte id, UInt16 data)
         {
@@ -28,7 +29,7 @@ namespace BioBotApp.Utils.Communication.pcan.Dynamixel
             CANMsg.DATA = new byte[8];
             CANMsg.DATA[0] = instruction;
             CANMsg.DATA[1] = (byte)(data);
-            CANMsg.DATA[2] = (byte)(data>>8);
+            CANMsg.DATA[2] = (byte)(data >> 8);
             CANMsg.ID = CANDevice.HARDWARE_FILTER_GRIPPER;
             PCANCom.Instance.send(CANMsg);
         }
@@ -40,12 +41,37 @@ namespace BioBotApp.Utils.Communication.pcan.Dynamixel
             CANMsg.DATA[0] = instruction;
             CANMsg.ID = CANDevice.HARDWARE_FILTER_GRIPPER;
             PCANCom.Instance.send(CANMsg);
-            
+
             /*Console.WriteLine(" ");
             Console.WriteLine("---------------------------------------");
             Console.Write("T: ");
             printPacket(CANMsg.DATA);//*/
         }
+
+        public static void sendPositionToMoveTo(Int16 position)
+        {
+            TPCANMsg CANMsg = new TPCANMsg();
+            CANMsg.DATA = new byte[8];
+
+            CANMsg.DATA[2] = 0x00;
+            CANMsg.DATA[6] = (byte)(position >> 8);
+            CANMsg.DATA[7] = (byte)(position);
+            CANMsg.ID = CANDevice.HARDWARE_FILTER_GRIPPER;
+
+            PCANCom.Instance.send(CANMsg);
+        }
+
+        public static void homeTool()
+        {
+            TPCANMsg CANMsg = new TPCANMsg();
+            CANMsg.DATA = new byte[8];
+
+            CANMsg.DATA[2] = (byte)InstructionSet.Home;
+            CANMsg.ID = CANDevice.HARDWARE_FILTER_SINGLE_CHANNEL_PIPETTE;
+
+            PCANCom.Instance.send(CANMsg);
+        }
+
         public static void printPacket(byte[] packet)
         {
             for (int n = 0; n < 8; n++)

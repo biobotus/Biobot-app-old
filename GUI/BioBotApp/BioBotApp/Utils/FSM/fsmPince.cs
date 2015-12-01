@@ -19,7 +19,9 @@ namespace BioBotApp.Utils.FSM
         private const byte INST_TILT = 6;
         private const byte INST_ROTATE = 7;
 
-
+        private const int MOVE_Z3 = 18;
+        private const int HOME = 19;
+        
         public fsmPince()
         {
 
@@ -67,7 +69,18 @@ namespace BioBotApp.Utils.FSM
             {
                 System.Threading.Thread.Sleep(Int32.Parse(row.description));
             }
+            else if (row.dtActionTypeRow.pk_id == MOVE_Z3)
+            {
+                Int16 tempValue = 0;
+                if (Int16.TryParse(row.description, out tempValue))
+                {
+                    DynamixelCom.sendPositionToMoveTo(tempValue);
+                }
+            }
+            else if (row.dtActionTypeRow.pk_id == HOME)
+            {
+                DynamixelCom.homeTool();
+            }
         }
-
     }
 }

@@ -17,7 +17,7 @@ namespace BioBotApp.Utils.Communication
 
                 try
                 {
-                    gCodeSerialChannel.configure("COM3", "115200", "8", "One", "None");
+                    gCodeSerialChannel.configure("COM4", "115200", "8", "One", "None");
                     gCodeSerialChannel.Open();
                 }
                 catch(Exception e)

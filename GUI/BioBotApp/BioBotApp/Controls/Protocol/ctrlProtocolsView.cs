@@ -153,6 +153,7 @@ namespace BioBotApp.Controls.Protocol
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (tlvProtocol.SelectedNode == null) return;
             tlvProtocol.Nodes.Remove(tlvProtocol.SelectedNode);
         }
 

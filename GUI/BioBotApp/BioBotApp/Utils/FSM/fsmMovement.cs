@@ -1,4 +1,8 @@
 ﻿using BioBotApp.Utils.Communication;
+using BioBotApp.Utils.Communication.pcan;
+using BioBotApp.Utils.Communication.pcan.Dynamixel;
+using BioBotApp.Utils.Communication.pcan.MultiChannelPipette;
+using BioBotApp.Utils.Communication.pcan.SingleChannelPipette;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,18 +21,28 @@ namespace BioBotApp.Utils.FSM
         private const int MOVE_Z3 = 18;
         private const int HOME = 19;
 
-        CustomSerial serial =  ComChannelFactory.getGCodeSerial();
+        CustomSerial serial = ComChannelFactory.getGCodeSerial();
+        SingleChannelPipette SCP = new SingleChannelPipette();
         AutoResetEvent acknowledgeEvent = new AutoResetEvent(false);
 
+        AutoResetEvent wait = new AutoResetEvent(false);
+        
         public fsmMovement()
         {
+            PCANCom.Instance.OnMessageReceived += Instance_OnMessageReceived;
+        }
+
+        private void Instance_OnMessageReceived(object sender, PCANComEventArgs e)
+        {
+            wait.Set();
         }
 
         public void move(DataSets.dsModuleStructure3.dtActionValueRow actionValue)
         {
-            if(actionValue.fk_action_type == MOVE_X)
+            if (actionValue.fk_action_type == MOVE_X)
             {
-                serial.Write("X" + Int32.Parse(actionValue.description) + '\n');
+                String value = "X" + Int32.Parse(actionValue.description) + '\n';
+                serial.Write(value);
             }
             else if (actionValue.fk_action_type == MOVE_Y)
             {
@@ -37,23 +51,72 @@ namespace BioBotApp.Utils.FSM
             }
             else if (actionValue.fk_action_type == MOVE_Z1)
             {
-                serial.Write("Z1" + Int32.Parse(actionValue.description) + '\n');
+                Int16 tempValue = 0;
+                if (Int16.TryParse(actionValue.description, out tempValue))
+                {
+                    SingleChannelPipette.sendPositionToMoveTo(tempValue);
+                    wait.WaitOne();
+                }
+                //serial.Write("Z1" + Int32.Parse(actionValue.description) + '\n');
             }
             else if (actionValue.fk_action_type == MOVE_Z2)
             {
-                serial.Write("Z2" + Int32.Parse(actionValue.description) + '\n');
+                Int16 tempValue = 0;
+                if (Int16.TryParse(actionValue.description, out tempValue))
+                {
+                    MultiChannelPipette.sendPositionToMoveTo(tempValue);
+                    wait.WaitOne();
+                }
+                //serial.Write("Z2" + Int32.Parse(actionValue.description) + '\n');
             }
             else if (actionValue.fk_action_type == MOVE_Z3)
             {
-                serial.Write("Z3" + Int32.Parse(actionValue.description) + '\n');
+                Int16 tempValue = 0;
+                if (Int16.TryParse(actionValue.description, out tempValue))
+                {
+                    DynamixelCom.sendPositionToMoveTo(tempValue);
+                    wait.WaitOne();
+                }
+                //serial.Write("Z3" + Int32.Parse(actionValue.description) + '\n');
             }
             else if (actionValue.fk_action_type == HOME)
             {
-                serial.Write("H" + actionValue.description + '\n');
-            }
+                switch (actionValue.description)
+                {
+                    case "X":
+                        write("HX");
+                        //write("G28X")
+                        break;
+                    case "Y":
+                        write("HY");
+                        //write("G28Y");
+                        break;
+                    case "Z1":
+                        SingleChannelPipette.homeTool();
+                        wait.WaitOne();
+                        break;
+                    case "Z2":
+                        MultiChannelPipette.homeTool();
+                        wait.WaitOne();
+                        break;
+                    case "Z3":
+                        DynamixelCom.homeTool();
+                        wait.WaitOne();
+                        break;
+                    default:
+                        break;
+                }
+                //if (actionValue.description == 
+                //serial.Write("H" + actionValue.description + '\n');
+            }    
+        }
 
+        public void write(string value)
+        {
+            serial.Write(value + '\n');
             String test = serial.ReadLine();
-            while (!test.Contains("Ok"))
+
+            while (!test.Contains("Completed"))
             {
                 //do nothing
                 System.Threading.Thread.Sleep(10);
@@ -61,11 +124,10 @@ namespace BioBotApp.Utils.FSM
                 {
                     test = serial.ReadLine();
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     System.Console.WriteLine(e.StackTrace);
                 }
-                
             }
         }
     }
