@@ -670,5 +670,14 @@ namespace BioBotApp.Controls.Option.Options
                 }
             }           
         }
+
+        private void homeAll()
+        {
+            SingleChannelPipette.homeTool();
+            MultiChannelPipette.homeTool();
+            DynamixelCom.homeTool();
+            writeSerial(SerialCommandType.Home, Axis.X, 0);
+            writeSerial(SerialCommandType.Home, Axis.Y, 0);
+        }
     }
 }
