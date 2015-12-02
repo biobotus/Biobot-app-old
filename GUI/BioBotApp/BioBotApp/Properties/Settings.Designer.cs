@@ -26,8 +26,8 @@ namespace BioBotApp.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Dsn=PostgreSQL30;uid=appbiobot;schema=biobot;database=biobotalpha;server=104.236." +
-            "215.136;pwd=biobot1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dsn=Localhost;uid=appbiobot;schema=biobot;database=biobotalpha;server=localhost;p" +
+            "wd=biobot1")]
         public string BioBotLocalhostConnectionString {
             get {
                 return ((string)(this["BioBotLocalhostConnectionString"]));

@@ -308,6 +308,14 @@
     <Compile Include="Utils\FSM\fsmPince.cs" />
     <Compile Include="Utils\FSM\fsmSingleChannelPipette.cs" />
     <Compile Include="Utils\FSM\fsmTAC.cs" />
+    <Compile Include="Utils\FSM\PinceV2\CANDeviceConstant.cs" />
+    <Compile Include="Utils\FSM\PinceV2\CANQueue.cs" />
+    <Compile Include="Utils\FSM\PinceV2\Dynamixel2CAN.cs" />
+    <Compile Include="Utils\FSM\PinceV2\DynamixelCANInstruction.cs" />
+    <Compile Include="Utils\FSM\PinceV2\DynamixelConst.cs" />
+    <Compile Include="Utils\FSM\PinceV2\DynamixelData.cs" />
+    <Compile Include="Utils\FSM\PinceV2\DynamixelPacket.cs" />
+    <Compile Include="Utils\FSM\PinceV2\PCANCom.cs" />
     <Compile Include="Utils\TCP\TCPClient.cs" />
     <Compile Include="Utils\TCP\TCPClientAsyncResultEventArgs.cs" />
     <EmbeddedResource Include="Controls\Deck\ctrlDeck.resx">
