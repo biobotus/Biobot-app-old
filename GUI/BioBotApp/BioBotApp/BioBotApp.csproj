@@ -274,6 +274,7 @@
     <Compile Include="Utils\Communication\CustomSerial.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utils\Communication\InterOperationFlag.cs" />
     <Compile Include="Utils\Communication\JSONParser.cs" />
     <Compile Include="Utils\Communication\pcan\CANDevice.cs" />
     <Compile Include="Utils\Communication\pcan\ctrCanConnector.cs">

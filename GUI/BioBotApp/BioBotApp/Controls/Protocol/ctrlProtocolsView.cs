@@ -139,6 +139,7 @@ namespace BioBotApp.Controls.Protocol
 
                 foreach (DataSets.dsModuleStructure3.dtActionValueRow actionValueRow in actionValueRows)
                 {
+
                     mainProtocol.executeAction(actionValueRow);
                 }
 

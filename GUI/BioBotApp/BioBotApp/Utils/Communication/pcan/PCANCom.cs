@@ -14,6 +14,7 @@ namespace BioBotApp.Utils.Communication.pcan
 {
     class PCANCom
     {
+        public EventHandler SerialBusyEvent;
 
         #region MEMBER
 
@@ -84,9 +85,20 @@ namespace BioBotApp.Utils.Communication.pcan
         #region SEND MESSAGE
         public TPCANStatus send(TPCANMsg CANMsg)
         {
+            //System.Threading.Thread.Sleep(1000);
+            //while (InterOperationFlag.isSerialBusy != false)
+            //{
+            //    System.Threading.Thread.Sleep(100);
+            //}
+            //InterOperationFlag.isCanBusy = true;
+
+           
+
             CANMsg.LEN = 8;
             CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
-            return PCANBasic.Write(m_PcanHandle, ref CANMsg);
+            TPCANStatus temp = PCANBasic.Write(m_PcanHandle, ref CANMsg);
+            InterOperationFlag.isCanBusy = false;
+            return temp;
         }
         #endregion
 

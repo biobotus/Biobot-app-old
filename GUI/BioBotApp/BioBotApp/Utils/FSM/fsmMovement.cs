@@ -24,7 +24,8 @@ namespace BioBotApp.Utils.FSM
 
         int desiredXSpeed = 25000;
         int desiredYSpeed = 10000;
-        
+
+                
         CustomSerial serial = ComChannelFactory.getGCodeSerial();
         SingleChannelPipette SCP = new SingleChannelPipette();
         AutoResetEvent acknowledgeEvent = new AutoResetEvent(false);
@@ -41,6 +42,7 @@ namespace BioBotApp.Utils.FSM
             wait.Set();
         }
 
+        
         public void move(DataSets.dsModuleStructure3.dtActionValueRow actionValue)
         {
             if (actionValue.fk_action_type == MOVE_X)
@@ -49,13 +51,16 @@ namespace BioBotApp.Utils.FSM
                 //String value = "G1 X" + Int32.Parse(actionValue.description) / 10 + " F" + desiredXSpeed + "\n";
                 String value = "G1 X" + Int32.Parse(actionValue.description) / 10 + "\n";
                 write(value);
+                wait.WaitOne();
             }
             else if (actionValue.fk_action_type == MOVE_Y)
             {
                 //String value = "Y" + Int32.Parse(actionValue.description) + '\n'; 
                 //String value = "G1 Y" + Int32.Parse(actionValue.description) / 10 + " F" + desiredYSpeed + "\n";
                 String value = "G1 Y" + Int32.Parse(actionValue.description) / 10 + "\n";
+                
                 write(value);
+                wait.WaitOne();
             }
             else if (actionValue.fk_action_type == MOVE_Z1)
             {
@@ -94,10 +99,12 @@ namespace BioBotApp.Utils.FSM
                     case "X":
                         //write("HX",1);
                         write("G28 X");
+                        wait.WaitOne();
                         break;
                     case "Y":
                         //write("HY",1);
                         write("G28 Y");
+                        wait.WaitOne();
                         break;
                     case "Z1":
                         SingleChannelPipette.homeTool();
@@ -121,6 +128,17 @@ namespace BioBotApp.Utils.FSM
 
         public void write(string value)
         {
+            //while (InterOperationFlag.isCanBusy != false)
+            //{
+            //    System.Threading.Thread.Sleep(100);
+            //}
+            //InterOperationFlag.isSerialBusy = true;
+
+            serial.Open();
+
+            serial.DiscardInBuffer();
+            serial.DiscardOutBuffer();
+
             serial.Write(value + '\n');
             String test;
             bool stayInThere = true;
@@ -133,11 +151,21 @@ namespace BioBotApp.Utils.FSM
                 {
                     if (test.Contains("Completed"))
                     {
-                        //System.Windows.Forms.MessageBox.Show(test);
-                        stayInThere = false;
-                        serial.ReadExisting();
                         serial.DiscardInBuffer();
                         serial.DiscardOutBuffer();
+                        System.Threading.Thread.Sleep(200);
+
+                        //System.Windows.Forms.MessageBox.Show(test);
+                        stayInThere = false;
+
+                        for (int x = 0; x < 5; x++)
+                        {
+                            serial.ReadExisting();
+                            serial.DiscardInBuffer();
+                            serial.DiscardOutBuffer();
+                            System.Threading.Thread.Sleep(100);
+                        }
+                        wait.Set();
                     }
                 }
                 else
@@ -145,7 +173,11 @@ namespace BioBotApp.Utils.FSM
                     test = serial.ReadLine();
                     //System.Threading.Thread.Sleep(100);
                 }
-            }   
+
+                
+            }
+            //InterOperationFlag.isSerialBusy = false;
+            serial.Close();
         }
     }
 }
