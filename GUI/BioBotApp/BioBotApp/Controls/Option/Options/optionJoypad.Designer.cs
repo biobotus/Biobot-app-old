@@ -102,6 +102,8 @@ namespace BioBotApp.Controls.Option.Options
             this.buttonZ1Plus3 = new System.Windows.Forms.Button();
             this.edtMoveValue = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -127,6 +129,13 @@ namespace BioBotApp.Controls.Option.Options
             this.btnHomeZ1 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbIncrement = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure1)).BeginInit();
@@ -135,94 +144,109 @@ namespace BioBotApp.Controls.Option.Options
             // 
             // Home
             // 
-            this.Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Home.Location = new System.Drawing.Point(479, 159);
-            this.Home.Margin = new System.Windows.Forms.Padding(30);
+            this.Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Home.Location = new System.Drawing.Point(700, 45);
+            this.Home.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(34, 29);
+            this.Home.Size = new System.Drawing.Size(49, 29);
             this.Home.TabIndex = 0;
-            this.Home.Text = "H";
+            this.Home.Text = "All";
             this.Home.UseVisualStyleBackColor = true;
             this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // buttonYPlus
             // 
-            this.buttonYPlus.Location = new System.Drawing.Point(537, 159);
+            this.buttonYPlus.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonYPlus.Location = new System.Drawing.Point(453, 166);
             this.buttonYPlus.Name = "buttonYPlus";
-            this.buttonYPlus.Size = new System.Drawing.Size(36, 29);
+            this.buttonYPlus.Size = new System.Drawing.Size(49, 29);
             this.buttonYPlus.TabIndex = 1;
+            this.buttonYPlus.Text = "+1";
             this.buttonYPlus.UseVisualStyleBackColor = true;
             this.buttonYPlus.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonYPlus2
             // 
-            this.buttonYPlus2.Location = new System.Drawing.Point(590, 160);
+            this.buttonYPlus2.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonYPlus2.Location = new System.Drawing.Point(508, 166);
             this.buttonYPlus2.Name = "buttonYPlus2";
-            this.buttonYPlus2.Size = new System.Drawing.Size(36, 29);
+            this.buttonYPlus2.Size = new System.Drawing.Size(49, 29);
             this.buttonYPlus2.TabIndex = 2;
+            this.buttonYPlus2.Text = "+10";
             this.buttonYPlus2.UseVisualStyleBackColor = true;
             this.buttonYPlus2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonYPlus3
             // 
-            this.buttonYPlus3.Location = new System.Drawing.Point(643, 160);
+            this.buttonYPlus3.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonYPlus3.Location = new System.Drawing.Point(563, 166);
             this.buttonYPlus3.Name = "buttonYPlus3";
-            this.buttonYPlus3.Size = new System.Drawing.Size(36, 29);
+            this.buttonYPlus3.Size = new System.Drawing.Size(49, 29);
             this.buttonYPlus3.TabIndex = 3;
+            this.buttonYPlus3.Text = "+ inc";
             this.buttonYPlus3.UseVisualStyleBackColor = true;
             this.buttonYPlus3.Click += new System.EventHandler(this.button3_Click);
             // 
             // buttonYMinus2
             // 
             this.buttonYMinus2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonYMinus2.Location = new System.Drawing.Point(358, 160);
+            this.buttonYMinus2.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonYMinus2.Location = new System.Drawing.Point(343, 166);
             this.buttonYMinus2.Name = "buttonYMinus2";
-            this.buttonYMinus2.Size = new System.Drawing.Size(36, 29);
+            this.buttonYMinus2.Size = new System.Drawing.Size(49, 29);
             this.buttonYMinus2.TabIndex = 5;
+            this.buttonYMinus2.Text = "-10";
             this.buttonYMinus2.UseVisualStyleBackColor = true;
             this.buttonYMinus2.Click += new System.EventHandler(this.button6_Click);
             // 
             // buttonYMinus3
             // 
             this.buttonYMinus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonYMinus3.Location = new System.Drawing.Point(305, 159);
+            this.buttonYMinus3.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonYMinus3.Location = new System.Drawing.Point(288, 166);
             this.buttonYMinus3.Name = "buttonYMinus3";
-            this.buttonYMinus3.Size = new System.Drawing.Size(36, 29);
+            this.buttonYMinus3.Size = new System.Drawing.Size(49, 29);
             this.buttonYMinus3.TabIndex = 4;
-            this.buttonYMinus3.Text = "Y";
+            this.buttonYMinus3.Text = "- inc";
             this.buttonYMinus3.UseVisualStyleBackColor = true;
             this.buttonYMinus3.Click += new System.EventHandler(this.button7_Click);
             // 
             // buttonXMinus2
             // 
             this.buttonXMinus2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonXMinus2.Location = new System.Drawing.Point(479, 75);
-            this.buttonXMinus2.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonXMinus2.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonXMinus2.Location = new System.Drawing.Point(427, 87);
+            this.buttonXMinus2.Margin = new System.Windows.Forms.Padding(6);
             this.buttonXMinus2.Name = "buttonXMinus2";
-            this.buttonXMinus2.Size = new System.Drawing.Size(36, 29);
+            this.buttonXMinus2.Size = new System.Drawing.Size(49, 29);
             this.buttonXMinus2.TabIndex = 8;
+            this.buttonXMinus2.Text = "+10";
             this.buttonXMinus2.UseVisualStyleBackColor = true;
             this.buttonXMinus2.Click += new System.EventHandler(this.button9_Click);
             // 
             // buttonXPlus2
             // 
             this.buttonXPlus2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonXPlus2.Location = new System.Drawing.Point(479, 252);
-            this.buttonXPlus2.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonXPlus2.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonXPlus2.Location = new System.Drawing.Point(427, 245);
+            this.buttonXPlus2.Margin = new System.Windows.Forms.Padding(6);
             this.buttonXPlus2.Name = "buttonXPlus2";
-            this.buttonXPlus2.Size = new System.Drawing.Size(36, 29);
+            this.buttonXPlus2.Size = new System.Drawing.Size(49, 29);
             this.buttonXPlus2.TabIndex = 11;
+            this.buttonXPlus2.Text = "-10";
             this.buttonXPlus2.UseVisualStyleBackColor = true;
             this.buttonXPlus2.Click += new System.EventHandler(this.button12_Click);
             // 
             // buttonXPlus3
             // 
             this.buttonXPlus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonXPlus3.Location = new System.Drawing.Point(479, 294);
-            this.buttonXPlus3.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonXPlus3.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonXPlus3.Location = new System.Drawing.Point(427, 286);
+            this.buttonXPlus3.Margin = new System.Windows.Forms.Padding(6);
             this.buttonXPlus3.Name = "buttonXPlus3";
-            this.buttonXPlus3.Size = new System.Drawing.Size(36, 29);
+            this.buttonXPlus3.Size = new System.Drawing.Size(49, 29);
             this.buttonXPlus3.TabIndex = 10;
+            this.buttonXPlus3.Text = "- inc";
             this.buttonXPlus3.UseVisualStyleBackColor = true;
             this.buttonXPlus3.Click += new System.EventHandler(this.button13_Click);
             // 
@@ -230,7 +254,7 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 376);
+            this.splitter1.Size = new System.Drawing.Size(3, 608);
             this.splitter1.TabIndex = 17;
             this.splitter1.TabStop = false;
             // 
@@ -247,7 +271,7 @@ namespace BioBotApp.Controls.Option.Options
             this.groupBox1.Controls.Add(this.labelY);
             this.groupBox1.Controls.Add(this.labelX);
             this.groupBox1.Controls.Add(this.refresh);
-            this.groupBox1.Location = new System.Drawing.Point(223, 22);
+            this.groupBox1.Location = new System.Drawing.Point(234, 333);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(171, 128);
             this.groupBox1.TabIndex = 18;
@@ -358,22 +382,24 @@ namespace BioBotApp.Controls.Option.Options
             // buttonZ1Plus2
             // 
             this.buttonZ1Plus2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ1Plus2.Location = new System.Drawing.Point(18, 79);
-            this.buttonZ1Plus2.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ1Plus2.Location = new System.Drawing.Point(33, 83);
+            this.buttonZ1Plus2.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ1Plus2.Name = "buttonZ1Plus2";
-            this.buttonZ1Plus2.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ1Plus2.Size = new System.Drawing.Size(49, 29);
             this.buttonZ1Plus2.TabIndex = 20;
+            this.buttonZ1Plus2.Text = "+10";
             this.buttonZ1Plus2.UseVisualStyleBackColor = true;
             this.buttonZ1Plus2.Click += new System.EventHandler(this.button16_Click);
             // 
             // buttonZ1Minus2
             // 
             this.buttonZ1Minus2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ1Minus2.Location = new System.Drawing.Point(18, 243);
-            this.buttonZ1Minus2.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ1Minus2.Location = new System.Drawing.Point(33, 241);
+            this.buttonZ1Minus2.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ1Minus2.Name = "buttonZ1Minus2";
-            this.buttonZ1Minus2.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ1Minus2.Size = new System.Drawing.Size(49, 29);
             this.buttonZ1Minus2.TabIndex = 23;
+            this.buttonZ1Minus2.Text = "-10";
             this.buttonZ1Minus2.UseVisualStyleBackColor = true;
             this.buttonZ1Minus2.Click += new System.EventHandler(this.button33_Click);
             // 
@@ -381,7 +407,7 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(19, 168);
+            this.label11.Location = new System.Drawing.Point(46, 174);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(22, 13);
             this.label11.TabIndex = 25;
@@ -392,7 +418,7 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(69, 168);
+            this.label12.Location = new System.Drawing.Point(101, 174);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(22, 13);
             this.label12.TabIndex = 32;
@@ -402,33 +428,36 @@ namespace BioBotApp.Controls.Option.Options
             // buttonZ2Minus2
             // 
             this.buttonZ2Minus2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ2Minus2.Location = new System.Drawing.Point(68, 243);
-            this.buttonZ2Minus2.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ2Minus2.Location = new System.Drawing.Point(88, 241);
+            this.buttonZ2Minus2.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ2Minus2.Name = "buttonZ2Minus2";
-            this.buttonZ2Minus2.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ2Minus2.Size = new System.Drawing.Size(49, 29);
             this.buttonZ2Minus2.TabIndex = 30;
+            this.buttonZ2Minus2.Text = "-10";
             this.buttonZ2Minus2.UseVisualStyleBackColor = true;
             this.buttonZ2Minus2.Click += new System.EventHandler(this.button36_Click);
             // 
             // buttonZ2Plus3
             // 
             this.buttonZ2Plus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ2Plus3.Location = new System.Drawing.Point(68, 34);
-            this.buttonZ2Plus3.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ2Plus3.Location = new System.Drawing.Point(87, 38);
+            this.buttonZ2Plus3.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ2Plus3.Name = "buttonZ2Plus3";
-            this.buttonZ2Plus3.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ2Plus3.Size = new System.Drawing.Size(49, 29);
             this.buttonZ2Plus3.TabIndex = 28;
+            this.buttonZ2Plus3.Text = "+ inc";
             this.buttonZ2Plus3.UseVisualStyleBackColor = true;
             this.buttonZ2Plus3.Click += new System.EventHandler(this.button38_Click);
             // 
             // buttonZ2Plus2
             // 
             this.buttonZ2Plus2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ2Plus2.Location = new System.Drawing.Point(68, 79);
-            this.buttonZ2Plus2.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ2Plus2.Location = new System.Drawing.Point(88, 83);
+            this.buttonZ2Plus2.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ2Plus2.Name = "buttonZ2Plus2";
-            this.buttonZ2Plus2.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ2Plus2.Size = new System.Drawing.Size(49, 29);
             this.buttonZ2Plus2.TabIndex = 27;
+            this.buttonZ2Plus2.Text = "+10";
             this.buttonZ2Plus2.UseVisualStyleBackColor = true;
             this.buttonZ2Plus2.Click += new System.EventHandler(this.button39_Click);
             // 
@@ -436,7 +465,7 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(125, 168);
+            this.label13.Location = new System.Drawing.Point(157, 174);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(22, 13);
             this.label13.TabIndex = 39;
@@ -447,93 +476,123 @@ namespace BioBotApp.Controls.Option.Options
             // buttonZ3Minus2
             // 
             this.buttonZ3Minus2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ3Minus2.Location = new System.Drawing.Point(124, 243);
-            this.buttonZ3Minus2.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ3Minus2.Location = new System.Drawing.Point(143, 241);
+            this.buttonZ3Minus2.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ3Minus2.Name = "buttonZ3Minus2";
-            this.buttonZ3Minus2.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ3Minus2.Size = new System.Drawing.Size(49, 29);
             this.buttonZ3Minus2.TabIndex = 37;
+            this.buttonZ3Minus2.Text = "-10";
             this.buttonZ3Minus2.UseVisualStyleBackColor = true;
             this.buttonZ3Minus2.Click += new System.EventHandler(this.button42_Click);
             // 
             // buttonZ3Plus3
             // 
             this.buttonZ3Plus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ3Plus3.Location = new System.Drawing.Point(124, 34);
-            this.buttonZ3Plus3.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ3Plus3.Location = new System.Drawing.Point(143, 38);
+            this.buttonZ3Plus3.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ3Plus3.Name = "buttonZ3Plus3";
-            this.buttonZ3Plus3.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ3Plus3.Size = new System.Drawing.Size(49, 29);
             this.buttonZ3Plus3.TabIndex = 35;
+            this.buttonZ3Plus3.Text = "+ inc";
             this.buttonZ3Plus3.UseVisualStyleBackColor = true;
             this.buttonZ3Plus3.Click += new System.EventHandler(this.button44_Click);
             // 
             // buttonXPlus
             // 
             this.buttonXPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonXPlus.ForeColor = System.Drawing.SystemColors.InfoText;
             this.buttonXPlus.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonXPlus.Location = new System.Drawing.Point(479, 207);
-            this.buttonXPlus.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonXPlus.Location = new System.Drawing.Point(427, 204);
+            this.buttonXPlus.Margin = new System.Windows.Forms.Padding(6);
             this.buttonXPlus.Name = "buttonXPlus";
-            this.buttonXPlus.Size = new System.Drawing.Size(36, 29);
+            this.buttonXPlus.Size = new System.Drawing.Size(49, 29);
             this.buttonXPlus.TabIndex = 12;
+            this.buttonXPlus.Text = "-1";
             this.buttonXPlus.UseVisualStyleBackColor = true;
             this.buttonXPlus.Click += new System.EventHandler(this.button11_Click);
             // 
             // buttonXMinus3
             // 
             this.buttonXMinus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonXMinus3.Location = new System.Drawing.Point(479, 30);
-            this.buttonXMinus3.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonXMinus3.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonXMinus3.Location = new System.Drawing.Point(427, 46);
+            this.buttonXMinus3.Margin = new System.Windows.Forms.Padding(6);
             this.buttonXMinus3.Name = "buttonXMinus3";
-            this.buttonXMinus3.Size = new System.Drawing.Size(36, 29);
+            this.buttonXMinus3.Size = new System.Drawing.Size(49, 29);
             this.buttonXMinus3.TabIndex = 9;
-            this.buttonXMinus3.Text = "X";
+            this.buttonXMinus3.Text = "+ inc";
             this.buttonXMinus3.UseVisualStyleBackColor = true;
             this.buttonXMinus3.Click += new System.EventHandler(this.button10_Click);
             // 
             // buttonZ1Plus3
             // 
             this.buttonZ1Plus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ1Plus3.Location = new System.Drawing.Point(18, 34);
-            this.buttonZ1Plus3.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ1Plus3.Location = new System.Drawing.Point(32, 38);
+            this.buttonZ1Plus3.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ1Plus3.Name = "buttonZ1Plus3";
-            this.buttonZ1Plus3.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ1Plus3.Size = new System.Drawing.Size(49, 29);
             this.buttonZ1Plus3.TabIndex = 21;
+            this.buttonZ1Plus3.Text = "+ inc";
             this.buttonZ1Plus3.UseVisualStyleBackColor = true;
             this.buttonZ1Plus3.Click += new System.EventHandler(this.button15_Click);
             // 
             // edtMoveValue
             // 
-            this.edtMoveValue.Location = new System.Drawing.Point(41, 29);
+            this.edtMoveValue.Location = new System.Drawing.Point(9, 43);
             this.edtMoveValue.MaxLength = 5;
             this.edtMoveValue.Name = "edtMoveValue";
-            this.edtMoveValue.Size = new System.Drawing.Size(84, 20);
+            this.edtMoveValue.Size = new System.Drawing.Size(95, 20);
             this.edtMoveValue.TabIndex = 14;
             this.edtMoveValue.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             this.edtMoveValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPressed);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.edtMoveValue);
-            this.groupBox3.Location = new System.Drawing.Point(177, 230);
+            this.groupBox3.Location = new System.Drawing.Point(461, 333);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(230, 104);
+            this.groupBox3.Size = new System.Drawing.Size(291, 128);
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Valeur de Decalement";
+            this.groupBox3.Text = "Move axis to given position";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "Desired position";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 72);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(131, 13);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Move axis to position ";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button8
             // 
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Location = new System.Drawing.Point(181, 62);
-            this.button8.Margin = new System.Windows.Forms.Padding(30);
+            this.button8.Location = new System.Drawing.Point(229, 91);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(36, 29);
+            this.button8.Size = new System.Drawing.Size(49, 29);
             this.button8.TabIndex = 19;
             this.button8.Text = "Z3";
             this.button8.UseVisualStyleBackColor = true;
@@ -542,10 +601,10 @@ namespace BioBotApp.Controls.Option.Options
             // button7
             // 
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Location = new System.Drawing.Point(138, 62);
-            this.button7.Margin = new System.Windows.Forms.Padding(30);
+            this.button7.Location = new System.Drawing.Point(174, 91);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(36, 29);
+            this.button7.Size = new System.Drawing.Size(49, 29);
             this.button7.TabIndex = 18;
             this.button7.Text = "Z2";
             this.button7.UseVisualStyleBackColor = true;
@@ -554,10 +613,10 @@ namespace BioBotApp.Controls.Option.Options
             // button6
             // 
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Location = new System.Drawing.Point(93, 62);
-            this.button6.Margin = new System.Windows.Forms.Padding(30);
+            this.button6.Location = new System.Drawing.Point(119, 91);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(36, 29);
+            this.button6.Size = new System.Drawing.Size(49, 29);
             this.button6.TabIndex = 17;
             this.button6.Text = "Z1";
             this.button6.UseVisualStyleBackColor = true;
@@ -566,10 +625,10 @@ namespace BioBotApp.Controls.Option.Options
             // button5
             // 
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(52, 62);
-            this.button5.Margin = new System.Windows.Forms.Padding(30);
+            this.button5.Location = new System.Drawing.Point(64, 91);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(36, 29);
+            this.button5.Size = new System.Drawing.Size(49, 29);
             this.button5.TabIndex = 16;
             this.button5.Text = "Y";
             this.button5.UseVisualStyleBackColor = true;
@@ -578,10 +637,10 @@ namespace BioBotApp.Controls.Option.Options
             // button3
             // 
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(12, 62);
-            this.button3.Margin = new System.Windows.Forms.Padding(30);
+            this.button3.Location = new System.Drawing.Point(9, 91);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(36, 29);
+            this.button3.Size = new System.Drawing.Size(49, 29);
             this.button3.TabIndex = 15;
             this.button3.Text = "X";
             this.button3.UseVisualStyleBackColor = true;
@@ -590,22 +649,24 @@ namespace BioBotApp.Controls.Option.Options
             // buttonZ3Plus2
             // 
             this.buttonZ3Plus2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ3Plus2.Location = new System.Drawing.Point(124, 79);
-            this.buttonZ3Plus2.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ3Plus2.Location = new System.Drawing.Point(144, 83);
+            this.buttonZ3Plus2.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ3Plus2.Name = "buttonZ3Plus2";
-            this.buttonZ3Plus2.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ3Plus2.Size = new System.Drawing.Size(49, 29);
             this.buttonZ3Plus2.TabIndex = 34;
+            this.buttonZ3Plus2.Text = "+10";
             this.buttonZ3Plus2.UseVisualStyleBackColor = true;
             this.buttonZ3Plus2.Click += new System.EventHandler(this.button45_Click);
             // 
             // buttonZ3Minus
             // 
             this.buttonZ3Minus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ3Minus.Location = new System.Drawing.Point(124, 198);
-            this.buttonZ3Minus.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ3Minus.Location = new System.Drawing.Point(143, 196);
+            this.buttonZ3Minus.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ3Minus.Name = "buttonZ3Minus";
-            this.buttonZ3Minus.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ3Minus.Size = new System.Drawing.Size(49, 29);
             this.buttonZ3Minus.TabIndex = 38;
+            this.buttonZ3Minus.Text = "-1";
             this.buttonZ3Minus.UseVisualStyleBackColor = true;
             this.buttonZ3Minus.Click += new System.EventHandler(this.button41_Click);
             // 
@@ -613,12 +674,13 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.buttonZ3Minus3.BackColor = System.Drawing.SystemColors.Control;
             this.buttonZ3Minus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ3Minus3.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonZ3Minus3.Location = new System.Drawing.Point(124, 285);
-            this.buttonZ3Minus3.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ3Minus3.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonZ3Minus3.Location = new System.Drawing.Point(143, 286);
+            this.buttonZ3Minus3.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ3Minus3.Name = "buttonZ3Minus3";
-            this.buttonZ3Minus3.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ3Minus3.Size = new System.Drawing.Size(49, 29);
             this.buttonZ3Minus3.TabIndex = 36;
+            this.buttonZ3Minus3.Text = "- inc";
             this.buttonZ3Minus3.UseVisualStyleBackColor = false;
             this.buttonZ3Minus3.Click += new System.EventHandler(this.button43_Click);
             // 
@@ -626,23 +688,25 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.buttonZ3Plus.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonZ3Plus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ3Plus.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonZ3Plus.Location = new System.Drawing.Point(124, 121);
-            this.buttonZ3Plus.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ3Plus.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonZ3Plus.Location = new System.Drawing.Point(143, 128);
+            this.buttonZ3Plus.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ3Plus.Name = "buttonZ3Plus";
-            this.buttonZ3Plus.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ3Plus.Size = new System.Drawing.Size(49, 29);
             this.buttonZ3Plus.TabIndex = 33;
+            this.buttonZ3Plus.Text = "+1";
             this.buttonZ3Plus.UseVisualStyleBackColor = false;
             this.buttonZ3Plus.Click += new System.EventHandler(this.button46_Click);
             // 
             // buttonZ2Minus
             // 
             this.buttonZ2Minus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ2Minus.Location = new System.Drawing.Point(68, 198);
-            this.buttonZ2Minus.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ2Minus.Location = new System.Drawing.Point(88, 196);
+            this.buttonZ2Minus.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ2Minus.Name = "buttonZ2Minus";
-            this.buttonZ2Minus.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ2Minus.Size = new System.Drawing.Size(49, 29);
             this.buttonZ2Minus.TabIndex = 31;
+            this.buttonZ2Minus.Text = "-1";
             this.buttonZ2Minus.UseVisualStyleBackColor = true;
             this.buttonZ2Minus.Click += new System.EventHandler(this.button35_Click);
             // 
@@ -650,12 +714,13 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.buttonZ2Minus3.BackColor = System.Drawing.SystemColors.Control;
             this.buttonZ2Minus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ2Minus3.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonZ2Minus3.Location = new System.Drawing.Point(68, 285);
-            this.buttonZ2Minus3.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ2Minus3.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonZ2Minus3.Location = new System.Drawing.Point(88, 286);
+            this.buttonZ2Minus3.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ2Minus3.Name = "buttonZ2Minus3";
-            this.buttonZ2Minus3.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ2Minus3.Size = new System.Drawing.Size(49, 29);
             this.buttonZ2Minus3.TabIndex = 29;
+            this.buttonZ2Minus3.Text = "- inc";
             this.buttonZ2Minus3.UseVisualStyleBackColor = false;
             this.buttonZ2Minus3.Click += new System.EventHandler(this.button37_Click);
             // 
@@ -663,23 +728,25 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.buttonZ2Plus.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonZ2Plus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ2Plus.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonZ2Plus.Location = new System.Drawing.Point(68, 121);
-            this.buttonZ2Plus.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ2Plus.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonZ2Plus.Location = new System.Drawing.Point(87, 128);
+            this.buttonZ2Plus.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ2Plus.Name = "buttonZ2Plus";
-            this.buttonZ2Plus.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ2Plus.Size = new System.Drawing.Size(49, 29);
             this.buttonZ2Plus.TabIndex = 26;
+            this.buttonZ2Plus.Text = "+1";
             this.buttonZ2Plus.UseVisualStyleBackColor = false;
             this.buttonZ2Plus.Click += new System.EventHandler(this.button40_Click);
             // 
             // buttonZ1Minus
             // 
             this.buttonZ1Minus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ1Minus.Location = new System.Drawing.Point(18, 198);
-            this.buttonZ1Minus.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ1Minus.Location = new System.Drawing.Point(33, 196);
+            this.buttonZ1Minus.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ1Minus.Name = "buttonZ1Minus";
-            this.buttonZ1Minus.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ1Minus.Size = new System.Drawing.Size(49, 29);
             this.buttonZ1Minus.TabIndex = 24;
+            this.buttonZ1Minus.Text = "-1";
             this.buttonZ1Minus.UseVisualStyleBackColor = true;
             this.buttonZ1Minus.Click += new System.EventHandler(this.button32_Click);
             // 
@@ -687,12 +754,13 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.buttonZ1Minus3.BackColor = System.Drawing.SystemColors.Control;
             this.buttonZ1Minus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ1Minus3.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonZ1Minus3.Location = new System.Drawing.Point(18, 285);
-            this.buttonZ1Minus3.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ1Minus3.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonZ1Minus3.Location = new System.Drawing.Point(33, 286);
+            this.buttonZ1Minus3.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ1Minus3.Name = "buttonZ1Minus3";
-            this.buttonZ1Minus3.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ1Minus3.Size = new System.Drawing.Size(49, 29);
             this.buttonZ1Minus3.TabIndex = 22;
+            this.buttonZ1Minus3.Text = "- inc";
             this.buttonZ1Minus3.UseVisualStyleBackColor = false;
             this.buttonZ1Minus3.Click += new System.EventHandler(this.button34_Click);
             // 
@@ -700,12 +768,13 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.buttonZ1Plus.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonZ1Plus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonZ1Plus.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonZ1Plus.Location = new System.Drawing.Point(18, 121);
-            this.buttonZ1Plus.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonZ1Plus.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonZ1Plus.Location = new System.Drawing.Point(31, 128);
+            this.buttonZ1Plus.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.buttonZ1Plus.Name = "buttonZ1Plus";
-            this.buttonZ1Plus.Size = new System.Drawing.Size(28, 29);
+            this.buttonZ1Plus.Size = new System.Drawing.Size(49, 29);
             this.buttonZ1Plus.TabIndex = 19;
+            this.buttonZ1Plus.Text = "+1";
             this.buttonZ1Plus.UseVisualStyleBackColor = false;
             this.buttonZ1Plus.Click += new System.EventHandler(this.button17_Click);
             // 
@@ -713,22 +782,25 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.buttonXMinus.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonXMinus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonXMinus.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonXMinus.Location = new System.Drawing.Point(479, 117);
-            this.buttonXMinus.Margin = new System.Windows.Forms.Padding(30);
+            this.buttonXMinus.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonXMinus.Location = new System.Drawing.Point(427, 128);
+            this.buttonXMinus.Margin = new System.Windows.Forms.Padding(6);
             this.buttonXMinus.Name = "buttonXMinus";
-            this.buttonXMinus.Size = new System.Drawing.Size(36, 29);
+            this.buttonXMinus.Size = new System.Drawing.Size(49, 29);
             this.buttonXMinus.TabIndex = 7;
+            this.buttonXMinus.Text = "+1";
             this.buttonXMinus.UseVisualStyleBackColor = false;
             this.buttonXMinus.Click += new System.EventHandler(this.button8_Click);
             // 
             // buttonYMinus
             // 
             this.buttonYMinus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonYMinus.Location = new System.Drawing.Point(411, 160);
+            this.buttonYMinus.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.buttonYMinus.Location = new System.Drawing.Point(398, 166);
             this.buttonYMinus.Name = "buttonYMinus";
-            this.buttonYMinus.Size = new System.Drawing.Size(36, 29);
+            this.buttonYMinus.Size = new System.Drawing.Size(49, 29);
             this.buttonYMinus.TabIndex = 6;
+            this.buttonYMinus.Text = "-1";
             this.buttonYMinus.UseVisualStyleBackColor = true;
             this.buttonYMinus.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -748,53 +820,132 @@ namespace BioBotApp.Controls.Option.Options
             // 
             // btnHomeZ3
             // 
-            this.btnHomeZ3.Location = new System.Drawing.Point(124, 3);
+            this.btnHomeZ3.Location = new System.Drawing.Point(700, 290);
+            this.btnHomeZ3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnHomeZ3.Name = "btnHomeZ3";
-            this.btnHomeZ3.Size = new System.Drawing.Size(28, 23);
+            this.btnHomeZ3.Size = new System.Drawing.Size(49, 29);
             this.btnHomeZ3.TabIndex = 41;
-            this.btnHomeZ3.Text = "H";
+            this.btnHomeZ3.Text = "Z3";
             this.btnHomeZ3.UseVisualStyleBackColor = true;
             this.btnHomeZ3.Click += new System.EventHandler(this.btnHomeZ3_Click);
             // 
             // btnHomeZ2
             // 
-            this.btnHomeZ2.Location = new System.Drawing.Point(68, 3);
+            this.btnHomeZ2.Location = new System.Drawing.Point(700, 241);
+            this.btnHomeZ2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnHomeZ2.Name = "btnHomeZ2";
-            this.btnHomeZ2.Size = new System.Drawing.Size(28, 23);
+            this.btnHomeZ2.Size = new System.Drawing.Size(49, 29);
             this.btnHomeZ2.TabIndex = 42;
-            this.btnHomeZ2.Text = "H";
+            this.btnHomeZ2.Text = "Z2";
             this.btnHomeZ2.UseVisualStyleBackColor = true;
             this.btnHomeZ2.Click += new System.EventHandler(this.btnHomeZ2_Click);
             // 
             // btnHomeZ1
             // 
-            this.btnHomeZ1.Location = new System.Drawing.Point(18, 3);
+            this.btnHomeZ1.Location = new System.Drawing.Point(700, 192);
+            this.btnHomeZ1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnHomeZ1.Name = "btnHomeZ1";
-            this.btnHomeZ1.Size = new System.Drawing.Size(28, 23);
+            this.btnHomeZ1.Size = new System.Drawing.Size(49, 29);
             this.btnHomeZ1.TabIndex = 43;
-            this.btnHomeZ1.Text = "H";
+            this.btnHomeZ1.Text = "Z1";
             this.btnHomeZ1.UseVisualStyleBackColor = true;
             this.btnHomeZ1.Click += new System.EventHandler(this.btnHomeZ1_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(479, 3);
+            this.button1.Location = new System.Drawing.Point(700, 94);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 23);
+            this.button1.Size = new System.Drawing.Size(49, 29);
             this.button1.TabIndex = 44;
-            this.button1.Text = "H";
+            this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(269, 162);
+            this.button2.Location = new System.Drawing.Point(700, 143);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 23);
+            this.button2.Size = new System.Drawing.Size(49, 29);
             this.button2.TabIndex = 45;
-            this.button2.Text = "H";
+            this.button2.Text = "Y";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(26, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 16);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Z axis (tools) movement ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(363, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 16);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "X and Y Axis movement";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(265, 174);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 13);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Y";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(442, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 13);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "X";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(682, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 16);
+            this.label5.TabIndex = 51;
+            this.label5.Text = "Home axis";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(30, 333);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 13);
+            this.label8.TabIndex = 52;
+            this.label8.Text = "Incrément (inc) :";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbIncrement
+            // 
+            this.tbIncrement.Location = new System.Drawing.Point(33, 358);
+            this.tbIncrement.MaxLength = 5;
+            this.tbIncrement.Name = "tbIncrement";
+            this.tbIncrement.Size = new System.Drawing.Size(95, 20);
+            this.tbIncrement.TabIndex = 54;
             // 
             // optionJoypad
             // 
@@ -804,6 +955,13 @@ namespace BioBotApp.Controls.Option.Options
             this.AutoScrollMinSize = new System.Drawing.Size(716, 351);
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.tbIncrement);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnHomeZ1);
@@ -849,7 +1007,7 @@ namespace BioBotApp.Controls.Option.Options
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "optionJoypad";
-            this.Size = new System.Drawing.Size(764, 376);
+            this.Size = new System.Drawing.Size(947, 608);
             this.Tag = "Joypad";
             this.Load += new System.EventHandler(this.optionJoypad_Load);
             this.groupBox1.ResumeLayout(false);
@@ -957,5 +1115,14 @@ namespace BioBotApp.Controls.Option.Options
         private Button button3;
         private Button button8;
         private Button button7;
+        private Label label1;
+        private Label label2;
+        private Label label4;
+        private Label label3;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private TextBox tbIncrement;
     }
 }

@@ -17,7 +17,6 @@ namespace BioBotApp.Utils.FSM
         private const int HOME = 19;
 
         AutoResetEvent wait = new AutoResetEvent(false);
-
         public fsmSingleChannelPipette()
         {
             PCANCom.Instance.OnMessageReceived += Instance_OnMessageReceived;
