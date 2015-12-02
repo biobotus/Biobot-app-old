@@ -212,3 +212,4 @@ C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\obj\Debug\PCAN.ct
 C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.csproj.GenerateResource.Cache
 C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.exe
 C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.pdb
+C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.csprojResolveAssemblyReference.cache

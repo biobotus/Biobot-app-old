@@ -20,7 +20,7 @@ namespace BioBotApp.Utils.Communication
                     gCodeSerialChannel.configure("COM4", "115200", "8", "One", "None");
 
                     //PCAN.ctrCanConnector temp = new PCAN.ctrCanConnector();
-                    //temp.connect();
+                    //temp.connect("51");
 
                     gCodeSerialChannel.Open();
                 }

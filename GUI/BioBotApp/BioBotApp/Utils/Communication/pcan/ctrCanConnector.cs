@@ -368,49 +368,22 @@ namespace PCAN
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            TPCANStatus stsResult;
-
-            // Get the handle fromt he text being shown
-            //
             String strTemp = cbChannel.Text;
             strTemp = strTemp.Substring(strTemp.IndexOf('(') + 1, 3);
             strTemp = strTemp.Replace('h', ' ').Trim(' ');
-
-            // Connects a selected PCAN-Basic channel
-            //
-            stsResult = PCANCom.Instance.connect(
-                            Convert.ToUInt16(strTemp, 16),
-                            getBaudrate(), getCanType(),
-                            Convert.ToUInt32(cbIO.Text, 16),
-                            Convert.ToUInt16(cbInterrupt.Text));
-
-            if (stsResult != TPCANStatus.PCAN_ERROR_OK)
-            {
-                if (stsResult != TPCANStatus.PCAN_ERROR_CAUTION)
-                    MessageBox.Show(GetFormatedError(stsResult));
-                else
-                {
-                    //IncludeTextMessage("******************************************************");
-                    //IncludeTextMessage("The bitrate being used is different than the given one");
-                    //IncludeTextMessage("******************************************************");
-                    stsResult = TPCANStatus.PCAN_ERROR_OK;
-                }
-
-            }
-            // Sets the connection status of the main-form
-            //
-            SetConnectionStatus(stsResult == TPCANStatus.PCAN_ERROR_OK);
+            connect(strTemp);
         }
 
-        public void connect()
+        public void connect(String strTemp)
         {
             TPCANStatus stsResult;
 
             // Get the handle fromt he text being shown
             //
+            /*
             String strTemp = cbChannel.Text;
             strTemp = strTemp.Substring(strTemp.IndexOf('(') + 1, 3);
-            strTemp = strTemp.Replace('h', ' ').Trim(' ');
+            strTemp = strTemp.Replace('h', ' ').Trim(' ');*/
 
             // Connects a selected PCAN-Basic channel
             //
