@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Peak.Can.Basic;
+using BioBotApp.Utils.Communication.pcan;
 
 namespace PCAN
 {

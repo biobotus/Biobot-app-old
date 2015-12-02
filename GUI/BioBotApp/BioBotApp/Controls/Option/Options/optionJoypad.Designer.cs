@@ -273,7 +273,7 @@ namespace BioBotApp.Controls.Option.Options
             this.groupBox1.Controls.Add(this.refresh);
             this.groupBox1.Location = new System.Drawing.Point(234, 333);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(171, 128);
+            this.groupBox1.Size = new System.Drawing.Size(158, 128);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Position du Robot";
@@ -322,7 +322,7 @@ namespace BioBotApp.Controls.Option.Options
             // labelZ3
             // 
             this.labelZ3.AutoSize = true;
-            this.labelZ3.Location = new System.Drawing.Point(110, 100);
+            this.labelZ3.Location = new System.Drawing.Point(60, 109);
             this.labelZ3.Name = "labelZ3";
             this.labelZ3.Size = new System.Drawing.Size(35, 13);
             this.labelZ3.TabIndex = 5;
@@ -331,7 +331,7 @@ namespace BioBotApp.Controls.Option.Options
             // labelZ2
             // 
             this.labelZ2.AutoSize = true;
-            this.labelZ2.Location = new System.Drawing.Point(58, 100);
+            this.labelZ2.Location = new System.Drawing.Point(60, 86);
             this.labelZ2.Name = "labelZ2";
             this.labelZ2.Size = new System.Drawing.Size(35, 13);
             this.labelZ2.TabIndex = 4;
@@ -341,7 +341,7 @@ namespace BioBotApp.Controls.Option.Options
             // labelZ1
             // 
             this.labelZ1.AutoSize = true;
-            this.labelZ1.Location = new System.Drawing.Point(6, 100);
+            this.labelZ1.Location = new System.Drawing.Point(60, 60);
             this.labelZ1.Name = "labelZ1";
             this.labelZ1.Size = new System.Drawing.Size(35, 13);
             this.labelZ1.TabIndex = 3;
@@ -351,7 +351,7 @@ namespace BioBotApp.Controls.Option.Options
             // labelY
             // 
             this.labelY.AutoSize = true;
-            this.labelY.Location = new System.Drawing.Point(79, 69);
+            this.labelY.Location = new System.Drawing.Point(66, 39);
             this.labelY.Name = "labelY";
             this.labelY.Size = new System.Drawing.Size(29, 13);
             this.labelY.TabIndex = 2;
@@ -361,7 +361,7 @@ namespace BioBotApp.Controls.Option.Options
             // labelX
             // 
             this.labelX.AutoSize = true;
-            this.labelX.Location = new System.Drawing.Point(17, 69);
+            this.labelX.Location = new System.Drawing.Point(65, 17);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(29, 13);
             this.labelX.TabIndex = 1;
@@ -372,9 +372,9 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.refresh.BackgroundImage = global::BioBotApp.Properties.Resources.refresh;
             this.refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.refresh.Location = new System.Drawing.Point(61, 20);
+            this.refresh.Location = new System.Drawing.Point(7, 39);
             this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(39, 34);
+            this.refresh.Size = new System.Drawing.Size(39, 44);
             this.refresh.TabIndex = 0;
             this.refresh.UseVisualStyleBackColor = true;
             this.refresh.Click += new System.EventHandler(this.refresh_Click);

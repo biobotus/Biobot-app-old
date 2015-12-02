@@ -49,6 +49,7 @@ namespace BioBotApp.Controls.Option.Options
         private void Instance_OnMessageReceived(object sender, PCANComEventArgs e)
         {
             wait.Set();
+            updatePositions();
         }
 
         public optionJoypad(dsModuleStructure3 dsModuleStructure,BindingSource bsModule) : this()
@@ -155,7 +156,6 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button5_Click(object sender, EventArgs e)
         {
-
             ycoor -= 1;
             move("Y", ycoor);
         }
@@ -230,15 +230,11 @@ namespace BioBotApp.Controls.Option.Options
         }
 
         private void button45_Click(object sender, EventArgs e)
-        {
-            if (edtMoveValue.Text.Length != 0)
-            {
-                Int16 value = Convert.ToInt16(edtMoveValue.Text);
-                z3coor += 10;
-                DynamixelCom.sendPositionToMoveTo((Int16)z3coor);
-                wait.Reset();
-                wait.WaitOne();
-            }            
+        {                
+            z3coor += 10;
+            DynamixelCom.sendPositionToMoveTo((Int16)z3coor);
+            wait.Reset();
+            wait.WaitOne();                     
             /*
             z3coor += 10;
             move("Z3", z3coor);*/
@@ -246,7 +242,6 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button46_Click(object sender, EventArgs e)
         {
-            Int16 value = Convert.ToInt16(edtMoveValue.Text);
             z3coor += 1;
             DynamixelCom.sendPositionToMoveTo((Int16)z3coor);
             wait.Reset();
@@ -289,22 +284,22 @@ namespace BioBotApp.Controls.Option.Options
                 z1coor += value;
                 SingleChannelPipette.sendPositionToMoveTo((Int16)z1coor);                
                 wait.Reset();
-                wait.WaitOne();                
+                wait.WaitOne();
             }
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
             z1coor += 10;
-            SingleChannelPipette.sendPositionToMoveTo((Int16)z2coor);
+            SingleChannelPipette.sendPositionToMoveTo((Int16)z1coor);
             wait.Reset();
             wait.WaitOne();
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            z1coor -= 1;
-            SingleChannelPipette.sendPositionToMoveTo((Int16)z2coor);
+            z1coor += 1;
+            SingleChannelPipette.sendPositionToMoveTo((Int16)z1coor);
             wait.Reset();
             wait.WaitOne();
         }
@@ -319,7 +314,6 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button42_Click(object sender, EventArgs e)
         {
-            Int16 value = Convert.ToInt16(edtMoveValue.Text);
             z3coor -= 10;
             DynamixelCom.sendPositionToMoveTo((Int16)z3coor);
             wait.Reset();
@@ -351,7 +345,7 @@ namespace BioBotApp.Controls.Option.Options
             z2coor -= 10;
             MultiChannelPipette.sendPositionToMoveTo((Int16)z2coor);
             wait.Reset();
-            wait.WaitOne();            
+            wait.WaitOne();
         }
 
         private void button37_Click(object sender, EventArgs e)
@@ -369,7 +363,7 @@ namespace BioBotApp.Controls.Option.Options
         private void button32_Click(object sender, EventArgs e)
         {
             z1coor -= 1;
-            SingleChannelPipette.sendPositionToMoveTo((Int16)z2coor);
+            SingleChannelPipette.sendPositionToMoveTo((Int16)z1coor);
             wait.Reset();
             wait.WaitOne();
         }
@@ -377,7 +371,7 @@ namespace BioBotApp.Controls.Option.Options
         private void button33_Click(object sender, EventArgs e)
         {
             z1coor -= 10;
-            SingleChannelPipette.sendPositionToMoveTo((Int16)z2coor);
+            SingleChannelPipette.sendPositionToMoveTo((Int16)z1coor);
             wait.Reset();
             wait.WaitOne();
         }
@@ -388,7 +382,7 @@ namespace BioBotApp.Controls.Option.Options
             {
                 Int16 value = Convert.ToInt16(tbIncrement.Text);
                 z1coor -= value;
-                SingleChannelPipette.sendPositionToMoveTo((Int16)z2coor);
+                SingleChannelPipette.sendPositionToMoveTo((Int16)z1coor);
                 wait.Reset();
                 wait.WaitOne();
             }
@@ -438,7 +432,6 @@ namespace BioBotApp.Controls.Option.Options
         private void move(String axe, double position)
         {
             ComChannelFactory.getGCodeSerial().WriteLine(axe + position);
-            updatePositions();
         }
 
         public void setupGCode(double x, double y, double z1, double z2, double z3)
@@ -496,6 +489,7 @@ namespace BioBotApp.Controls.Option.Options
 
         private void btnHomeZ3_Click(object sender, EventArgs e)
         {
+            z3coor = 0;
             DynamixelCom.homeTool();
             wait.Reset();
             wait.WaitOne();
@@ -507,6 +501,7 @@ namespace BioBotApp.Controls.Option.Options
 
         private void btnHomeZ2_Click(object sender, EventArgs e)
         {
+            z2coor = 0;
             MultiChannelPipette.homeTool();
             wait.Reset();
             wait.WaitOne();
@@ -518,6 +513,7 @@ namespace BioBotApp.Controls.Option.Options
 
         private void btnHomeZ1_Click(object sender, EventArgs e)
         {
+            z1coor = 0;
             SingleChannelPipette.homeTool();
             wait.Reset();
             wait.WaitOne();
@@ -531,14 +527,12 @@ namespace BioBotApp.Controls.Option.Options
         {
             ComChannelFactory.getGCodeSerial().WriteLine("HY");
             ycoor = 0;
-            updatePositions();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             ComChannelFactory.getGCodeSerial().WriteLine("HX");
             xcoor = 0;
-            updatePositions();
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -578,6 +572,7 @@ namespace BioBotApp.Controls.Option.Options
                 Int16 value = Convert.ToInt16(edtMoveValue.Text);
                 z2coor = value;
                 MultiChannelPipette.sendPositionToMoveTo((Int16)z2coor);
+                updatePositions();
             }
         }
 
@@ -588,6 +583,7 @@ namespace BioBotApp.Controls.Option.Options
                 Int16 value = Convert.ToInt16(edtMoveValue.Text);
                 z3coor = value;
                 DynamixelCom.sendPositionToMoveTo((Int16)z3coor);
+                updatePositions();
             }
         }
     }

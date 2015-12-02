@@ -27,9 +27,7 @@ namespace BioBotApp.Utils.Communication
                 this.BaudRate = int.Parse(baudRate);
                 this.DataBits = int.Parse(dataBits);
                 this.PortName = portName;
-                this.Parity = (Parity)Enum.Parse(typeof(Parity), parityBits);
-                
-                
+                this.Parity = (Parity)Enum.Parse(typeof(Parity), parityBits);   
             }
             catch (Exception ex)
             {
