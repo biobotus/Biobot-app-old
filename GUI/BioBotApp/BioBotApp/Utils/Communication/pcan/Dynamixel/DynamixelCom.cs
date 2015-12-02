@@ -9,13 +9,14 @@ namespace BioBotApp.Utils.Communication.pcan.Dynamixel
 {
     class DynamixelCom
     {
-        private enum InstructionSet { Home = 0x01, GoTo = 0x00 };
+        private enum InstructionSet { Home = 0x00, GoTo = 0x01  };
+        static int INSTRUCTION_BYTE = 0;
 
         public static void sendInstruction(byte instruction, byte id, UInt16 data)
         {
             TPCANMsg CANMsg = new TPCANMsg();
             CANMsg.DATA = new byte[8];
-            CANMsg.DATA[0] = instruction;
+            CANMsg.DATA[INSTRUCTION_BYTE] = instruction;
             CANMsg.DATA[1] = id;
             CANMsg.DATA[2] = (byte)(data);
             CANMsg.DATA[3] = (byte)(data >> 8);
@@ -27,7 +28,7 @@ namespace BioBotApp.Utils.Communication.pcan.Dynamixel
         {
             TPCANMsg CANMsg = new TPCANMsg();
             CANMsg.DATA = new byte[8];
-            CANMsg.DATA[0] = instruction;
+            CANMsg.DATA[INSTRUCTION_BYTE] = instruction;
             CANMsg.DATA[1] = (byte)(data);
             CANMsg.DATA[2] = (byte)(data >> 8);
             CANMsg.ID = CANDevice.HARDWARE_FILTER_GRIPPER;
@@ -38,7 +39,7 @@ namespace BioBotApp.Utils.Communication.pcan.Dynamixel
         {
             TPCANMsg CANMsg = new TPCANMsg();
             CANMsg.DATA = new byte[8];
-            CANMsg.DATA[0] = instruction;
+            CANMsg.DATA[INSTRUCTION_BYTE] = instruction;
             CANMsg.ID = CANDevice.HARDWARE_FILTER_GRIPPER;
             PCANCom.Instance.send(CANMsg);
 
@@ -53,7 +54,7 @@ namespace BioBotApp.Utils.Communication.pcan.Dynamixel
             TPCANMsg CANMsg = new TPCANMsg();
             CANMsg.DATA = new byte[8];
 
-            CANMsg.DATA[2] = 0x00;
+            CANMsg.DATA[INSTRUCTION_BYTE] = (byte)InstructionSet.GoTo;
             CANMsg.DATA[6] = (byte)(position >> 8);
             CANMsg.DATA[7] = (byte)(position);
             CANMsg.ID = CANDevice.HARDWARE_FILTER_GRIPPER;
@@ -66,8 +67,8 @@ namespace BioBotApp.Utils.Communication.pcan.Dynamixel
             TPCANMsg CANMsg = new TPCANMsg();
             CANMsg.DATA = new byte[8];
 
-            CANMsg.DATA[2] = (byte)InstructionSet.Home;
-            CANMsg.ID = CANDevice.HARDWARE_FILTER_SINGLE_CHANNEL_PIPETTE;
+            CANMsg.DATA[INSTRUCTION_BYTE] = (byte)InstructionSet.Home;
+            CANMsg.ID = CANDevice.HARDWARE_FILTER_GRIPPER;
 
             PCANCom.Instance.send(CANMsg);
         }

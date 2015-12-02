@@ -13,7 +13,6 @@ namespace BioBotApp.Utils.FSM
 {
     public class fsmPince
     {
-
         private const byte INST_CLOSE_GRIPPER = 1;
         private const byte INST_OPEN_GRIPPER = 2;
         private const byte INST_SET_MOVING_SPEED = 3;
@@ -26,16 +25,14 @@ namespace BioBotApp.Utils.FSM
         private const int HOME = 19;
         
         public fsmPince()
-        {
-           
-        }
-       
+        {           
+        }       
 
         public void executeAction(DataSets.dsModuleStructure3.dtActionValueRow row)
         {
             if (row.dtActionTypeRow.pk_id == DBManager.ActionTypes.OPEN)
             {
-                byte pourcentage = Convert.ToByte(row.dtActionTypeRow.description);
+                byte pourcentage = Convert.ToByte(row.description);
                 Dynamixel2CANQueue.openGripper(pourcentage);
                 //DynamixelCom.sendInstruction(INST_OPEN_GRIPPER);
             }

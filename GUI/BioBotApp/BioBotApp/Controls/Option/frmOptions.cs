@@ -86,7 +86,6 @@ namespace BioBotApp.Controls.Option
             else if (e.Node.Name.Equals("nodeJoypad"))
             {
                 setOptionControl(new optionJoypad());
-
             }
             else if (e.Node.Name.Equals("nodeSavedProtocol"))
             {

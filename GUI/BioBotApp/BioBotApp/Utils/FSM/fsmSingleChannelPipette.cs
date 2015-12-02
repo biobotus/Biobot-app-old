@@ -31,19 +31,27 @@ namespace BioBotApp.Utils.FSM
         {
             if (row.dtActionTypeRow.pk_id == PIPETTE)
             {
-                SingleChannelPipette.pipette(Convert.ToInt16(row.description));
-                wait.Reset();
-                wait.WaitOne();
-                Int16 delay = Convert.ToInt16(row.description);
-                System.Threading.Thread.Sleep(delay / 2);
+                Int16 volume = 0;
+                if (Int16.TryParse(row.description, out volume))
+                {
+                    SingleChannelPipette.pipette(volume);
+                    wait.Reset();
+                    wait.WaitOne();
+                    Int16 delay = Convert.ToInt16(row.description);
+                    System.Threading.Thread.Sleep(delay / 2);
+                }               
             }
             else if (row.dtActionTypeRow.pk_id == DISPENSE)
             {
-                SingleChannelPipette.dispense(Convert.ToInt16(row.description));
-                wait.Reset();
-                wait.WaitOne();
-                Int16 delay = Convert.ToInt16(row.description);
-                System.Threading.Thread.Sleep(delay / 2);
+                Int16 volume = 0;
+                if (Int16.TryParse(row.description, out volume))
+                {
+                    SingleChannelPipette.dispense(volume);
+                    wait.Reset();
+                    wait.WaitOne();
+                    Int16 delay = Convert.ToInt16(row.description);
+                    System.Threading.Thread.Sleep(delay / 2);
+                }
             }
             else if (row.dtActionTypeRow.pk_id == MOVE_Z1)
             {
