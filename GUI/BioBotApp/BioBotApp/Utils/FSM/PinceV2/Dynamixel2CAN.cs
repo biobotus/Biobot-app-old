@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using PCAN;
 using Peak.Can.Basic;
+using BioBotApp.Utils.Communication.pcan;
 
 namespace Dynamixel.Driver
 {
@@ -234,7 +235,7 @@ namespace Dynamixel.Driver
             CANMsg.DATA[6] = byte6;
             CANMsg.DATA[7] = byte7;
             CANMsg.ID = CANDeviceConstant.HARDWARE_FILTER_GRIPPER;
-            CANQueue.Instance.add(CANMsg);
+            PCANCom.Instance.send(CANMsg);
         }
         
         public static void addGetInstruction(byte treatingFunction, byte id, byte adress, byte nbOfByte)

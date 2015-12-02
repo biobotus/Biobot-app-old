@@ -1023,7 +1023,8 @@ namespace BioBotApp.Controls.Option.Options
 
         private void Home_Click(object sender, EventArgs e)
         {
-            ComChannelFactory.getGCodeSerial().WriteLine("H\n");
+            homeAll();
+            //ComChannelFactory.getGCodeSerial().WriteLine("H\n");
         }
 
         #endregion

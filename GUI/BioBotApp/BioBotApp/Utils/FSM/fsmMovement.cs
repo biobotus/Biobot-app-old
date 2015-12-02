@@ -5,6 +5,7 @@ using BioBotApp.Utils.Communication.pcan.MultiChannelPipette;
 using BioBotApp.Utils.Communication.pcan.SingleChannelPipette;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -21,6 +22,10 @@ namespace BioBotApp.Utils.FSM
         private const int MOVE_Z3 = 18;
         private const int HOME = 19;
 
+        int desiredXSpeed = 25000;
+        int desiredYSpeed = 10000;
+
+                
         CustomSerial serial = ComChannelFactory.getGCodeSerial();
         SingleChannelPipette SCP = new SingleChannelPipette();
         AutoResetEvent acknowledgeEvent = new AutoResetEvent(false);
@@ -37,17 +42,25 @@ namespace BioBotApp.Utils.FSM
             wait.Set();
         }
 
+        
         public void move(DataSets.dsModuleStructure3.dtActionValueRow actionValue)
         {
             if (actionValue.fk_action_type == MOVE_X)
             {
-                String value = "X" + Int32.Parse(actionValue.description) + '\n';
-                serial.Write(value);
+                //String value = "X" + Int32.Parse(actionValue.description) + '\n';
+                //String value = "G1 X" + Int32.Parse(actionValue.description) / 10 + " F" + desiredXSpeed + "\n";
+                String value = "G1 X" + Int32.Parse(actionValue.description) / 10 + "\n";
+                write(value);
+                wait.WaitOne();
             }
             else if (actionValue.fk_action_type == MOVE_Y)
             {
-                String value = "Y" + Int32.Parse(actionValue.description) + '\n';
-                serial.Write(value);
+                //String value = "Y" + Int32.Parse(actionValue.description) + '\n'; 
+                //String value = "G1 Y" + Int32.Parse(actionValue.description) / 10 + " F" + desiredYSpeed + "\n";
+                String value = "G1 Y" + Int32.Parse(actionValue.description) / 10 + "\n";
+                
+                write(value);
+                wait.WaitOne();
             }
             else if (actionValue.fk_action_type == MOVE_Z1)
             {
@@ -84,12 +97,14 @@ namespace BioBotApp.Utils.FSM
                 switch (actionValue.description)
                 {
                     case "X":
-                        write("HX");
-                        //write("G28X")
+                        //write("HX",1);
+                        write("G28 X");
+                        wait.WaitOne();
                         break;
                     case "Y":
-                        write("HY");
-                        //write("G28Y");
+                        //write("HY",1);
+                        write("G28 Y");
+                        wait.WaitOne();
                         break;
                     case "Z1":
                         SingleChannelPipette.homeTool();
@@ -113,22 +128,56 @@ namespace BioBotApp.Utils.FSM
 
         public void write(string value)
         {
-            serial.Write(value + '\n');
-            String test = serial.ReadLine();
+            //while (InterOperationFlag.isCanBusy != false)
+            //{
+            //    System.Threading.Thread.Sleep(100);
+            //}
+            //InterOperationFlag.isSerialBusy = true;
 
-            while (!test.Contains("Completed"))
+            serial.Open();
+
+            serial.DiscardInBuffer();
+            serial.DiscardOutBuffer();
+
+            serial.Write(value + '\n');
+            String test;
+            bool stayInThere = true;
+            
+            test = serial.ReadLine();                    
+
+            while (stayInThere == true)
             {
-                //do nothing
-                System.Threading.Thread.Sleep(10);
-                try
+                if (test != String.Empty)
+                {
+                    if (test.Contains("Completed"))
+                    {
+                        serial.DiscardInBuffer();
+                        serial.DiscardOutBuffer();
+                        System.Threading.Thread.Sleep(200);
+
+                        //System.Windows.Forms.MessageBox.Show(test);
+                        stayInThere = false;
+
+                        for (int x = 0; x < 5; x++)
+                        {
+                            serial.ReadExisting();
+                            serial.DiscardInBuffer();
+                            serial.DiscardOutBuffer();
+                            System.Threading.Thread.Sleep(100);
+                        }
+                        wait.Set();
+                    }
+                }
+                else
                 {
                     test = serial.ReadLine();
+                    //System.Threading.Thread.Sleep(100);
                 }
-                catch (Exception e)
-                {
-                    System.Console.WriteLine(e.StackTrace);
-                }
+
+                
             }
+            //InterOperationFlag.isSerialBusy = false;
+            serial.Close();
         }
     }
 }
