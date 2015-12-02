@@ -476,7 +476,7 @@ namespace BioBotApp.Controls.Option.Options
 
         private void move(String axe, double position)
         {
-            ComChannelFactory.getGCodeSerial().WriteLine(axe + position);
+            //ComChannelFactory.getGCodeSerial().WriteLine(axe + position);
         }
 
         public void setupGCode(double x, double y, double z1, double z2, double z3)
@@ -591,7 +591,8 @@ namespace BioBotApp.Controls.Option.Options
             {
                 Int16 value = Convert.ToInt16(edtMoveValue.Text);
                 xcoor = value;
-                move("X", xcoor);
+                writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+                //move("X", xcoor);
                 updatePositions();
             }
         }
@@ -602,7 +603,8 @@ namespace BioBotApp.Controls.Option.Options
             {
                 Int16 value = Convert.ToInt16(edtMoveValue.Text);
                 ycoor = value;
-                move("Y", ycoor);
+                writeSerial(SerialCommandType.MoveTo, Axis.Y, (int)ycoor);
+                //move("Y", ycoor);
                 updatePositions();
             }
         }

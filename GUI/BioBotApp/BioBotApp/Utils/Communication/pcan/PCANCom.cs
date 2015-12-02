@@ -90,14 +90,12 @@ namespace BioBotApp.Utils.Communication.pcan
             //{
             //    System.Threading.Thread.Sleep(100);
             //}
-            //InterOperationFlag.isCanBusy = true;
-
-           
+            //InterOperationFlag.isCanBusy = true;           
 
             CANMsg.LEN = 8;
             CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
             TPCANStatus temp = PCANBasic.Write(m_PcanHandle, ref CANMsg);
-            InterOperationFlag.isCanBusy = false;
+            //InterOperationFlag.isCanBusy = false;
             return temp;
         }
         #endregion
