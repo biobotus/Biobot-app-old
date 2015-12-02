@@ -114,7 +114,7 @@ namespace BioBotApp.Controls.Option.Options
         private void button1_Click(object sender, EventArgs e)
         {
             ycoor += 1;
-            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.Y, (int)ycoor);
             //move("Y", ycoor);
             updatePositions();
         }
@@ -122,7 +122,7 @@ namespace BioBotApp.Controls.Option.Options
         private void button2_Click(object sender, EventArgs e)
         {
             ycoor += 10;
-            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.Y, (int)ycoor);
             //move("Y", ycoor);
             updatePositions();
         }
@@ -174,7 +174,7 @@ namespace BioBotApp.Controls.Option.Options
         private void button5_Click(object sender, EventArgs e)
         {
             ycoor -= 1;
-            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.Y, (int)ycoor);
             //move("Y", ycoor);
             updatePositions();
         }
@@ -205,7 +205,7 @@ namespace BioBotApp.Controls.Option.Options
             {
                 Int16 value = Convert.ToInt16(tbIncrement.Text);
                 ycoor += value;
-                writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+                writeSerial(SerialCommandType.MoveTo, Axis.Y, (int)ycoor);
                 //move("Y", ycoor);
                 updatePositions();
             }
@@ -226,7 +226,7 @@ namespace BioBotApp.Controls.Option.Options
         private void button6_Click(object sender, EventArgs e)
         {
             ycoor -= 10;
-            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.Y, (int)ycoor);
             //move("Y", ycoor);
             updatePositions();
         }
@@ -237,7 +237,7 @@ namespace BioBotApp.Controls.Option.Options
             {
                 Int16 value = Convert.ToInt16(tbIncrement.Text);
                 ycoor -= value;
-                writeSerial(SerialCommandType.MoveTo, Axis.Y, (int)xcoor);
+                writeSerial(SerialCommandType.MoveTo, Axis.Y, (int)ycoor);
                 //move("Y", ycoor);
                 updatePositions();
             }
