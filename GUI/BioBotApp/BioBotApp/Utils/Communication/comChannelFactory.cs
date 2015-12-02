@@ -17,7 +17,7 @@ namespace BioBotApp.Utils.Communication
 
                 try
                 {
-                    gCodeSerialChannel.configure("COM4", "115200", "8", "One", "None");
+                    gCodeSerialChannel.configure("COM4", "57600", "8", "One", "None");
 
                     //PCAN.ctrCanConnector temp = new PCAN.ctrCanConnector();
                     //temp.connect("51");

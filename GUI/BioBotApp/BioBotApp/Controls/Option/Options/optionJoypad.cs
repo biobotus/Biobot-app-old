@@ -38,11 +38,16 @@ namespace BioBotApp.Controls.Option.Options
     ////}
     public partial class optionJoypad : UserControl
     {
+        fsmMovement fsmMove = new fsmMovement(); 
+        
+        private enum SerialCommandType { MoveTo, Home };  
+        private enum Axis { X, Y };     
+
         AutoResetEvent wait = new AutoResetEvent(false);
         public optionJoypad()
         {
             InitializeComponent();
-            ComChannelFactory.getGCodeSerial().DataReceived += OptionJoypad_DataReceived;
+            //ComChannelFactory.getGCodeSerial().DataReceived += OptionJoypad_DataReceived;
             PCANCom.Instance.OnMessageReceived += Instance_OnMessageReceived;
         }
 
@@ -109,28 +114,32 @@ namespace BioBotApp.Controls.Option.Options
         private void button1_Click(object sender, EventArgs e)
         {
             ycoor += 1;
-            move("Y", ycoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+            //move("Y", ycoor);
             updatePositions();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             ycoor += 10;
-            move("Y", ycoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+            //move("Y", ycoor);
             updatePositions();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             xcoor += 1;
-            move("X", xcoor);
+            //move("X", xcoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
             updatePositions();
         }      
 
         private void button9_Click(object sender, EventArgs e)
         {
             xcoor += 10;
-            move("X", xcoor);
+            //move("X", xcoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
             updatePositions();
         }
 
@@ -140,7 +149,8 @@ namespace BioBotApp.Controls.Option.Options
             {
                 Int16 value = Convert.ToInt16(tbIncrement.Text);
                 xcoor += value;
-                move("X", xcoor);
+                //move("X", xcoor);
+                writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
                 updatePositions();
             }
         }
@@ -148,21 +158,24 @@ namespace BioBotApp.Controls.Option.Options
         private void button11_Click(object sender, EventArgs e)
         {
             xcoor -= 1;
-            move("X", xcoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+            //move("X", xcoor);
             updatePositions();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             xcoor -= 10;
-            move("X", xcoor);
+            //move("X", xcoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
             updatePositions();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             ycoor -= 1;
-            move("Y", ycoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+            //move("Y", ycoor);
             updatePositions();
         }
 
@@ -192,7 +205,8 @@ namespace BioBotApp.Controls.Option.Options
             {
                 Int16 value = Convert.ToInt16(tbIncrement.Text);
                 ycoor += value;
-                move("Y", ycoor);
+                writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+                //move("Y", ycoor);
                 updatePositions();
             }
         }
@@ -203,7 +217,8 @@ namespace BioBotApp.Controls.Option.Options
             {
                 Int16 value = Convert.ToInt16(tbIncrement.Text);
                 xcoor -= value;
-                move("X", xcoor);
+                writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+                //move("X", xcoor);
                 updatePositions();
             }
         }
@@ -211,7 +226,8 @@ namespace BioBotApp.Controls.Option.Options
         private void button6_Click(object sender, EventArgs e)
         {
             ycoor -= 10;
-            move("Y", ycoor);
+            writeSerial(SerialCommandType.MoveTo, Axis.X, (int)xcoor);
+            //move("Y", ycoor);
             updatePositions();
         }
 
@@ -221,7 +237,8 @@ namespace BioBotApp.Controls.Option.Options
             {
                 Int16 value = Convert.ToInt16(tbIncrement.Text);
                 ycoor -= value;
-                move("Y", ycoor);
+                writeSerial(SerialCommandType.MoveTo, Axis.Y, (int)xcoor);
+                //move("Y", ycoor);
                 updatePositions();
             }
         }
@@ -556,13 +573,15 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            ComChannelFactory.getGCodeSerial().WriteLine("HY");
+            //ComChannelFactory.getGCodeSerial().WriteLine("HY");
+            writeSerial(SerialCommandType.Home, Axis.Y, 0);
             ycoor = 0;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            ComChannelFactory.getGCodeSerial().WriteLine("HX");
+            //ComChannelFactory.getGCodeSerial().WriteLine("HX");
+            writeSerial(SerialCommandType.Home, Axis.X, 0);
             xcoor = 0;
         }
 
@@ -619,6 +638,35 @@ namespace BioBotApp.Controls.Option.Options
                 DynamixelCom.sendPositionToMoveTo((Int16)z3coor);
                 updatePositions();
             }
+        }
+
+        private void writeSerial(SerialCommandType command, Axis axis, Int32 positionToMoveTo)
+        {
+            if (command == SerialCommandType.Home)
+            {
+                if (axis == Axis.X)
+                {
+                    fsmMove.write("G28 X");
+                }
+                else if (axis == Axis.Y)
+                {
+                    fsmMove.write("G28 Y");
+                }
+
+            }
+            else if (command == SerialCommandType.MoveTo)
+            {
+                if (axis == Axis.X)
+                {
+                    String value = "G1 X" + positionToMoveTo / 10 + "\n";
+                    fsmMove.write(value);
+                }
+                else if (axis == Axis.Y)
+                {
+                    String value = "G1 Y" + positionToMoveTo / 10 + "\n";
+                    fsmMove.write(value);
+                }
+            }           
         }
     }
 }

@@ -246,7 +246,7 @@ namespace PCAN
 
             // Baudrates 
             //
-            cbBaudrates.SelectedIndex = 0; // 1M
+            cbBaudrates.SelectedIndex = 3; // 1M
 
             // Hardware Type for no plugAndplay hardware
             //
