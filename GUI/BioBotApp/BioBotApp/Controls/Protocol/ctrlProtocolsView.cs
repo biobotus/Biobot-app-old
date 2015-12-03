@@ -13,6 +13,7 @@ using BioBotApp.Utils.FSM;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using BioBotApp.Controls.Load;
+using BioBotApp.Utils;
 
 namespace BioBotApp.Controls.Protocol
 {
@@ -113,6 +114,7 @@ namespace BioBotApp.Controls.Protocol
             }
             
             executeAction(tlvProtocol.SelectedNode);
+            Logger.Instance.close();
         }
 
         public void executeAction(TreeNode treeNode)
@@ -128,13 +130,10 @@ namespace BioBotApp.Controls.Protocol
             if(treeNode is StepLeafNode)
             {
                 StepLeafNode stepLeafNode = treeNode as StepLeafNode;
-
                 
                 DataSets.dsModuleStructure3.dtStepLeafRow stepLeaf = stepLeafNode.getStepLeaf();
                 DataSets.dsModuleStructure3.dtActionValueRow[] actionValueRows = stepLeaf.GetdtActionValueRows();
-
-                
-                
+                                
                 //DataSets.dsModuleStructure3.dtActionValueDataTable table = stepLeafNode.getActionValueDataTable();
 
                 foreach (DataSets.dsModuleStructure3.dtActionValueRow actionValueRow in actionValueRows)
@@ -142,8 +141,6 @@ namespace BioBotApp.Controls.Protocol
 
                     mainProtocol.executeAction(actionValueRow);
                 }
-
-               
             }
         }
 

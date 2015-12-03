@@ -17,6 +17,21 @@ namespace BioBotApp.Controls.TCPConsole
             InitializeComponent();
         }
 
+        #region INSTANCE
+        private static ctrlConsole instance;
+        public static ctrlConsole Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ctrlConsole();
+                }
+                return instance;
+            }
+        }
+        #endregion
+
         private void btnSendCmbToRemote_Click(object sender, EventArgs e)
         {
             if (edtCmdWindow.Text.Length > 0)
@@ -36,7 +51,23 @@ namespace BioBotApp.Controls.TCPConsole
             }
             edtCmdWindow.Text += logLine;
             edtCmdWindow.SelectionStart = edtCmdWindow.Text.Length;
+            edtCmdWindow.Refresh();
             edtCmdWindow.ScrollToCaret();
+        }
+
+        public void AppendTextBox(string value)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<string>(AppendTextBox), new object[] { value });
+                return;
+            }
+            edtCmdWindow.Text += value + "\r\n";
+        }
+
+        private void edtCmdWindow_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -316,6 +316,7 @@
     <Compile Include="Utils\FSM\PinceV2\DynamixelConst.cs" />
     <Compile Include="Utils\FSM\PinceV2\DynamixelData.cs" />
     <Compile Include="Utils\FSM\PinceV2\DynamixelPacket.cs" />
+    <Compile Include="Utils\Logger.cs" />
     <Compile Include="Utils\TCP\TCPClient.cs" />
     <Compile Include="Utils\TCP\TCPClientAsyncResultEventArgs.cs" />
     <EmbeddedResource Include="Controls\Deck\ctrlDeck.resx">

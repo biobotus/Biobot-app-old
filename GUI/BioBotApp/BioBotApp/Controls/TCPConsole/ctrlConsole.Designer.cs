@@ -44,13 +44,14 @@
             // 
             this.edtCmdWindow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.edtCmdWindow.Location = new System.Drawing.Point(4, 4);
-            this.edtCmdWindow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.edtCmdWindow.Margin = new System.Windows.Forms.Padding(2);
             this.edtCmdWindow.Multiline = true;
             this.edtCmdWindow.Name = "edtCmdWindow";
             this.edtCmdWindow.ReadOnly = true;
             this.edtCmdWindow.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.edtCmdWindow.Size = new System.Drawing.Size(541, 294);
             this.edtCmdWindow.TabIndex = 2;
+            this.edtCmdWindow.TextChanged += new System.EventHandler(this.edtCmdWindow_TextChanged);
             // 
             // panel4
             // 
@@ -59,9 +60,9 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.panel4.Padding = new System.Windows.Forms.Padding(3);
             this.panel4.Size = new System.Drawing.Size(555, 378);
             this.panel4.TabIndex = 7;
             // 
@@ -71,7 +72,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
             this.panel1.Size = new System.Drawing.Size(549, 302);
             this.panel1.TabIndex = 7;
             // 
@@ -93,9 +94,9 @@
             this.panel5.Controls.Add(this.btnSendCmbToRemote);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(3, 324);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Padding = new System.Windows.Forms.Padding(4);
             this.panel5.Size = new System.Drawing.Size(549, 51);
             this.panel5.TabIndex = 5;
             // 
@@ -103,7 +104,7 @@
             // 
             this.edtSendCmd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.edtSendCmd.Location = new System.Drawing.Point(4, 4);
-            this.edtSendCmd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.edtSendCmd.Margin = new System.Windows.Forms.Padding(4);
             this.edtSendCmd.Name = "edtSendCmd";
             this.edtSendCmd.Size = new System.Drawing.Size(541, 20);
             this.edtSendCmd.TabIndex = 3;
@@ -113,7 +114,7 @@
             this.btnSendCmbToRemote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSendCmbToRemote.Location = new System.Drawing.Point(474, 25);
-            this.btnSendCmbToRemote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSendCmbToRemote.Margin = new System.Windows.Forms.Padding(2);
             this.btnSendCmbToRemote.Name = "btnSendCmbToRemote";
             this.btnSendCmbToRemote.Size = new System.Drawing.Size(72, 24);
             this.btnSendCmbToRemote.TabIndex = 4;

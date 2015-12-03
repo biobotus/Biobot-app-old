@@ -41,11 +41,11 @@
             this.CancelBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pkidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fkstepcompositeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.taSavedProtocol = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taSavedProtocol();
             this.taSavedProtocol1 = new BioBotApp.DataSets.dsModuleStructure3TableAdapters.taSavedProtocol();
-            this.pkidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fkstepcompositeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -164,7 +164,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(265, 60);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(265, 61);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // LoadBtn
@@ -205,6 +205,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -219,20 +220,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(282, 401);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "dtSavedProtocol";
-            this.bindingSource1.DataSource = this.dsModuleStructure3;
-            this.bindingSource1.Filter = "description = null";
-            // 
-            // taSavedProtocol
-            // 
-            this.taSavedProtocol.ClearBeforeFill = true;
-            // 
-            // taSavedProtocol1
-            // 
-            this.taSavedProtocol1.ClearBeforeFill = true;
             // 
             // pkidDataGridViewTextBoxColumn1
             // 
@@ -249,6 +236,21 @@
             this.fkstepcompositeDataGridViewTextBoxColumn1.HeaderText = "Step_ID";
             this.fkstepcompositeDataGridViewTextBoxColumn1.Name = "fkstepcompositeDataGridViewTextBoxColumn1";
             this.fkstepcompositeDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "dtSavedProtocol";
+            this.bindingSource1.DataSource = this.dsModuleStructure3;
+            this.bindingSource1.Filter = "description = null";
+            this.bindingSource1.Sort = "pk_id";
+            // 
+            // taSavedProtocol
+            // 
+            this.taSavedProtocol.ClearBeforeFill = true;
+            // 
+            // taSavedProtocol1
+            // 
+            this.taSavedProtocol1.ClearBeforeFill = true;
             // 
             // LoadDialog
             // 

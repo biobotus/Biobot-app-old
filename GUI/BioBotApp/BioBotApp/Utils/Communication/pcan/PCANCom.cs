@@ -8,7 +8,7 @@ using System.Timers;
 
 using Peak.Can.Basic;
 using TPCANHandle = System.UInt16;
-
+using BioBotApp.Utils;
 
 namespace BioBotApp.Utils.Communication.pcan
 {
@@ -28,7 +28,6 @@ namespace BioBotApp.Utils.Communication.pcan
 
         #region CONSTRUCTOR
         public PCANCom(){
-
 
         }
         #endregion
@@ -94,7 +93,10 @@ namespace BioBotApp.Utils.Communication.pcan
 
             CANMsg.LEN = 8;
             CANMsg.MSGTYPE = TPCANMessageType.PCAN_MESSAGE_STANDARD;
+            Logger.Instance.logPacket(CANMsg.DATA, true, (int)CANMsg.ID);
             TPCANStatus temp = PCANBasic.Write(m_PcanHandle, ref CANMsg);
+            
+
             //InterOperationFlag.isCanBusy = false;
             return temp;
         }
@@ -145,19 +147,10 @@ namespace BioBotApp.Utils.Communication.pcan
             if (stsResult == TPCANStatus.PCAN_ERROR_OK)
             {
                 postMessage(CANMsg);
+                Logger.Instance.logPacket(CANMsg.DATA, false, (int)CANMsg.ID);
             }
                
             return stsResult;
-        }
-
-        public void printPacket(byte[] packet)
-        {
-            int N = 8;
-            Console.Write("\nN={0:X}   -   ", N);
-            for (int n = 0; n < N; n++)
-            {
-                Console.Write("[{0:X}] ", packet[n]);
-            }
         }
 
         #endregion

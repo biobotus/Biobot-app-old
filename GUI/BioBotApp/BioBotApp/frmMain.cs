@@ -42,6 +42,8 @@ namespace BioBotApp
             initData();
             initControls();
 
+            Logger.Instance.openLog("log.txt");
+
             _tcpClient = Utils.TCP.AsyncTcpClient.getInstance();
             _tcpClient.tcpClientAsyncResult += OnTcpClientResultCallback;
         }

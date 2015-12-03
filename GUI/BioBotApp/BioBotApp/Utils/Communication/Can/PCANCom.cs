@@ -8,7 +8,7 @@ using System.Timers;
 
 using Peak.Can.Basic;
 using TPCANHandle = System.UInt16;
-
+using BioBotApp.Utils.Logger;
 
 namespace PCAN
 {
@@ -28,7 +28,7 @@ namespace PCAN
         #region CONSTRUCTOR
         public PCANCom(){
 
-
+            
         }
         #endregion
 
@@ -135,6 +135,7 @@ namespace PCAN
             if (stsResult == TPCANStatus.PCAN_ERROR_OK)
             {
                 postMessage(CANMsg);
+                
             }
                
             return stsResult;
