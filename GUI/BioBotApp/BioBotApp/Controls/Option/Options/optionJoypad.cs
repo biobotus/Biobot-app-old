@@ -648,11 +648,11 @@ namespace BioBotApp.Controls.Option.Options
             {
                 if (axis == Axis.X)
                 {
-                    fsmMove.write("G28 X");
+                    writeOnSerial("G28 X");                    
                 }
                 else if (axis == Axis.Y)
                 {
-                    fsmMove.write("G28 Y");
+                    writeOnSerial("G28 Y");                    
                 }
 
             }
@@ -660,13 +660,13 @@ namespace BioBotApp.Controls.Option.Options
             {
                 if (axis == Axis.X)
                 {
-                    String value = "G1 X" + positionToMoveTo / 10 + "\n";
-                    fsmMove.write(value);
+                    String value = "G1 X" + positionToMoveTo / 10;
+                    writeOnSerial(value);
                 }
                 else if (axis == Axis.Y)
                 {
-                    String value = "G1 Y" + positionToMoveTo / 10 + "\n";
-                    fsmMove.write(value);
+                    String value = "G1 Y" + positionToMoveTo / 10;
+                    writeOnSerial(value);
                 }
             }           
         }
@@ -678,6 +678,12 @@ namespace BioBotApp.Controls.Option.Options
             DynamixelCom.homeTool();
             writeSerial(SerialCommandType.Home, Axis.X, 0);
             writeSerial(SerialCommandType.Home, Axis.Y, 0);
+        }
+
+        private void writeOnSerial(String value)
+        {
+            fsmMove.write(value);
+            fsmMove.isBusy = false;
         }
     }
 }

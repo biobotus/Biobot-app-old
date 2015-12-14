@@ -14,6 +14,8 @@ namespace BioBotApp.Utils.Communication.pcan
 {
     class PCANCom
     {
+        public bool isBusy { get; set; }
+
         public EventHandler SerialBusyEvent;
 
         #region MEMBER
@@ -27,8 +29,9 @@ namespace BioBotApp.Utils.Communication.pcan
 
 
         #region CONSTRUCTOR
-        public PCANCom(){
-
+        public PCANCom()
+        {
+            isBusy = false;
         }
         #endregion
 
@@ -84,6 +87,7 @@ namespace BioBotApp.Utils.Communication.pcan
         #region SEND MESSAGE
         public TPCANStatus send(TPCANMsg CANMsg)
         {
+            isBusy = true;
             //System.Threading.Thread.Sleep(1000);
             //while (InterOperationFlag.isSerialBusy != false)
             //{
@@ -160,6 +164,7 @@ namespace BioBotApp.Utils.Communication.pcan
         private void postMessage(TPCANMsg CANMsg)
         {
             OnMessageReceivedEvent(new PCANComEventArgs(CANMsg));
+            isBusy = false;
         }
 
         protected virtual void OnMessageReceivedEvent(PCANComEventArgs e)
@@ -174,7 +179,6 @@ namespace BioBotApp.Utils.Communication.pcan
         #endregion
 
     }
-
 
     #region OBSERVER PATTERN (EVENTARGS)
     public class PCANComEventArgs : EventArgs

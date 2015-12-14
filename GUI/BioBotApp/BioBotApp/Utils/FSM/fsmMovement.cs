@@ -22,11 +22,13 @@ namespace BioBotApp.Utils.FSM
         private const int MOVE_Z3 = 18;
         private const int HOME = 19;
 
+        public bool isBusy = false;
+
         int desiredXSpeed = 25000;
         int desiredYSpeed = 10000;
 
                 
-        CustomSerial serial = ComChannelFactory.getGCodeSerial();
+        CustomSerial serial = ComChannelFactory.getGCodeSerial();        
         SingleChannelPipette SCP = new SingleChannelPipette();
         AutoResetEvent acknowledgeEvent = new AutoResetEvent(false);
 
@@ -35,6 +37,7 @@ namespace BioBotApp.Utils.FSM
         public fsmMovement()
         {
             PCANCom.Instance.OnMessageReceived += Instance_OnMessageReceived;
+            serial.isBusy = false;
         }
 
         private void Instance_OnMessageReceived(object sender, PCANComEventArgs e)
@@ -49,7 +52,7 @@ namespace BioBotApp.Utils.FSM
             {
                 //String value = "X" + Int32.Parse(actionValue.description) + '\n';
                 //String value = "G1 X" + Int32.Parse(actionValue.description) / 10 + " F" + desiredXSpeed + "\n";
-                String value = "G1 X" + Int32.Parse(actionValue.description) / 10 + "\n";
+                String value = "G1 X" + Int32.Parse(actionValue.description) / 10;
                 write(value);
                 wait.WaitOne();
             }
@@ -57,7 +60,7 @@ namespace BioBotApp.Utils.FSM
             {
                 //String value = "Y" + Int32.Parse(actionValue.description) + '\n'; 
                 //String value = "G1 Y" + Int32.Parse(actionValue.description) / 10 + " F" + desiredYSpeed + "\n";
-                String value = "G1 Y" + Int32.Parse(actionValue.description) / 10 + "\n";
+                String value = "G1 Y" + Int32.Parse(actionValue.description) / 10;
                 
                 write(value);
                 wait.WaitOne();
@@ -126,7 +129,7 @@ namespace BioBotApp.Utils.FSM
             }    
         }
 
-        public void write(string value)
+        public void write(string dataToSend)
         {
             //while (InterOperationFlag.isCanBusy != false)
             //{
@@ -134,48 +137,48 @@ namespace BioBotApp.Utils.FSM
             //}
             //InterOperationFlag.isSerialBusy = true;
 
+            serial.isBusy = true;           
+
+            Logger.Instance.writeToLog(">>>>>>>>>>>>>>>>>>>>>", true, true);
+            Logger.Instance.writeToLog("SERIAL - Sending at : "+System.DateTime.Now, true, true);
+            Logger.Instance.writeToLog(dataToSend, true, true);
+            Logger.Instance.writeToLog(">>>>>>>>>>>>>>>>>>>>>", true, true);
+
             serial.Open();
 
             serial.DiscardInBuffer();
             serial.DiscardOutBuffer();
 
-            serial.Write(value + '\n');
-            String test;
+            serial.Write(dataToSend + '\n');
+            String receivedData;
             bool stayInThere = true;
             
-            test = serial.ReadLine();                    
+            receivedData = serial.ReadLine();
 
             while (stayInThere == true)
             {
-                if (test != String.Empty)
+                Logger.Instance.writeToLog("<<<<<<<<<<<<<<<<<<<<<", true, true);
+                Logger.Instance.writeToLog("SERIAL - Receiving at : " + System.DateTime.Now, true, true);
+                Logger.Instance.writeToLog(receivedData, false, true);
+                Logger.Instance.writeToLog("<<<<<<<<<<<<<<<<<<<<<", true, true);
+
+                if (receivedData.Contains(dataToSend))
                 {
-                    if (test.Contains("Completed"))
-                    {
-                        serial.DiscardInBuffer();
-                        serial.DiscardOutBuffer();
-                        System.Threading.Thread.Sleep(200);
+                    serial.DiscardInBuffer();
+                    serial.DiscardOutBuffer();
+                    System.Threading.Thread.Sleep(200);
 
-                        //System.Windows.Forms.MessageBox.Show(test);
-                        stayInThere = false;
-
-                        for (int x = 0; x < 5; x++)
-                        {
-                            serial.ReadExisting();
-                            serial.DiscardInBuffer();
-                            serial.DiscardOutBuffer();
-                            System.Threading.Thread.Sleep(100);
-                        }
-                        wait.Set();
-                    }
+                    //System.Windows.Forms.MessageBox.Show(test);
+                    stayInThere = false;
+                    wait.Set();
+                    serial.isBusy = false;
                 }
                 else
                 {
-                    test = serial.ReadLine();
-                    //System.Threading.Thread.Sleep(100);
+                    receivedData = serial.ReadLine();
+                    System.Threading.Thread.Sleep(200);
                 }
-
-                
-            }
+            }            
             //InterOperationFlag.isSerialBusy = false;
             serial.Close();
         }

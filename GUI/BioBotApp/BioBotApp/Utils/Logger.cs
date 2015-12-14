@@ -66,28 +66,33 @@ namespace BioBotApp.Utils
             file2.Close();
         }
 
-        public void logPacket(byte[] packet, bool transmit, int physicalFilterId)
+        public void logPacket(byte[] packet, bool transmit, int canIdMsg)
         {
             int N = 8;
-
-            switch (packet[1])
+            int outil = packet[1];
+            if (transmit == true)
+                outil = canIdMsg;
+            
+            switch (outil)
             {
                 case CANDevice.HARDWARE_FILTER_GRIPPER:
-                    writeToLog("Gripper (" + physicalFilterId + ") - (" + DateTime.Now + "): ", true, true);
+                    writeToLog("Gripper - (" + DateTime.Now + "): ", true, true);
                     //file.WriteLine("Gripper (" + DateTime.Now +"): ");
                     break;
                 case CANDevice.HARDWARE_FILTER_MUTLI_CHANNEL_PIPETTE:
-                    writeToLog("Pippet Multiple (" + physicalFilterId + ") - (" + DateTime.Now + "): ", true, true);
+                    writeToLog("Pippet Multiple - (" + DateTime.Now + "): ", true, true);
                     //file.WriteLine("Pippet Multiple (" + DateTime.Now + "): ");
                     break;
                 case CANDevice.HARDWARE_FILTER_SINGLE_CHANNEL_PIPETTE:
-                    writeToLog("Pippet Simple (" + physicalFilterId + ") - (" + DateTime.Now + "): ", true, true);
+                    writeToLog("Pippet Simple - (" + DateTime.Now + "): ", true, true);
                     break;
                 //file.WriteLine("Pippet Simple (" + DateTime.Now + "): ");
                 default:
-                    writeToLog("Unknown byte 1 (" + physicalFilterId + ") - (" + DateTime.Now + ") ", true, true);
+                    writeToLog("Unknown byte 1 (" + outil + ") - (" + DateTime.Now + ") ", true, true);
                     break;
             }
+
+            writeToLog("CAN Message ID: " + canIdMsg, true, true);
 
             if (transmit == true)
             {
@@ -110,15 +115,20 @@ namespace BioBotApp.Utils
                 {
                     writeToLog(String.Format("[{0}] ", packet[n]), false, true);
                 }
-            }            
+            }
+            Console.WriteLine("########################");
         } 
 
-        private void writeToLog(string toWrite, bool newLine, bool appendText)
+        public void writeToLog(string toWrite, bool newLine, bool appendText)
         {
-            string newLineInString = newLine ? Environment.NewLine : "";
-            commandsSent.Add(toWrite + newLineInString);
+            string lineToPrint = newLine ? Environment.NewLine : "";
+            commandsSent.Add(toWrite + lineToPrint);
             //file.Write(toWrite + newLineInString);
-            ctrlConsole.Instance.AppendTextBox(toWrite + newLineInString);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.Write(toWrite + lineToPrint);
+            
+            Console.ResetColor();
 
             /*
             using (StreamWriter writer = new StreamWriter("OutputTest.txt"))

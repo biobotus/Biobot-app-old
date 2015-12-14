@@ -9,6 +9,8 @@ namespace BioBotApp.Utils.Communication
 {
     class CustomSerial : SerialPort
     {
+        public bool isBusy { get; set; }
+
         public CustomSerial()
         {
 

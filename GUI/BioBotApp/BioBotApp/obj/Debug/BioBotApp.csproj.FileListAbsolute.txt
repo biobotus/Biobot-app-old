@@ -174,6 +174,7 @@ C:\Users\Regis\Documents\BiobotOldApp\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotAp
 C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe.config
 C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe
 C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.pdb
+C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.csprojResolveAssemblyReference.cache
 C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Deck.ctrlDeck.resources
 C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Labware.ctrlLabware.resources
 C:\Users\majl1801\Desktop\BiobotOldApp\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Load.LoadDialog.resources

@@ -95,7 +95,7 @@
             this.txtBaudeRate.Name = "txtBaudeRate";
             this.txtBaudeRate.Size = new System.Drawing.Size(121, 20);
             this.txtBaudeRate.TabIndex = 5;
-            this.txtBaudeRate.Text = "250000";
+            this.txtBaudeRate.Text = "56700";
             this.txtBaudeRate.Validating += new System.ComponentModel.CancelEventHandler(this.txtBaudeRate_Validating);
             this.txtBaudeRate.Validated += new System.EventHandler(this.txtBaudeRate_Validated);
             // 

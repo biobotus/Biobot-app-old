@@ -14,6 +14,8 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using BioBotApp.Controls.Load;
 using BioBotApp.Utils;
+using BioBotApp.Utils.Communication;
+using BioBotApp.Utils.Communication.pcan;
 
 namespace BioBotApp.Controls.Protocol
 {
@@ -22,7 +24,9 @@ namespace BioBotApp.Controls.Protocol
     public partial class ctrlProtocolsView : UserControl
     {
 
+        CustomSerial serial = ComChannelFactory.getGCodeSerial();
         fsmMainProtocol mainProtocol; 
+
         public ctrlProtocolsView()
         {
             InitializeComponent();
@@ -112,9 +116,14 @@ namespace BioBotApp.Controls.Protocol
             {
                 return;
             }
-            
+
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("START PROTOCOL");
+            Console.WriteLine("-----------------------------------------------");
             executeAction(tlvProtocol.SelectedNode);
-            Logger.Instance.close();
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("END PROTOCOL");
+            Console.WriteLine("-----------------------------------------------");
         }
 
         public void executeAction(TreeNode treeNode)
@@ -138,8 +147,8 @@ namespace BioBotApp.Controls.Protocol
 
                 foreach (DataSets.dsModuleStructure3.dtActionValueRow actionValueRow in actionValueRows)
                 {
-
                     mainProtocol.executeAction(actionValueRow);
+                    while (serial.isBusy == true || PCANCom.Instance.isBusy == true);                    
                 }
             }
         }

@@ -24,17 +24,6 @@ namespace BioBotApp.Utils.Communication.pcan.MultiChannelPipette
             CANMsg.ID = CANDevice.HARDWARE_FILTER_MUTLI_CHANNEL_PIPETTE;
 
             PCANCom.Instance.send(CANMsg);
-            Console.WriteLine(" ");
-            Console.WriteLine("---------------------------------------");
-            Console.Write("T: ");
-            printPacket(CANMsg.DATA);
-        }
-        public static void printPacket(byte[] packet)
-        {
-            for (int n = 0; n < 8; n++)
-            {
-                Console.Write("Single channel pipette : [{0:X}] ", packet[n]);
-            }
         }
 
         public static void sendPositionToMoveTo(Int16 position)
@@ -46,7 +35,6 @@ namespace BioBotApp.Utils.Communication.pcan.MultiChannelPipette
             CANMsg.DATA[6] = (byte)(position >> 8);
             CANMsg.DATA[7] = (byte)(position);
             CANMsg.ID = CANDevice.HARDWARE_FILTER_MUTLI_CHANNEL_PIPETTE;
-            printPacket(CANMsg.DATA);
             PCANCom.Instance.send(CANMsg);
         }
 

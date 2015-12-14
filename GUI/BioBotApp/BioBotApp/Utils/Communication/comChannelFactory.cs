@@ -8,7 +8,6 @@ namespace BioBotApp.Utils.Communication
 {
     class ComChannelFactory
     {
-
         public static CustomSerial getGCodeSerial()
         {
             if (gCodeSerialChannel == null)
