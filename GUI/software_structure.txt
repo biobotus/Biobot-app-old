@@ -1,0 +1,178 @@
+Labware definition(containers):
+	# Define parameters for different kind of labware. Can also be used for modules
+	
+	type of labware:
+		multiwell plate: 	flat plate with multiple "wells" used as small test tubes. Goes from 6 to 1536 wells.
+		tube: 				Individual tubes, usually 0.2, 0.5, 1.5, 2, 5, 15, 50 ml.
+		tube rack:			Rack containing tubes. Different racks are needed depending on the tube size.
+		pipette tip: 		Disposable tips going at the end of the pipette. Depending on the size of the pipette, user needs specific tip size.
+		tip box:			Box containing the pipette tips.
+		plate rack:			Rack to receive a multiwell plate (ex: thermo rack, magnetic rack, other modules)
+		other container:	Any other container (rectangle container for liquid, petri dish, etc.)
+		
+	parameters for each labware:
+		multiwell plate:
+			name
+			company (optional)
+			catalogue number (optional)
+			plate height
+			plate width
+			plate length
+			first well position (x y)
+			distance between wells x
+			distance between wells y
+			well count
+			column count
+			well depth
+			well width					# instead of diameter because some wells are square shaped
+			well shape					# round square
+			well bottom shape     		# flat bottom round bottom v shaped deepwell pcr tube
+			well max volume(optional)
+			dead volume(optional)
+			
+		tube:
+			name
+			company
+			catalogue number
+			height
+			top diameter
+			max volume
+
+		tube rack:
+			name
+			company
+			catalogue number
+			rack height
+			rack width
+			rack length
+			first tube position (x y)
+			distance between tubes x
+			distance between tubes y
+			tubes count
+			column count
+			tube z offset	
+			
+		pipette tip:
+			volume min
+			volume max
+			length
+			length on pipette
+		
+		tip box:
+			name
+			company
+			catalogue number
+			box height
+			box width
+			box length
+			first tip position (x y)
+			distance between tips x
+			distance between tips y
+			tips count
+			column count
+			tip height out of box
+			
+		plate rack:
+			z offset
+		
+		Other container:
+			name
+			company
+			catalogue number
+			height
+			width
+			length
+			shape 						# rectangle round
+			depth
+		
+		
+Deck layout:
+	# Define every labware and modules on the robot deck.
+	# An instance of a labware with a specific name that can be referenced in an instruction.
+	# Labware could be stack (example, rack + tube, multiple tip box stacked).
+	
+	Name of labware
+	position of labware and modules on the deck (x, y)
+	labware is lid or not
+	track tips
+
+	
+Tool rack layout:
+	# Define the position and type of each tool on the tool rack.
+	# The position correspond to the center of the tool relative to the centre of the tool rack.
+	
+	tool name
+	tool company
+	tool type					# Gripper, single channel pipette, multichannel pipette
+	tool position
+	
+
+Instructions:
+	# Command line to accomplish one action
+	
+	with tool "T" do action "X"
+	example:
+		with pipette1 move_to (x, y) or (multiwell_plate_1;A1)
+		with pipette1 move_to (z)
+		with pipette1 aspirate (n ul, s ul/sec)
+
+	
+Tool actions (low level instruction):
+	# basic actions a specific tool or module can do.
+	# correspond to low level instructions
+	
+	Single channel pipette:
+		move (x, y, z, speed)
+		aspirate (volume, speed)
+		dispense (volume, speed)
+		load tip
+		eject tip
+
+	Single channel pipette:
+		move (x, y, z, speed)
+		aspirate (volume, speed)
+		dispense (volume, speed)
+		load tip
+		eject tip
+	
+	Gripper:
+		move (x, y, z, speed)
+		open
+		close
+		rotate axis 1
+		rotate axix 2
+		
+	Modules: ...
+
+		
+High level instruction (examples):
+	# Complex actions composed of many low or high level instructions.
+	
+	load tip:
+		move to (x, y)
+		move down
+		move up
+	
+	transfer (with tool "pipette" from labware "L1" to labware "L2"):
+		load tip (see above)
+		move to L1
+		move to bottom of L1
+		aspirate x ul
+		move up
+		move to L2
+		move to bottom of L2
+		dispense x+? ul
+		move up
+		go to waste
+		move down
+		eject tip
+
+				
+Protocol:
+	# Sequence of many instructions (low or high level)
+	# bound to a specific deck layout and tool rack layout.
+	# possibility to loop a set of instructions.
+	
+	deck layout
+	tool rack layout
+	sequence of instructions (low or high level)

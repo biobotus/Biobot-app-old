@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD8DAC81-BCF5-422F-B8AD-E6B9C16A5F4D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BioBotApp</RootNamespace>
+    <AssemblyName>BioBotApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\..\..\..\..\Dropbox\Projet RobotBio\GUI\DB\Npgsql-2.2.3-net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Deck\ctrlDeck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Deck\ctrlDeck.Designer.cs">
+      <DependentUpon>ctrlDeck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Labware\ctrlLabware.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Labware\ctrlLabware.Designer.cs">
+      <DependentUpon>ctrlLabware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Load\LoadDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Load\LoadDialog.Designer.cs">
+      <DependentUpon>LoadDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\abstractDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\abstractDialog.Designer.cs">
+      <DependentUpon>abstractDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\namedComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\namedComboBox.Designer.cs">
+      <DependentUpon>namedComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\namedInputTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\namedInputTextBox.Designer.cs">
+      <DependentUpon>namedInputTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionCommunication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionCommunication.Designer.cs">
+      <DependentUpon>optionCommunication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionCustomSerial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionCustomSerial.Designer.cs">
+      <DependentUpon>optionCustomSerial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionJoypad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionJoypad.Designer.cs">
+      <DependentUpon>optionJoypad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionLabwareParameterType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionLabwareParameterType.Designer.cs">
+      <DependentUpon>optionLabwareParameterType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionModuleTypeLabwareParameterType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionModuleTypeLabwareParameterType.Designer.cs">
+      <DependentUpon>optionModuleTypeLabwareParameterType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionLabwareTypeLabwareParameterType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionLabwareTypeLabwareParameterType.Designer.cs">
+      <DependentUpon>optionLabwareTypeLabwareParameterType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionLabwareType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionLabwareType.Designer.cs">
+      <DependentUpon>optionLabwareType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionModuleType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionModuleType.Designer.cs">
+      <DependentUpon>optionModuleType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionActionValueType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionActionValueType.Designer.cs">
+      <DependentUpon>optionActionValueType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionDBConnection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionDBConnection.Designer.cs">
+      <DependentUpon>optionDBConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\frmOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\frmOptions.Designer.cs">
+      <DependentUpon>frmOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionActionType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionActionType.Designer.cs">
+      <DependentUpon>optionActionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionModuleTypeActionType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionModuleTypeActionType.Designer.cs">
+      <DependentUpon>optionModuleTypeActionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionMovement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionMovement.Designer.cs">
+      <DependentUpon>optionMovement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionProtocol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionProtocol.Designer.cs">
+      <DependentUpon>optionProtocol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionSavedProtocol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionSavedProtocol.Designer.cs">
+      <DependentUpon>optionSavedProtocol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.Designer.cs">
+      <DependentUpon>ctrlCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ProtocolNode.cs" />
+    <Compile Include="Controls\Steps\Parameter controls\ProtocolTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\StepCompositeNode.cs" />
+    <Compile Include="Controls\Steps\Parameter controls\StepLeafNode.cs" />
+    <Compile Include="Controls\Protocol\ctrlProtocolsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Protocol\ctrlProtocolsView.Designer.cs">
+      <DependentUpon>ctrlProtocolsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Steps\frmNewProtocol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Steps\frmNewProtocol.Designer.cs">
+      <DependentUpon>frmNewProtocol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Steps\ctrlStepsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Steps\ctrlStepsView.Designer.cs">
+      <DependentUpon>ctrlStepsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Steps\frmNewStep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Steps\frmNewStep.Designer.cs">
+      <DependentUpon>frmNewStep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ctrlModuleCommands.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ctrlModuleCommands.Designer.cs">
+      <DependentUpon>ctrlModuleCommands.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ctrlParameter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ctrlParameter.Designer.cs">
+      <DependentUpon>ctrlParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tools\ctrlTools.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Tools\ctrlTools.Designer.cs">
+      <DependentUpon>ctrlTools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tools\ModuleTypeSelectionEventArgs.cs" />
+    <Compile Include="DataSets\dsModuleStructure3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsModuleStructure3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompMain.Designer.cs">
+      <DependentUpon>frmCompMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Communication\asyncSerialCallbackEventArgs.cs" />
+    <Compile Include="Utils\Communication\ComChannelFactory.cs" />
+    <Compile Include="Utils\Communication\CustomSerial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\Communication\InterOperationFlag.cs" />
+    <Compile Include="Utils\Communication\JSONParser.cs" />
+    <Compile Include="Utils\Communication\pcan\CANDevice.cs" />
+    <Compile Include="Utils\Communication\pcan\ctrCanConnector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utils\Communication\pcan\ctrCanConnector.designer.cs">
+      <DependentUpon>ctrCanConnector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Communication\pcan\Dynamixel\DynamixelCom.cs" />
+    <Compile Include="Utils\Communication\pcan\MultiChannel\MultiChannelPipette.cs" />
+    <Compile Include="Utils\Communication\pcan\PCANBasic.cs" />
+    <Compile Include="Utils\Communication\pcan\PCANCom.cs" />
+    <Compile Include="Utils\Communication\pcan\SingleChannelPipette\SingleChannelPipette.cs" />
+    <Compile Include="Utils\Communication\pcan\TAC\TacComm.cs" />
+    <Compile Include="Utils\DataBase\DBManager.cs" />
+    <Compile Include="Utils\Form\ApplicationExeptionHandlers.cs" />
+    <Compile Include="Controls\Utils\crudOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Utils\crudOptions.Designer.cs">
+      <DependentUpon>crudOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TCPConsole\ctrlConsole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TCPConsole\ctrlConsole.Designer.cs">
+      <DependentUpon>ctrlConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\FSM\fsmMainProtocol.cs" />
+    <Compile Include="Utils\FSM\fsmMovement.cs" />
+    <Compile Include="Utils\FSM\fsmMultiChannelPipette.cs" />
+    <Compile Include="Utils\FSM\fsmPince.cs" />
+    <Compile Include="Utils\FSM\fsmSingleChannelPipette.cs" />
+    <Compile Include="Utils\FSM\fsmTAC.cs" />
+    <Compile Include="Utils\FSM\PinceV2\CANDeviceConstant.cs" />
+    <Compile Include="Utils\FSM\PinceV2\CANQueue.cs" />
+    <Compile Include="Utils\FSM\PinceV2\Dynamixel2CAN.cs" />
+    <Compile Include="Utils\FSM\PinceV2\DynamixelCANInstruction.cs" />
+    <Compile Include="Utils\FSM\PinceV2\DynamixelConst.cs" />
+    <Compile Include="Utils\FSM\PinceV2\DynamixelData.cs" />
+    <Compile Include="Utils\FSM\PinceV2\DynamixelPacket.cs" />
+    <Compile Include="Utils\Logger.cs" />
+    <Compile Include="Utils\TCP\TCPClient.cs" />
+    <Compile Include="Utils\TCP\TCPClientAsyncResultEventArgs.cs" />
+    <EmbeddedResource Include="Controls\Deck\ctrlDeck.resx">
+      <DependentUpon>ctrlDeck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Labware\ctrlLabware.resx">
+      <DependentUpon>ctrlLabware.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Load\LoadDialog.resx">
+      <DependentUpon>LoadDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\abstractDialog.resx">
+      <DependentUpon>abstractDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\namedComboBox.resx">
+      <DependentUpon>namedComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\namedInputTextBox.resx">
+      <DependentUpon>namedInputTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionCommunication.resx">
+      <DependentUpon>optionCommunication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionCustomSerial.resx">
+      <DependentUpon>optionCustomSerial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionJoypad.resx">
+      <DependentUpon>optionJoypad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionLabwareParameterType.resx">
+      <DependentUpon>optionLabwareParameterType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionModuleTypeLabwareParameterType.resx">
+      <DependentUpon>optionModuleTypeLabwareParameterType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionLabwareTypeLabwareParameterType.resx">
+      <DependentUpon>optionLabwareTypeLabwareParameterType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionLabwareType.resx">
+      <DependentUpon>optionLabwareType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionModuleType.resx">
+      <DependentUpon>optionModuleType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionActionValueType.resx">
+      <DependentUpon>optionActionValueType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionActionType.resx">
+      <DependentUpon>optionActionType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionDBConnection.resx">
+      <DependentUpon>optionDBConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\frmOptions.resx">
+      <DependentUpon>frmOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionModuleTypeActionType.resx">
+      <DependentUpon>optionModuleTypeActionType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionMovement.resx">
+      <DependentUpon>optionMovement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionProtocol.resx">
+      <DependentUpon>optionProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionSavedProtocol.resx">
+      <DependentUpon>optionSavedProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Protocol\ctrlProtocolsView.resx">
+      <DependentUpon>ctrlProtocolsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Steps\frmNewProtocol.resx">
+      <DependentUpon>frmNewProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Steps\ctrlStepsView.resx">
+      <DependentUpon>ctrlStepsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Steps\frmNewStep.resx">
+      <DependentUpon>frmNewStep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Steps\Parameter controls\ctrlModuleCommands.resx">
+      <DependentUpon>ctrlModuleCommands.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Steps\Parameter controls\ctrlParameter.resx">
+      <DependentUpon>ctrlParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Tools\ctrlTools.resx">
+      <DependentUpon>ctrlTools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompMain.resx">
+      <DependentUpon>frmCompMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Controls\Utils\crudOptions.resx">
+      <DependentUpon>crudOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TCPConsole\ctrlConsole.resx">
+      <DependentUpon>ctrlConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\Communication\pcan\ctrCanConnector.resx">
+      <DependentUpon>ctrCanConnector.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSets\dsModuleStructure3.xsc">
+      <DependentUpon>dsModuleStructure3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsModuleStructure3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsModuleStructure3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\dsModuleStructure3.xss">
+      <DependentUpon>dsModuleStructure3.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link_break.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

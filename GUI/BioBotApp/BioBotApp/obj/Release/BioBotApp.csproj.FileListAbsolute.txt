@@ -1,0 +1,8 @@
+C:\Users\David\Documents\workspace\BioBotGit\GUI\BioBotApp\BioBotApp\bin\Release\BioBotApp.exe.config
+C:\Users\David\Documents\workspace\BioBotGit\GUI\BioBotApp\BioBotApp\bin\Release\BioBotApp.exe
+C:\Users\David\Documents\workspace\BioBotGit\GUI\BioBotApp\BioBotApp\bin\Release\BioBotApp.pdb
+C:\Users\David\Documents\workspace\BioBotGit\GUI\BioBotApp\BioBotApp\obj\Release\BioBotApp.Form1.resources
+C:\Users\David\Documents\workspace\BioBotGit\GUI\BioBotApp\BioBotApp\obj\Release\BioBotApp.Properties.Resources.resources
+C:\Users\David\Documents\workspace\BioBotGit\GUI\BioBotApp\BioBotApp\obj\Release\BioBotApp.csproj.GenerateResource.Cache
+C:\Users\David\Documents\workspace\BioBotGit\GUI\BioBotApp\BioBotApp\obj\Release\BioBotApp.exe
+C:\Users\David\Documents\workspace\BioBotGit\GUI\BioBotApp\BioBotApp\obj\Release\BioBotApp.pdb
